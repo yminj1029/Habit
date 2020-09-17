@@ -14,6 +14,20 @@ public class Member2VO {
 	private int point;
 	private String category;
 	
+	public Member2VO(String m_id, String name, String nickname, String tel, String gender, String job, String email,
+			int point, String category) {
+		super();
+		this.m_id = m_id;
+		this.name = name;
+		this.nickname = nickname;
+		this.tel = tel;
+		this.gender = gender;
+		this.job = job;
+		this.email = email;
+		this.point = point;
+		this.category = category;
+	}
+
 	public Member2VO(String m_id, String pw, String name, String nickname, String tel, String gender, String job,
 			String email, int point, String category) {
 		super();
