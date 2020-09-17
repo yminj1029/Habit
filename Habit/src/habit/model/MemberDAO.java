@@ -33,6 +33,16 @@ public class MemberDAO {
 		return conn;
 	}
 	
+	public void dbClose() {
+		try {
+			if(rs!=null) rs.close();
+			if(ps!=null) ps.close();
+			if(conn!=null) conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+}
+	
 	public int memberInsert(MemberVO vo) {
 		conn = getConnect();
 		// MyBatis
@@ -94,16 +104,7 @@ public class MemberDAO {
 		return cnt;
 	}
 	
-	public void dbClose() {
-			try {
-				if(rs!=null) rs.close();
-				if(ps!=null) ps.close();
-				if(conn!=null) conn.close();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-	}
-	
+
 	public MemberVO memberContent(int num) {
 		MemberVO vo=null;
 		conn=getConnect();
