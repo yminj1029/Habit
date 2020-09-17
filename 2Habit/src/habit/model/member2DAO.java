@@ -65,13 +65,13 @@ public class member2DAO {
 		return cnt;
 	}
 	
-	public int member2Delete(String M_id, String pw) {
+	public int member2Delete(String m_id, String pw) {
 		conn=getConnect();
 		String SQL="delete from member2 where num=?, pw=?";
 		int cnt=-1;
 		try {
 			ps=conn.prepareStatement(SQL);
-			ps.setString(1, M_id);
+			ps.setString(1, m_id);
 			ps.setString(2, pw);
 			cnt=ps.executeUpdate();
 		} catch (Exception e) {
