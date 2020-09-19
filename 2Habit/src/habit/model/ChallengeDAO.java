@@ -106,7 +106,7 @@ public class ChallengeDAO {
 			ps.setString(7, vo.getH_day());
 			ps.setString(8, vo.getAlarm());
 			ps.setInt(9, vo.getCh_id());
-			ps.setNString(10, vo.getM_id());
+			ps.setString(10, vo.getM_id());
 			
 			
 			cnt=ps.executeUpdate();
