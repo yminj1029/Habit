@@ -32,7 +32,7 @@ public class ChallengeDAO {
 			e.printStackTrace();
 		}
 		return conn;
-	}
+	};;
 
 	public void dbClose() {
 		try {
