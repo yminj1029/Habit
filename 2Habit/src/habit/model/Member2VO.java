@@ -12,8 +12,6 @@ public class Member2VO {
 	private String job; 
 	private String email;
 	private int point;
-	private String category;
-	
 	
 	
 	public Member2VO() {
@@ -21,7 +19,7 @@ public class Member2VO {
 	}
 
 	public Member2VO(String m_id, String name, String nickname, String tel, String gender, String job, String email,
-			int point, String category) {
+			int point) {
 		super();
 		this.m_id = m_id;
 		this.name = name;
@@ -31,11 +29,10 @@ public class Member2VO {
 		this.job = job;
 		this.email = email;
 		this.point = point;
-		this.category = category;
 	}
 
 	public Member2VO(String m_id, String pw, String name, String nickname, String tel, String gender, String job,
-			String email, int point, String category) {
+			String email, int point) {
 		super();
 		this.m_id = m_id;
 		this.pw = pw;
@@ -46,7 +43,6 @@ public class Member2VO {
 		this.job = job;
 		this.email = email;
 		this.point = point;
-		this.category = category;
 	}
 
 	public String getM_id() {
@@ -119,14 +115,6 @@ public class Member2VO {
 
 	public void setPoint(int point) {
 		this.point = point;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
 	}
 	
 }

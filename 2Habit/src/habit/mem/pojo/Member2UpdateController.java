@@ -23,7 +23,6 @@ public class Member2UpdateController implements Member2Controller{
 		String gender = request.getParameter("gender");
 		String job = request.getParameter("job");
 		String email = request.getParameter("email");
-		String category = request.getParameter("category");
 		String cpath = request.getContextPath();
 		
 		Member2VO vo = new Member2VO();  //vo·Î ¹­´Â´Ù!!
@@ -36,7 +35,6 @@ public class Member2UpdateController implements Member2Controller{
 		vo.setGender(gender);
 		vo.setJob(job);
 		vo.setEmail(email);
-		vo.setCategory(category);
 		
 		member2DAO dao = new member2DAO();
 		int cnt = dao.member2Update(vo);

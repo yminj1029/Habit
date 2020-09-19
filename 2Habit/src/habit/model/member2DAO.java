@@ -40,10 +40,11 @@ public class member2DAO {
 		}
 }
 	
+	// 회원가입!!
 	public int member2Insert(Member2VO vo) {
 		conn = getConnect();
 		// MyBatis
-		String SQL = "insert into member2 values(?,?,?,?,?,?,?,?,0,?)";
+		String SQL = "insert into member2 values(?,?,?,?,?,?,?,?)";
 		int cnt = -1;// -1=실패의의미
 		try {
 			ps = conn.prepareStatement(SQL);
@@ -55,7 +56,6 @@ public class member2DAO {
 			ps.setString(6, vo.getGender());
 			ps.setString(7, vo.getJob());
 			ps.setString(8, vo.getEmail());
-			ps.setString(9, vo.getCategory());
 			cnt = ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -65,9 +65,10 @@ public class member2DAO {
 		return cnt;
 	}
 	
+	// 회원 탈퇴!!
 	public int member2Delete(String m_id, String pw) {
 		conn=getConnect();
-		String SQL="delete from member2 where num=?, pw=?";
+		String SQL="delete from member2 where m_id=?, pw=?";
 		int cnt=-1;
 		try {
 			ps=conn.prepareStatement(SQL);
@@ -81,21 +82,22 @@ public class member2DAO {
 		return cnt;
 	}
 	
+	// 회원 정보 수정!!
 	public int member2Update(Member2VO vo) {
 		conn=getConnect();
-		String SQL = "update member2 set pw=?, name=?, nickname=?, tel=?, job=?, email=?, category=? where m_id=?, pw=?";
+		String SQL = "update member2 set pw=?, name=?, nickname=?, tel=?, job=?, email=? where m_id=?, pw=?";
 		int cnt=-1;
 		try {
-			ps.setString(1, vo.getM_id());
-			ps.setString(2, vo.getPw());
-			ps.setString(3, vo.getName());
-			ps.setString(4, vo.getNickname());
-			ps.setString(5, vo.getTel());
-			ps.setString(6, vo.getGender());
-			ps.setString(7, vo.getJob());
-			ps.setString(8, vo.getEmail());
-			ps.setInt(9, vo.getPoint());
-			ps.setString(10, vo.getCategory());
+			ps.setString(1, vo.getPw());
+			ps.setString(2, vo.getName());
+			ps.setString(3, vo.getNickname());
+			ps.setString(4, vo.getTel());
+			ps.setString(5, vo.getJob());
+			ps.setString(6, vo.getEmail());
+			ps.setString(7, vo.getM_id());
+			ps.setString(8, vo.getPw());
+			
+			
 			cnt=ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -105,6 +107,7 @@ public class member2DAO {
 		return cnt;
 	}
 	
+	//회원 정보 자기꺼 보기!! 
 	public Member2VO member2Content(String m_id) {
 		Member2VO vo=null;
 		conn=getConnect();
@@ -123,8 +126,7 @@ public class member2DAO {
 		         String job=rs.getString("job");
 		         String email=rs.getString("email");
 		         int point=rs.getInt("point");
-		         String category=rs.getString("category");
-		         vo=new Member2VO(m_id, name, nickname, tel, gender, job, email, point, category);
+		         vo=new Member2VO(m_id, name, nickname, tel, gender, job, email, point);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
