@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import habit.model.Member2VO;
-import habit.model.member2DAO;
+import habit.model.Member2DAO;
 
 public class Member2UpdateController implements Member2Controller{
 
@@ -36,7 +36,7 @@ public class Member2UpdateController implements Member2Controller{
 		vo.setJob(job);
 		vo.setEmail(email);
 		
-		member2DAO dao = new member2DAO();
+		Member2DAO dao = new Member2DAO();
 		int cnt = dao.member2Update(vo);
 		String page = null;
 		if(cnt>0) {

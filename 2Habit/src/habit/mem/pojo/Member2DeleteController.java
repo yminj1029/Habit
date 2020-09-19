@@ -6,7 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import habit.model.member2DAO;
+import habit.model.Member2DAO;
 
 
 public class Member2DeleteController implements Member2Controller {
@@ -19,7 +19,7 @@ public class Member2DeleteController implements Member2Controller {
 		String m_id =request.getParameter("m_id");
 		String pw =request.getParameter("pw");
 		
-		member2DAO dao = new member2DAO();
+		Member2DAO dao = new Member2DAO();
 		int cnt = dao.member2Delete(m_id, pw);
 		String page = null;
 		if(cnt>0) {

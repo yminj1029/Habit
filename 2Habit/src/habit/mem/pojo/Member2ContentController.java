@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import habit.model.Member2VO;
-import habit.model.member2DAO;
+import habit.model.Member2DAO;
 
 
 public class Member2ContentController implements Member2Controller {
@@ -17,7 +17,7 @@ public class Member2ContentController implements Member2Controller {
 	public String requestHandle(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String m_id = request.getParameter("m_id");
-		member2DAO dao = new member2DAO();
+		Member2DAO dao = new Member2DAO();
 		Member2VO vo = dao.member2Content(m_id);
 		//memberContent.jsp·Î º¸³»±ë
 		request.setAttribute("vo", vo);

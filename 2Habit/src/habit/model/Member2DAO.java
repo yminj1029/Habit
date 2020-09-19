@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class member2DAO {
+public class Member2DAO {
 	private Connection conn;
 	private PreparedStatement ps;
 	private ResultSet rs;
