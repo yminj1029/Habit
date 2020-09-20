@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ChallengeResultDAO {
-	public class Member2DAO {
 		private Connection conn;
 		private PreparedStatement ps;
 		private ResultSet rs;
@@ -67,5 +66,4 @@ public class ChallengeResultDAO {
 
 		}
 
-	}
 }
