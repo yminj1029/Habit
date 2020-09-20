@@ -8,70 +8,64 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 
-
 public class ChallengeResultDAO {
-	private Connection conn;
-	private PreparedStatement ps;
-	private ResultSet rs;
-	// 초기화 블럭
-	static {
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 
-	public Connection getConnect() {
-		String url = "jdbc:oracle:thin:@112.187.117.251:1521:XE";
-		String user = "hv";
-		String password = "hv";
-		try {
-			conn = DriverManager.getConnection(url, user, password);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return conn;
-	}
-	
-	public void dbClose() {
-		try {
-			if(rs!=null) rs.close();
-			if(ps!=null) ps.close();
-			if(conn!=null) conn.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-}
-	
-	public ArrayList<ChallengeResultVO> challengeResult() {
+		private Connection conn;
+		private PreparedStatement ps;
+		private ResultSet rs;
 
-		ArrayList<ChallengeResultVO> list = new ArrayList<ChallengeResultVO>();
-		try {
-			getConnect();
+		// 초기화 블럭
+		public Connection getConnect() {
+			String url = "jdbc:oracle:thin:@112.187.117.251:1521:XE";
+			String user = "hv";
+			String password = "hv";
+			try {
+				Class.forName("oracle.jdbc.driver.OracleDriver");
+				conn = DriverManager.getConnection(url, user, password);
 
-			String sql = "select mid,mname,gender,tel,lv from member";
-
-			ps = conn.prepareStatement(sql);
-
-			rs = ps.executeQuery();
-			while (rs.next()) {
-				String mid = rs.getString(1);
-				String mname = rs.getString(2);
-				String gender = rs.getString(3);
-				String tel = rs.getString(4);
-				String lv = rs.getString(5);
-				ChallengeResultVO vo = new ChallengeResultVO(ch_id, chm_id, prf_id, chr_date, chr_point, chr_result);
-				list.add(vo);
-
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
+			return conn;
 		}
-		return list;
 
-	}
+		public void dbClose() {
+			try {
+				if (rs != null)
+					rs.close();
+				if (ps != null)
+					ps.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		public ArrayList<ChallengeResultVO> challengeResult(Member2VO vocm) {
+			vocm = new Member2VO();
+			ArrayList<ChallengeResultVO> list = new ArrayList<ChallengeResultVO>();
+			String sql = "select c.ch_name, c.startdate, c.enddate, cr.chr_result"
+					+ "from challenge c, challenge_result cr where c.m_id=?";
+			try {
+				getConnect();
+				ps = conn.prepareStatement(sql);
+				ps.setString(1, vocm.getM_id());
+				rs = ps.executeQuery();
+				while (rs.next()) {
+					String ch_name = rs.getString(1);
+					String startdate = rs.getString(2);
+					String enddate = rs.getString(3);
+					String chr_result = rs.getString(4);
+
+					ChallengeResultVO Vot = new ChallengeResultVO(ch_name, startdate, enddate, chr_result);
+					list.add(Vot);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return list;
+
+		}
 
 }

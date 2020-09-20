@@ -29,13 +29,14 @@ CREATE SEQUENCE  "CHALLENGE_RESULT_SEQ" MINVALUE 1 MAXVALUE 10000 INCREMENT BY 1
 
 CREATE TABLE "MEMBER2"
    (   "M_ID" VARCHAR2(30 BYTE), 
+   "NICKNAME" VARCHAR2(20 BYTE), 
    "PW" VARCHAR2(20 BYTE), 
    "NAME" VARCHAR2(20 BYTE), 
-   "NICKNAME" VARCHAR2(20 BYTE), 
    "TEL" VARCHAR2(20 BYTE), 
    "GENDER" VARCHAR2(20 BYTE), 
    "JOB" VARCHAR2(30 BYTE), 
    "EMAIL" VARCHAR2(30 BYTE), 
+   "habit" VARCHAR2(30 BYTE), 
    "POINT" NUMBER
    );
 
@@ -47,11 +48,11 @@ CREATE TABLE "MEMBER2"
   ALTER TABLE "MEMBER2" MODIFY ("TEL" NOT NULL ENABLE);
   ALTER TABLE "MEMBER2" MODIFY ("EMAIL" NOT NULL ENABLE);
 
-Insert into MEMBER2 (M_ID,PW,NAME,NICKNAME,TEL,GENDER,JOB,EMAIL,POINT) values ('hansung','1234','¹ÚÇÑ¼º','¿øÄ³½½','1012121212','¿©','Å«¾ð´µ','hansung@naver.com','500');
-Insert into MEMBER2 (M_ID,PW,NAME,NICKNAME,TEL,GENDER,JOB,EMAIL,POINT) values ('minji','1234','À±¹ÎÁö','À±Áö¾¾','1012341234','¿©','¼±»ý´Ô','minji@naver.com','1000');
-Insert into MEMBER2 (M_ID,PW,NAME,NICKNAME,TEL,GENDER,JOB,EMAIL,POINT) values ('hyewon','1234','Á¤Çý¿ø','Àú¼¼»óÀÎ½Î','1013131313','¿©','¹Ú»ç´Ô','hyewon@naver.com','500');
-Insert into MEMBER2 (M_ID,PW,NAME,NICKNAME,TEL,GENDER,JOB,EMAIL,POINT) values ('yejiAn','1234','¾È¿¹Áö','¿¹µÕÁöµÕ','1089102114','¿©','ÇÐ»ý','yeji@naver.com','100');
-Insert into MEMBER2 (M_ID,PW,NAME,NICKNAME,TEL,GENDER,JOB,EMAIL,POINT) values ('seyeon','1234','Á¤¼¼¿¬','nameChanger','1045567890','¿©','ÃÑÀå´Ô','seyeon@naver.com','0');
+Insert into MEMBER2 (M_ID,PW,NAME,NICKNAME,TEL,GENDER,JOB,EMAIL,POINT,HABIT) values ('hansung','1234','¹ÚÇÑ¼º','¿øÄ³½½','1012121212','¿©','Å«¾ð´µ','hansung@naver.com','500',null);
+Insert into MEMBER2 (M_ID,PW,NAME,NICKNAME,TEL,GENDER,JOB,EMAIL,POINT,HABIT) values ('minji','1234','À±¹ÎÁö','À±Áö¾¾','1012341234','¿©','¼±»ý´Ô','minji@naver.com','1000',null);
+Insert into MEMBER2 (M_ID,PW,NAME,NICKNAME,TEL,GENDER,JOB,EMAIL,POINT,HABIT) values ('hyewon','1234','Á¤Çý¿ø','Àú¼¼»óÀÎ½Î','1013131313','¿©','¹Ú»ç´Ô','hyewon@naver.com','500',null);
+Insert into MEMBER2 (M_ID,PW,NAME,NICKNAME,TEL,GENDER,JOB,EMAIL,POINT,HABIT) values ('yejiAn','1234','¾È¿¹Áö','¿¹µÕÁöµÕ','1089102114','¿©','ÇÐ»ý','yeji@naver.com','100',null);
+Insert into MEMBER2 (M_ID,PW,NAME,NICKNAME,TEL,GENDER,JOB,EMAIL,POINT,HABIT) values ('seyeon','1234','Á¤¼¼¿¬','nameChanger','1045567890','¿©','ÃÑÀå´Ô','seyeon@naver.com','0',null);
 
 /** myhabit Å×ÀÌºí »ý¼º**/
 
