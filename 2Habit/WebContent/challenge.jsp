@@ -97,7 +97,7 @@
 						여기는 {vo.ch_name} &nbsp;<small>{vo.num}</small>
 					</div>
 					<div class="col-4 text-right"><a class="btn btn-secondary" data-toggle="modal"
-							href="#viewModal">자세히</a></div>
+							href="#challViewModal">자세히</a></div>
 				</div>
 			</div>
 			<div class="card-body">
@@ -119,7 +119,7 @@
 	</ul>
 
 
-<!-- 챌린지 등록 페이지 -->
+<!-- 챌린지 등록하기 -->
 	<div class="modal fade" id="registerModal" tabindex="-1" role="dialog"
 		aria-labelledby="modal" aria-hidden="true">
 		<div class="modal-dialog">
@@ -315,9 +315,8 @@
 							</div>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary"
-								data-dismiss="modal">취소</button>
 							<button type="submit" class="btn btn-primary">등록하기</button>
+							<button type="button" class="btn btn-secondary"	data-dismiss="modal">취소</button>
 						</div>
 					</form>
 				</div>
@@ -327,20 +326,17 @@
 
 
 <!-- 챌린지 구성원보기 -->
-	<div class="modal fade" id="viewModal" tabindex="-1" role="dialog"
+	<div class="modal fade" id="challViewModal" tabindex="-1" role="dialog"
 		aria-labelledby="modal" aria-hidden="true">
-		
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="modal">{vo.ch_name}</h5>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					<form action="./proof.jsp" method="post">
 						<div class="form-row">
 							<div class="form-group col-sm-6">
 								<label>방장닉네임</label> <label>{vo.nickname}</label>
@@ -386,19 +382,65 @@
 						</div>
 					<div class="modal-footer">
 				     	<a class="btn btn-warning" href="#">참여하기</a>
-						<button type="submit" class="btn btn-primary">인증하기</button>
+						<a class="btn btn-primary mx-1 mt-2" data-toggle="modal" href="#proofModal" data-dismiss="modal">인증하기</a>
 						<button type="button" class="btn btn-secondary"	data-dismiss="modal">닫기</button>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- 챌린지 인증하기 -->
+	<div class="modal fade" id="proofModal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modal">챌린지 인증</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="./challenge.jsp" method="post">
+						<div class="form-row">
+							<div class="form-group col-sm-6">
+								<label>인증 제목</label> <input type="text" name="challengeName"
+									class="form-control" maxlength="20">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-sm-4">
+                        		<label>인증 날짜</label>
+                     		</div>
+                   		</div>
+		                <div class="form-row">
+		                   <div class="form-group col-sm-4">
+		                   		<label>챌린지 마감 연도</label>
+		                   </div>
+		                </div>
+						<div class="form-group">
+							<label>내용</label>
+							<textarea type="text" name="evaluationContent"
+								class="form-control" maxlength="2048" style="height: 180px;"></textarea>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-sm-6">
+								<label>첨부파일</label> <input type="text" name="file"
+									class="form-control" maxlength="20">
+							</div>
+						</div>
+						<div class="modal-footer">
+							<a class="btn btn-primary mx-1 mt-2" data-toggle="modal" href="#challViewModal" data-dismiss="modal">인증완료</a>
+							<a class="btn btn-secondary mx-1 mt-2" data-toggle="modal" href="#challViewModal" data-dismiss="modal">취소</a>
+						</div>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
 
-<footer class="bg-dark mt-4 p-5 text-center" style="color: #FFFFFF;">
 
-		Copyright ⓒ 2018 나동빈 All Rights Reserved. </footer>
-		
+<footer class="bg-dark mt-4 p-5 text-center" style="color: #FFFFFF;">Copyright ⓒ 2018 나동빈 All Rights Reserved.</footer>
 <!-- javascript -->
 	<!-- 제이쿼리 자바스크립트 추가하기 -->
 	<script src="./js/jquery.min.js"></script>
