@@ -6,6 +6,7 @@ drop table review cascade constraints;
 drop table my_result cascade constraints;
 drop table challenge_members cascade constraints;
 drop table challenge_result cascade constraints;
+drop table CRAWLING cascade constraints;
 
 drop sequence "MY_HABIT_SEQ";
 drop sequence "CHALLENGE_SEQ";
@@ -214,8 +215,14 @@ CREATE TABLE "MEMBER2"
   ALTER TABLE "CHALLENGE_RESULT" ADD CONSTRAINT "CHALLENGE_RESULT_FK2" FOREIGN KEY ("PRF_ID")
 	  REFERENCES "PROOF" ("PRF_ID") ENABLE;
   ALTER TABLE "CHALLENGE_RESULT" ADD CONSTRAINT "CHALLENGE_RESULT_FK3" FOREIGN KEY ("CHM_ID")
-	  REFERENCES "CHALLENGE_MEMBERS" ("CHM_ID") ENABLE;	  
+	  REFERENCES "CHALLENGE_MEMBERS" ("CHM_ID") ENABLE;	 
 	  
+/**CRAWLING 한거 담는 테이블**/	  
+  CREATE TABLE "CRAWLING"(	
+  "Y_ID" NUMBER, 
+  "Y_TITLE" VARCHAR2(300 BYTE), 
+	"URL" VARCHAR2(300 BYTE));
+
 commit
 	  SELECT * FROM CHALLENGE;
 	  SELECT * FROM CHALLENGE_MEMBERS;
