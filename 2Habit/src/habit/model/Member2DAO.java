@@ -223,14 +223,14 @@ public class Member2DAO {
 		return null;
 	}
 	//나의 습관 보기
-	public ArrayList<Member2VO> member2Mypage(Member2VO user) {
+	public ArrayList<Member2VO> member2Mypage(String m_id) {
 
 		ArrayList<Member2VO> list = new ArrayList<Member2VO>();
 		String sql = "select mh.h_name, c.ch_name, mr.mr_result, cr.chr_result from my_habit mh, challenge c, my_result mr, challenge_result cr where  mh.m_id= ?";
 		try {
 			getConnect();
 			ps = conn.prepareStatement(sql);
-			ps.setString(1, user.getM_id());
+			ps.setString(1, m_id);
 			rs = ps.executeQuery();
 			while (rs.next()) {
 				String h_name = rs.getString(1);
