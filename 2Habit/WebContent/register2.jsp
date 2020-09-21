@@ -4,7 +4,9 @@
   <head>
     <title>HABIT</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+	<link rel="stylesheet" href="assets/css/main.css?1" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
     <!-- 부트스트랩 CSS 추가하기 -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
