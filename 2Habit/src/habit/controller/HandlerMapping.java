@@ -18,7 +18,8 @@ public class HandlerMapping {
 	private void initMap() {
 
 		try {
-		mappings.put("/join.do", new Member2InsertController());
+		mappings.put("/main.do", new MainController());
+		mappings.put("/join.do", new Member2InsertFormController());
 		mappings.put("/login.do", new Member2UpdateController());
 		mappings.put("/mypage.do", new Member2MyPageController());
 		}catch(Exception e) {
