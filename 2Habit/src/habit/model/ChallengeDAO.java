@@ -118,6 +118,34 @@ public class ChallengeDAO {
 		return cnt;
 	}
 	
+	// challenge 검색기능
+	public ArrayList<ChallengeVO> challengeSeach(String search) {
+
+		ArrayList<ChallengeVO> list = new ArrayList<ChallengeVO>();
+		String sql = "select * from challenge where ch_name=?";
+		try {
+			getConnect();
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, "%" + search + "%");
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				String ch_name = rs.getString(1);
+				int num = rs.getInt(2);
+				String startdate = rs.getString(3);
+				String enddate = rs.getString(4);
+				String ch_content = rs.getString(5);
+				String alarm = rs.getString(6);
+
+				ChallengeVO voc = new ChallengeVO();
+				list.add(voc);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	
 	// 챌린지 게시판의 리스트를 뽑아서 볼 수 있게 하자!!
 	public ArrayList<ChallengeVO> ChallengeAllList() {
 		ArrayList<ChallengeVO> list = new ArrayList<ChallengeVO>();

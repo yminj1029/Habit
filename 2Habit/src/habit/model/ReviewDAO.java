@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class ReviewDAO {
 
@@ -43,7 +45,31 @@ public class ReviewDAO {
 			e.printStackTrace();
 		}
 	}
+	//후기 검색기능
+	public ArrayList<ChallengeVO> challengeSeach(String search) {
 
+		ArrayList<ChallengeVO> list = new ArrayList<ChallengeVO>();
+		String sql = "select r.r_name, m.nickname, r.r_date, r.content from review r, member2 m where r_name=?";
+		try {
+			getConnect();
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, "%" + search + "%");
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				String r_name = rs.getString(1);
+				String nickname = rs.getString(2);
+				String r_date = rs.getString(3);
+				String r_content = rs.getString(4);
+
+				ChallengeVO voc = new ChallengeVO();
+				list.add(voc);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
 	// 후기작성
 	public int reviewInsert(String m_id, int r_point, String r_file) {
 		ReviewVO vor = new ReviewVO();

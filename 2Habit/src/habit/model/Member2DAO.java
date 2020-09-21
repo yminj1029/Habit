@@ -127,7 +127,7 @@ public class Member2DAO {
 	 */
 
 	// 로그인
-	public Member2VO member2Login(String mid, String mpw, boolean check) {
+	public Member2VO member2Login(String mid, String mpw) {
 		Member2VO user = null;
 		try {
 			getConnect();
@@ -158,70 +158,9 @@ public class Member2DAO {
 		} finally {
 			dbClose();
 		}
-		if (check == true) {
-			File cookie = new File("test.txt");
-			if (cookie.exists()) {
-				cookie.delete();
-			}
-			BufferedWriter bufferedWriter = null;
-			try {
-				cookie.createNewFile();
-				bufferedWriter = new BufferedWriter(new FileWriter(cookie));
-				bufferedWriter.write(user.getM_id() + "\n" + user.getName() + "\n"+ user.getNickname() + "\n"
-						+ user.getTel() + "\n" + user.getGender() + "\n" + user.getEmail());
-				bufferedWriter.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			} finally {
-				try {
-					if (bufferedWriter != null) {
-						bufferedWriter.close();
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-		}
 		return user;
 	}
-
-	// autologin(자동로그인)
-	public Member2VO member2AutoLogin() {
-		File cookie = new File("test.txt");
-		Member2VO user = null;
-		FileReader filereader = null;
-		BufferedReader bufReader = null;
-		try {
-			filereader = new FileReader(cookie);
-			bufReader = new BufferedReader(filereader);
-			if (cookie.exists()) {
-				String m_id = bufReader.readLine();
-				String name = bufReader.readLine();
-				String nickname = bufReader.readLine();
-				String tel = bufReader.readLine();
-				String gender = bufReader.readLine();
-				String email = bufReader.readLine();
-				user = new Member2VO(m_id, name, nickname, tel, gender, email);
-			}
-		} catch (FileNotFoundException e) {
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			dbClose();
-		}
-
-		return user;
-	}
-
-	// 로그아웃
-	public Member2VO member2Logout() {
-		File cookie = new File("test.txt");
-		if (cookie.exists()) {
-			cookie.delete();
-		}
-		return null;
-	}
+	
 	//나의 습관 보기
 	public ArrayList<Member2VO> member2Mypage(String m_id) {
 
