@@ -42,15 +42,14 @@ public class ChallengeResultDAO {
 			}
 		}
 
-		public ArrayList<ChallengeResultVO> challengeResult(Member2VO vocm) {
-			vocm = new Member2VO();
+		public ArrayList<ChallengeResultVO> challengeResult(String m_id) {
 			ArrayList<ChallengeResultVO> list = new ArrayList<ChallengeResultVO>();
 			String sql = "select c.ch_name, c.startdate, c.enddate, cr.chr_result"
 					+ "from challenge c, challenge_result cr where c.m_id=?";
 			try {
 				getConnect();
 				ps = conn.prepareStatement(sql);
-				ps.setString(1, vocm.getM_id());
+				ps.setString(1, m_id);
 				rs = ps.executeQuery();
 				while (rs.next()) {
 					String ch_name = rs.getString(1);
