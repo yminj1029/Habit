@@ -2,7 +2,7 @@ package habit.controller;
 
 import java.util.HashMap;
 
-import habit.mem.pojo.Member2ManageListController;
+import habit.mem.pojo.Member2MyPageController;
 import habit.mem.pojo.Member2Controller;
 import habit.mem.pojo.Member2InsertController;
 import habit.mem.pojo.Member2UpdateController;
@@ -19,7 +19,7 @@ public class HandlerMapping {
 
 		try {
 		mappings.put("/insert.do", new Member2InsertController());
-		mappings.put("/content.do", new Member2ManageListController());
+		mappings.put("/content.do", new Member2MyPageController());
 		mappings.put("/update.do", new Member2UpdateController());
 		}catch(Exception e) {
 			e.printStackTrace();

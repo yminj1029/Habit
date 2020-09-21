@@ -10,7 +10,7 @@ import habit.model.Member2VO;
 import habit.model.Member2DAO;
 
 
-public class Member2LoginController2 implements Member2Controller{
+public class Member2LoginController implements Member2Controller{
 
 	@Override
 	public String requestHandle(HttpServletRequest request, HttpServletResponse response)
