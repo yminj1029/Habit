@@ -20,12 +20,8 @@ public class Member2FrontController extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("euc-kr");
-		//1. 어떤 요청인지 파악하는 작업 -> list.do? insert.do? delete.do??
 		String reqUrl= request.getRequestURI();
-		//System.out.println(reqUrl);
 		String ctxPath = request.getContextPath();
-		//System.out.println(ctxPath);
-		//클라이언트가 요청한 명령
 		String command = reqUrl.substring(ctxPath.length());
 		System.out.println(command);
 		
