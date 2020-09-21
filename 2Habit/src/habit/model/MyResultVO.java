@@ -3,73 +3,63 @@ package habit.model;
 public class MyResultVO {
 	//속성을 만들자!!!!
 	
-	private int mr_id; 
-	private int h_id; 
+	private int r_id; 
+	private int ch_id; 
 	private String m_id; 
-	private String mr_date;
-	private String mr_result;
-	private String mr_point;
+	private String r_date;
+	private String r_file;
+	private int r_point;
+	
 	
 	public MyResultVO() {
-		super();
 	}
-
-	public MyResultVO(int mr_id, int h_id, String m_id, String mr_date, String mr_result, String mr_point) {
+	
+	
+	
+	public MyResultVO(int r_id, int ch_id, String m_id, String r_date, String r_file, int r_point) {
 		super();
-		this.mr_id = mr_id;
-		this.h_id = h_id;
+		this.r_id = r_id;
+		this.ch_id = ch_id;
 		this.m_id = m_id;
-		this.mr_date = mr_date;
-		this.mr_result = mr_result;
-		this.mr_point = mr_point;
+		this.r_date = r_date;
+		this.r_file = r_file;
+		this.r_point = r_point;
 	}
-
-	public int getMr_id() {
-		return mr_id;
+	public int getR_id() {
+		return r_id;
 	}
-
-	public void setMr_id(int mr_id) {
-		this.mr_id = mr_id;
+	public void setR_id(int r_id) {
+		this.r_id = r_id;
 	}
-
-	public int getH_id() {
-		return h_id;
+	public int getCh_id() {
+		return ch_id;
 	}
-
-	public void setH_id(int h_id) {
-		this.h_id = h_id;
+	public void setCh_id(int ch_id) {
+		this.ch_id = ch_id;
 	}
-
 	public String getM_id() {
 		return m_id;
 	}
-
 	public void setM_id(String m_id) {
 		this.m_id = m_id;
 	}
-
-	public String getMr_date() {
-		return mr_date;
+	public String getR_date() {
+		return r_date;
 	}
-
-	public void setMr_date(String mr_date) {
-		this.mr_date = mr_date;
+	public void setR_date(String r_date) {
+		this.r_date = r_date;
 	}
-
-	public String getMr_result() {
-		return mr_result;
+	public String getR_file() {
+		return r_file;
 	}
-
-	public void setMr_result(String mr_result) {
-		this.mr_result = mr_result;
+	public void setR_file(String r_file) {
+		this.r_file = r_file;
 	}
-
-	public String getMr_point() {
-		return mr_point;
+	public int getR_point() {
+		return r_point;
 	}
-
-	public void setMr_point(String mr_point) {
-		this.mr_point = mr_point;
+	public void setR_point(int r_point) {
+		this.r_point = r_point;
 	}
 	
 	

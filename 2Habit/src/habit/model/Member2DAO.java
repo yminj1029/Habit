@@ -186,7 +186,7 @@ public class Member2DAO {
 	}
 
 	// autologin(자동로그인)
-	public Member2VO autologin() {
+	public Member2VO member2AutoLogin() {
 		File cookie = new File("test.txt");
 		Member2VO user = null;
 		FileReader filereader = null;
@@ -215,7 +215,7 @@ public class Member2DAO {
 	}
 
 	// 로그아웃
-	public Member2VO logout() {
+	public Member2VO member2Logout() {
 		File cookie = new File("test.txt");
 		if (cookie.exists()) {
 			cookie.delete();
@@ -223,7 +223,7 @@ public class Member2DAO {
 		return null;
 	}
 	//나의 습관 보기
-	public ArrayList<Member2VO> managelist(Member2VO user) {
+	public ArrayList<Member2VO> member2Mypage(Member2VO user) {
 
 		ArrayList<Member2VO> list = new ArrayList<Member2VO>();
 		String sql = "select mh.h_name, c.ch_name, mr.mr_result, cr.chr_result from my_habit mh, challenge c, my_result mr, challenge_result cr where  mh.m_id= ?";
@@ -246,7 +246,6 @@ public class Member2DAO {
 		}
 		return list;
 	}
-	
 	
 	
 }

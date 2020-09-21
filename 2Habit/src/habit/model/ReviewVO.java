@@ -12,7 +12,6 @@ public class ReviewVO {
 	
 	
 	public ReviewVO() {
-		super();
 	}
 
 
