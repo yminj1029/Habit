@@ -16,7 +16,7 @@ import habit.mem.pojo.Member2Controller;
 
 
 
-public class Member2FrontController extends HttpServlet {
+public class FrontController extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("euc-kr");
