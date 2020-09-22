@@ -52,7 +52,6 @@
 
 	<!-- 후기리스트 전체보기 -->
 	<div class="container">
-
 		<!-- 후기리스트 검색&등록 -->
 		<!-- 검색하면 어떤 페이지 띄울것인지 -> 새 페이지 만들기 -->
 		<form method="get" action="./sortedoutReview.jsp"
@@ -71,7 +70,7 @@
 				href="#registerModal">등록하기</a>
 		</form>
 
-		<!-- 후기1개 -->
+<!-- 후기1개 -->
 		<div class="card bg-light mt-3">
 			<div class="card-header bg-light">
 				<div class="row">
@@ -79,6 +78,7 @@
 						여기는 {vo.r_title} &nbsp;<small>{vo.nickname}</small>
 					</div>
 					<div class="col-4 text-right">
+					<span class="text-right" style="color: green;">(추천: 15★)</span>
 						<a class="btn btn-secondary" data-toggle="modal"
 							href="#viewModal">자세히</a>
 					</div>
@@ -86,51 +86,12 @@
 			</div>
 			<div class="card-body">
 				<span class="card-text">{vo.r_date}후기작성일</span><br> 
-				<span class="card-text">{vo.r_content}후기내용</span>
+				<span class="card-text">{vo.r_content}후기내용</span><br>
 			</div>
 		</div>
-
-		<!-- 후기2개 -->
-		<div class="card bg-light mt-3">
-			<div class="card-header bg-light">
-				<div class="row">
-					<div class="col-8 text-left">
-						여기는 {vo.r_title} &nbsp;<small>{vo.nickname}</small>
-					</div>
-					<div class="col-4 text-right">
-						<a class="btn btn-secondary" data-toggle="modal" href="#registerModal">자세히</a>
-					</div>
-				</div>
-			</div>
-			<div class="card-body">
-				<span class="card-text">{vo.r_date}후기작성일</span><br> <span class="card-text">{vo.r_content}후기내용</span>
-			</div>
-		</div>
-
-		<!-- 후기3개 -->
-		<div class="card bg-light mt-3">
-			<div class="card-header bg-light">
-				<div class="row">
-					<div class="col-8 text-left">
-						여기는 {vo.r_title} &nbsp;<small>{vo.nickname}</small>
-					</div>
-					<div class="col-4 text-right">
-						<a class="btn btn-secondary" data-toggle="modal"
-							href="#registerModal">자세히</a>
-					</div>
-				</div>
-			</div>
-			<div class="card-body">
-				<span class="card-text">{vo.r_date}후기작성일</span><br> <span
-					class="card-text">{vo.r_content}후기내용</span>
-			</div>
-		</div>
-
-
 	</div>
 
-	<!-- 페이지 이동 -->
-	<!-- 페이지 이동 get방식으로 할까 스크롤 다운으로 할까? -->
+<!-- 페이지 이동 -->
 	<ul class="pagination justify-content-center mt-3">
 		<li class="page-item"><a class="page-link" href="#">이전</a></li>
 		<li class="page-item"><a class="page-link" href="#">다음</a></li>
@@ -150,7 +111,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form action="./reviewRegisterAction.jsp" method="post">
+					<form action="./review.jsp" method="post">
 						<div class="form-row">
 							<div class="form-group col-sm-6">
 								<label>후기 제목</label> <input type="text" name="reviewName"
@@ -175,7 +136,7 @@
 						</div>
 						<div class="form-group">
 							<label>내용</label>
-							<textarea type="text" name="evaluationContent"
+							<textarea type="text" name="reviewContent"
 								class="form-control" maxlength="2048" style="height: 180px;"></textarea>
 						</div>
 						<div class="form-row">
@@ -185,9 +146,9 @@
 							</div>
 						</div>
 						<div class="modal-footer">
+							<button type="submit" class="btn btn-primary">등록하기</button>
 							<button type="button" class="btn btn-secondary"
 								data-dismiss="modal">취소</button>
-							<button type="submit" class="btn btn-primary">등록하기</button>
 						</div>
 					</form>
 				</div>
@@ -237,7 +198,7 @@
 							</div>
 						</div>
 						<div class="modal-footer">
-							<button type="submit" class="btn btn-primary">수정하기</button>
+							<a class="btn btn-primary" onclick="return confirm('추천하시겠습니까?')" href="./review.jsp">추천</a>
 							<button type="button" class="btn btn-secondary"
 								data-dismiss="modal">취소</button>
 						</div>
@@ -250,7 +211,7 @@
 
 </header>
 
-		<footer class="bg-dark mt-4 p-5 text-center" style="color: #FFFFFF;"> Credit @ 2020 빅데이터 3차 윤민지 박한성 정혜원 안예지. </footer>
+		<footer class="mt-4 p-5 text-center"> Credit @ 2020 빅데이터 3차 윤민지 박한성 정혜원 안예지. </footer>
 
 
 <!-- javascript -->
