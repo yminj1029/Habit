@@ -43,9 +43,11 @@ public class Member2LoginController implements InterController{
 		if(result==0) {
 			HttpSession session = request.getSession();
 			session.setAttribute("mid", mid); 
-			page="redirect:"+cpath+"/list.do";
+			page="redirect:"+cpath+"/membermain.do";
+			System.out.println("로그인 성공");
 		}else {
 			page="redirect:"+cpath+"login.do";
+			System.out.println("좀망한듯....");
 		}
 		return page;
 	}

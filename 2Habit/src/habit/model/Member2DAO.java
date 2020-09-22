@@ -57,20 +57,17 @@ public class Member2DAO {
 	public int member2Insert(Member2VO vo) {
 		conn = getConnect();
 		// MyBatis
-		String SQL = "insert into member2 values(?,?,?,?,?,?,?,?,?,?)";
+		String SQL = "insert into member2 values(?,?,?,?,?,?,?)";
 		int cnt = -1;// -1=실패의의미
 		try {
 			ps = conn.prepareStatement(SQL);
 			ps.setString(1, vo.getM_id());
-			ps.setString(4, vo.getNickname());
 			ps.setString(2, vo.getPw());
-			ps.setString(3, vo.getName());
-			ps.setString(5, vo.getTel());
+			ps.setString(3, vo.getNickname());
+			ps.setString(4, vo.getTel());
+			ps.setString(5, vo.getEmail());
 			ps.setString(6, vo.getGender());
 			ps.setString(7, vo.getJob());
-			ps.setString(8, vo.getEmail());
-			ps.setString(9, vo.getHabit());
-			ps.setInt(10, vo.getPoint());
 			cnt = ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

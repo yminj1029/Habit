@@ -16,8 +16,7 @@ public class Member2LogoutController implements InterController{
 		String cpath = request.getContextPath();
 		HttpSession session = request.getSession();
 		session.invalidate();
-		response.sendRedirect("login.html");
-		String page="redirect:"+cpath+"/list.do";
+		String page="redirect:"+cpath+"/main.do";
 		return page;
 	}
 	

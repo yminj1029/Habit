@@ -12,7 +12,7 @@ public class MainController implements InterController{
 	public String requestHandle(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		return "member/main.jsp";
+		return "/main.jsp";
 	}
 
 }
