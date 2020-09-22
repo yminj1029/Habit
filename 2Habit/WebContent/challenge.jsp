@@ -382,7 +382,7 @@
 							</div>
 						</div>
 					<div class="modal-footer">
-				     	<a class="btn btn-warning" href="#">참여하기</a>
+				     	<a class="btn btn-warning" href="#joinModal">참여하기</a>
 						<a class="btn btn-primary mx-1 mt-2" data-toggle="modal" href="#proofModal" data-dismiss="modal">인증하기</a>
 						<button type="button" class="btn btn-secondary"	data-dismiss="modal">닫기</button>
 					</div>
@@ -390,6 +390,41 @@
 			</div>
 		</div>
 	</div>
+	
+<!-- 챌린지 참여하기 -->
+	<div class="modal fade" id="joinModal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modal">챌린지 참여</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="./challenge.jsp" method="post">
+						<div class="form-row">
+							<div class="form-group col-sm-6">
+								<label>챌린지 명</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label>참여하시겠습니까?</label>
+							<textarea type="text" name="evaluationContent"
+								class="form-control" maxlength="2048" style="height: 180px;"></textarea>
+						</div>
+						<div class="modal-footer">
+							<a class="btn btn-primary mx-1 mt-2" data-toggle="modal" href="#challViewModal" >참여</a>
+							<a class="btn btn-secondary mx-1 mt-2" data-toggle="modal" href="#challViewModal" data-dismiss="modal">취소</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
 
 <!-- 챌린지 인증하기 -->
 	<div class="modal fade" id="proofModal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
