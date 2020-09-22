@@ -32,6 +32,7 @@
 			<a class="navbar-brand" href="index.jsp">HABIT</a>
 		</nav>
 	</div>
+	<header id="bg">
 	<br><br><br><br><br>
     <div class="container mt-3" style="max-width: 560px;">
 
@@ -48,7 +49,7 @@
      	<a class="btn btn-secondary" href="register.jsp">회원가입</a>
       </form>
     </div>
-
+    </header>
     <footer class="bg-dark mt-4 p-5 text-center" style="color: #FFFFFF;">
       Copyright ⓒ 2018 나동빈 All Rights Reserved.
     </footer>

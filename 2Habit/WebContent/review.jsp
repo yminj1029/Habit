@@ -44,8 +44,8 @@
       </div>
     </nav>
 </div>
-
 	<!-- main -->
+<header id="bg">
 	<nav class="navbar navbar-expand-lg navbar-light">
 		<div class="navbar-brand">후기게시판</div>
 	</nav>
@@ -247,6 +247,8 @@
 		</div>
 	</div>
 
+
+</header>
 
 		<footer class="bg-dark mt-4 p-5 text-center" style="color: #FFFFFF;"> Credit @ 2020 빅데이터 3차 윤민지 박한성 정혜원 안예지. </footer>
 

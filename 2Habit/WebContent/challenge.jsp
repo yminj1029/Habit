@@ -65,6 +65,7 @@
     </nav>
 	
 <!-- main -->
+<header id="bg">
 	<nav class="navbar navbar-expand-lg navbar-light">
 		<div class="navbar-brand">챌린지게시판</div>
 	</nav>
@@ -438,7 +439,7 @@
 			</div>
 		</div>
 	</div>
-
+</header>
 
 <footer class="bg-dark mt-4 p-5 text-center" style="color: #FFFFFF;">Copyright ⓒ 2018 나동빈 All Rights Reserved.</footer>
 <!-- javascript -->

@@ -43,7 +43,7 @@
 	</div>
 
 	<!--  Main -->
-
+<header id="bg">
 	<header id="header2">
 		<div class="container">
 			<div class="jumbotron">
@@ -75,6 +75,8 @@
 			</div>
 		</div>
 	</header>
+	
+</header>
 	<footer class="bg-dark mt-4 p-5 text-center" style="color: #FFFFFF;"> Credit @ 2020 빅데이터 3차 윤민지 박한성 정혜원 안예지. </footer>
 	
 

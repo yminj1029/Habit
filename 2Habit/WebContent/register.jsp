@@ -21,6 +21,7 @@
 	</div>
 
 <!-- Main -->
+<header id="bg">
     <div class="container mt-3" style="max-width: 560px;">
       <form method="post" action="./userRegisterAction.jsp">
         <div class="form-group">
@@ -62,9 +63,16 @@
         <button type="submit" class="btn btn-primary">회원가입</button>
       </form>
     </div>
+    
+    </header>
+    
+    
+    
     <footer class="bg-dark mt-4 p-5 text-center" style="color: #FFFFFF;">
       Copyright ⓒ 2018 나동빈 All Rights Reserved.
     </footer>
+    
+
 
 <!-- javascript -->
     <!-- 제이쿼리 자바스크립트 추가하기 -->
