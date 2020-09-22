@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
 <meta charset="utf-8">
 <!-- 반응형 웹에 관한것 -->
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -11,8 +13,21 @@
 <!-- 부트스트랩 CSS 만들어서 추가하기 -->
 <link rel="stylesheet" href="./css/bootstrap.min.css" />
 <!-- 커스텀 CSS 만들어서 추가하기 -->
-<link rel="stylesheet" href="./css/custom.css" />
+<link rel="stylesheet" href="./css/custom.css" />s
+
 <title>myHabit</title>
+<style>
+body{
+      background-image: url('./images/sky.png');
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      width: 100%;
+   height: 100%;
+   background-size:cover;
+   }
+
+</style>
+
 </head>
 
 <body>
@@ -45,7 +60,6 @@
 	<!--  Main -->
 <header id="bg">
 	<header id="header2">
-	<section></section>
 		<div class="container">
 			<div class="jumbotron">
 				<h1>회원정보</h1>
@@ -55,16 +69,23 @@
 				</div>
 				<div class="square content">
 					<h5>{vo.nickname} 님,</h5>
-					<h6>{vo.m_id}</h6>
-					<h6>{vo.tel}</h6>
 					<h6>{vo.email}</h6>
-					<h6>{vo.gender}</h6>
-					<h6>{vo.job}</h6>
-					<h6>{vo.category}</h6>
 					<p>bgcolor바꾸기!+버튼클릭시펼쳐지게or modal띄우기+글씨 커지면 자동 늘리기</p>
 					<a class="btn btn-secondary mx-1 mt-2" data-toggle="modal" href="#">회원정보 수정</a>
 				</div>
 				</div>
+			</div>
+				
+				
+						</div>
+	</header>
+	
+</header>
+				
+				
+				
+				
+	<section id="header3">
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
@@ -75,9 +96,7 @@
       </h4>
     </div>
     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-      <div class="panel-body">
       1번쨈ㄴㅇㅎㅁㅇㄴ
-      </div>
     </div>
   </div>
   <div class="panel panel-default">
@@ -109,11 +128,8 @@
     </div>
   </div>
 </div>
-			</div>
-		</div>
-	</header>
-	
-</header>
+	</section>			
+
 	<footer class="bg-dark mt-4 p-5 text-center" style="color: #FFFFFF;"> Credit @ 2020 빅데이터 3차 윤민지 박한성 정혜원 안예지. </footer>
 	
 
