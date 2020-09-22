@@ -6,6 +6,7 @@ import habit.mem.pojo.Member2MyPageController;
 import habit.mem.pojo.InterController;
 import habit.mem.pojo.Member2InsertController;
 import habit.mem.pojo.Member2UpdateController;
+import habit.rv.pojo.ReivewListController;
 import habit.cha.pojo.ChallengeListController;
 import habit.mem.pojo.*;
 
@@ -24,7 +25,7 @@ public class HandlerMapping {
 		mappings.put("/login.do", new Member2UpdateController());
 		mappings.put("/mypage.do", new Member2MyPageController());
 		mappings.put("/challengeboard.do", new ChallengeListController());
-		
+		mappings.put("/reviewboard.do", new ReivewListController());
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

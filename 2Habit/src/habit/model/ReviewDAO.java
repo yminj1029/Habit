@@ -45,6 +45,32 @@ public class ReviewDAO {
 			e.printStackTrace();
 		}
 	}
+	
+	//전체 리뷰보기
+	public ArrayList<ReviewVO> reviewboard(int r_id) {
+
+		ArrayList<ReviewVO> list = new ArrayList<ReviewVO>();
+		String sql = "select ch_id, m_id, r_date, r_file from reviews where r_id= ?";
+		try {
+			getConnect();
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, r_id);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				int ch_id = rs.getInt(1);
+				String m_id = rs.getString(2);
+				String r_date = rs.getString(3);
+				String r_file = rs.getString(4);
+
+				ReviewVO vo = new ReviewVO(ch_id, m_id, r_date, r_file);
+				list.add(vo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
 	//후기 검색기능
 	public ArrayList<ChallengeVO> challengeSeach(String search) {
 
