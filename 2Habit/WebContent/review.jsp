@@ -111,7 +111,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form action="./review.jsp" method="post">
+					<form action="./review.jsp" method="get">
 						<div class="form-row">
 							<div class="form-group col-sm-6">
 								<label>후기 제목</label> <input type="text" name="reviewName"
@@ -145,10 +145,9 @@
 									class="form-control" maxlength="20">
 							</div>
 						</div>
-						<div class="modal-footer">
-							<button type="submit" class="btn btn-primary">등록하기</button>
-							<button type="button" class="btn btn-secondary"
-								data-dismiss="modal">취소</button>
+						<div class="modal-footer"> 
+							<input class="btn btn-primary" type="submit" onclick="reviewConfirmed(event)" value="후기작성 완료" style="color:white;">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
 						</div>
 					</form>
 				</div>
@@ -170,7 +169,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form action="./reviewRegisterAction.jsp" method="post">
+					<form action="./review.jsp" method="post">
 						<div class="form-row">
 							<div class="form-group col-sm-6">
 								<label>챌린지명</label>  <div>{vo.ch_name}</div>
@@ -221,6 +220,19 @@
 	<script src="./js/pooper.js"></script>
 	<!-- 부트스트랩 자바스크립트 추가하기 -->
 	<script src="./js/bootstrap.min.js"></script>
-
+	<script>
+		function reviewConfirmed(e){
+					var m_id=0;
+					if(!confirm('후기 작성을 완료하시겠습니까?')){
+						e.preventDefault();
+					}else{
+						confirmed(e);
+						return m_id;
+					}
+					}
+		function confirmed(e){
+					return alert('후기 작성 성공! 마이페이지 내 후기 모음을 확인하세요~')			
+				}
+		</script>
 </body>
 </html>

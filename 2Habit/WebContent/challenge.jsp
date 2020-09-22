@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,9 +40,8 @@
 	100%{width:60%;}
 	
 </style>
-
-
 <title>HABIT</title>
+
 </head>
 <body>
 
@@ -320,7 +321,7 @@
 							</div>
 						</div>
 						<div class="modal-footer">
-							<button type="submit" class="btn btn-primary">등록하기</button>
+							<input class="btn btn-primary" type="submit" onclick="newChallenge(event)" value="등록완료" style="color:white;">
 							<button type="button" class="btn btn-secondary"	data-dismiss="modal">취소</button>
 						</div>
 					</form>
@@ -331,6 +332,7 @@
 
 
 <!-- 챌린지 구성원보기 -->
+
 	<div class="modal fade" id="challViewModal" tabindex="-1" role="dialog"
 		aria-labelledby="modal" aria-hidden="true">
 		<div class="modal-dialog">
@@ -342,6 +344,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
+			<form action="./challenge.jsp?" method="get">
 						<div class="form-row">
 							<div class="form-group col-sm-6">
 								<label>방장닉네임</label> <label>{vo.nickname}</label>
@@ -386,48 +389,15 @@
 							</div>
 						</div>
 					<div class="modal-footer">
-				     	<a class="btn btn-warning" href="#joinModal">참여하기</a>
-						<a class="btn btn-primary mx-1 mt-2" data-toggle="modal" href="#proofModal" data-dismiss="modal">인증하기</a>
+				     	<input class="btn btn-warning" type="submit" onclick="joinClicked(event)" value="참여" style="color:white;">
+						<a class="btn btn-primary" data-toggle="modal" href="#proofModal" data-dismiss="modal">인증하기</a>
 						<button type="button" class="btn btn-secondary"	data-dismiss="modal">닫기</button>
 					</div>
+			</form>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-<!-- 챌린지 참여하기 -->
-	<div class="modal fade" id="joinModal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="modal">챌린지 참여</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<form action="./challenge.jsp" method="post">
-						<div class="form-row">
-							<div class="form-group col-sm-6">
-								<label>챌린지 명</label>
-							</div>
-						</div>
-						<div class="form-group">
-							<label>참여하시겠습니까?</label>
-							<textarea type="text" name="evaluationContent"
-								class="form-control" maxlength="2048" style="height: 180px;"></textarea>
-						</div>
-						<div class="modal-footer">
-							<a class="btn btn-primary mx-1 mt-2" data-toggle="modal" href="#challViewModal" >참여</a>
-							<a class="btn btn-secondary mx-1 mt-2" data-toggle="modal" href="#challViewModal" data-dismiss="modal">취소</a>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	
 	
 
 <!-- 챌린지 인증하기 -->
@@ -441,7 +411,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form action="./challenge.jsp" method="post">
+					<form action="./myinfo.jsp" method="get">
 						<div class="form-row">
 							<div class="form-group col-sm-6">
 								<label>인증 제목</label> <input type="text" name="challengeName"
@@ -460,17 +430,17 @@
 		                </div>
 						<div class="form-group">
 							<label>내용</label>
-							<textarea type="text" name="evaluationContent"
+							<textarea type="text" name="content"
 								class="form-control" maxlength="2048" style="height: 180px;"></textarea>
 						</div>
 						<div class="form-row">
 							<div class="form-group col-sm-6">
-								<label>첨부파일</label> <input type="text" name="file"
+								<label>첨부파일</label><input type="text" name="file"
 									class="form-control" maxlength="20">
 							</div>
 						</div>
 						<div class="modal-footer">
-							<a class="btn btn-primary mx-1 mt-2" data-toggle="modal" href="#challViewModal" data-dismiss="modal">인증완료</a>
+							<input class="btn btn-primary" type="submit" onclick="confirm(인증 성공)" value="인증완료" style="color:white;">
 							<a class="btn btn-secondary mx-1 mt-2" data-toggle="modal" href="#challViewModal" data-dismiss="modal">취소</a>
 						</div>
 					</form>
@@ -488,6 +458,34 @@
 	<script src="./js/pooper.js"></script>
 	<!-- 부트스트랩 자바스크립트 추가하기 -->
 	<script src="./js/bootstrap.min.js"></script>
+	
+	<script>
+		function joinClicked(e){
+			var m_id=0;
+			if(!confirm('참여하시겠습니까?')){
+				e.preventDefault();
+			}else{
+				joined(e);
+				return m_id;
+			}
+			}
+		function joined(e){
+			return alert('참여 성공! 챌린지 시이작~')			
+		}
+		function newChallenge(e){
+					var m_id=0;
+					if(!confirm('챌린지 등록을 완료하시겠습니까?')){
+						e.preventDefault();
+					}else{
+						confirmed(e);
+						return m_id;
+					}
+					}
+		function confirmed(e){
+					return alert('챌린지 등록 완료!')			
+				}
+	</script>
+	
 
 </body>
 </html>
