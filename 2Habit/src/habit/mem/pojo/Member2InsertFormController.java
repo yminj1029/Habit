@@ -6,7 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Member2InsertFormController implements Member2Controller{
+public class Member2InsertFormController implements InterController{
 
 	@Override
 	public String requestHandle(HttpServletRequest request, HttpServletResponse response)

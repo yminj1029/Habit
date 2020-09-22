@@ -7,12 +7,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import habit.mem.pojo.InterController;
 import habit.model.ChallengeResultDAO;
 import habit.model.ChallengeResultVO;
 import habit.model.Member2DAO;
 import habit.model.Member2VO;
 
-public class ChallengeResultController implements ChallengeController{
+public class ChallengeResultController implements InterController{
 
 	@Override
 	public String requestHandle(HttpServletRequest request, HttpServletResponse response)

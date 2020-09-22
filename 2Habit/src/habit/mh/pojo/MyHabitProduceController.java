@@ -6,12 +6,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import habit.model.Member2DAO;
-import habit.model.Member2VO;
+import habit.mem.pojo.InterController;
 import habit.model.MyHabitDAO;
 import habit.model.MyHabitVO;
 
-public class MyHabitProduceController implements MyHabitController{
+public class MyHabitProduceController implements InterController{
 
 	@Override
 	public String requestHandle(HttpServletRequest request, HttpServletResponse response)

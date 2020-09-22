@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import habit.model.Member2VO;
 import habit.model.Member2DAO;
 
-public class Member2UpdateController implements Member2Controller{
+public class Member2UpdateController implements InterController{
 
 	@Override
 	public String requestHandle(HttpServletRequest request, HttpServletResponse response)

@@ -3,15 +3,16 @@ package habit.controller;
 import java.util.HashMap;
 
 import habit.mem.pojo.Member2MyPageController;
-import habit.mem.pojo.Member2Controller;
+import habit.mem.pojo.InterController;
 import habit.mem.pojo.Member2InsertController;
 import habit.mem.pojo.Member2UpdateController;
+import habit.cha.pojo.ChallengeListController;
 import habit.mem.pojo.*;
 
 public class HandlerMapping {
-	private HashMap<String, Member2Controller> mappings;
+	private HashMap<String, InterController> mappings;
 	public HandlerMapping() {
-		mappings = new HashMap<String, Member2Controller>();
+		mappings = new HashMap<String, InterController>();
 		initMap();
 	}
 
@@ -22,11 +23,13 @@ public class HandlerMapping {
 		mappings.put("/join.do", new Member2InsertFormController());
 		mappings.put("/login.do", new Member2UpdateController());
 		mappings.put("/mypage.do", new Member2MyPageController());
+		mappings.put("/challengeboard.do", new ChallengeListController());
+		
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
-	public Member2Controller getController(String key) {
+	public InterController getController(String key) {
 		return mappings.get(key);
 	}
 }

@@ -12,7 +12,7 @@ import habit.model.Member2VO;
 import habit.model.Member2DAO;
 
 
-public class Member2MyPageController implements Member2Controller {
+public class Member2MyPageController implements InterController {
 
 	@Override
 	public String requestHandle(HttpServletRequest request, HttpServletResponse response)

@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import habit.mem.pojo.Member2Controller;
+import habit.mem.pojo.InterController;
 import habit.model.Member2VO;
-import habit.mem.pojo.Member2Controller;
+import habit.mem.pojo.InterController;
 
 
 
@@ -27,7 +27,7 @@ public class FrontController extends HttpServlet {
 		
 		//각 요청에 따라 처리하기
 		
-		Member2Controller member2controller = null;
+		InterController member2controller = null;
 		String nextView = null;
 		HandlerMapping mapping = new HandlerMapping();
 		member2controller = mapping.getController(command);
