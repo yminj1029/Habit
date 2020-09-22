@@ -17,24 +17,25 @@ public class Member2InsertController implements Member2Controller{
 			throws ServletException, IOException {
 		String cpath = request.getContextPath();
 		String m_id = request.getParameter("m_id");
+		String nickname = request.getParameter("nickname");
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
-		String nickname = request.getParameter("nickname");
 		String tel = request.getParameter("tel");
 		String gender = request.getParameter("gender");
 		String job = request.getParameter("job");
 		String email = request.getParameter("email");
-		
+		String habit = request.getParameter("habit");
 		
 		Member2VO vo= new Member2VO();
 		vo.setM_id(m_id);
+		vo.setNickname(nickname);
 		vo.setPw(pw);
 		vo.setName(name);
-		vo.setNickname(nickname);
 		vo.setTel(tel);
 		vo.setGender(gender);
 		vo.setJob(job);
 		vo.setEmail(email);
+		vo.setHabit(habit);
 		
 		Member2DAO dao = new Member2DAO();
 		int cnt= dao.member2Insert(vo);
