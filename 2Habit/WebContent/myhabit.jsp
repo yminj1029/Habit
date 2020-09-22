@@ -148,8 +148,8 @@ table.calendar td{
 	<div class="calendar1">
    <div class="cal_top">
         <a href="#" id="movePrevMonth"><span id="prevMonth" class="cal_tit">&lt;</span></a>
-        <span id="cal_top_year"></span>년
-        <span id="cal_top_month"></span>월
+        <span id="cal_top_year"></span>
+        <span id="cal_top_month"></span>
         <a href="#" id="moveNextMonth"><span id="nextMonth" class="cal_tit">&gt;</span></a>
     </div>
     <div id="cal_tab" class="cal">
@@ -171,8 +171,6 @@ table.calendar td{
         drawDays();
         $("#movePrevMonth").on("click", function(){movePrevMonth();});
         $("#moveNextMonth").on("click", function(){moveNextMonth();});
-        $("#movePrevMonth1").on("click", function(){movePrevMonth1();});
-        $("#moveNextMonth1").on("click", function(){moveNextMonth1();});
     });
     
     //calendar 그리기
@@ -245,43 +243,10 @@ table.calendar td{
         }
         getNewInfo();
     }
+
     
     function getNewInfo(){
         for(var i=0;i<42;i++){
-            $tdDay.eq(i).text("");
-        }
-        dayCount=0;
-        firstDay = new Date(year,month-1,1);
-        lastDay = new Date(year,month,0);
-        drawDays();
-    }
-    
-    //calendar(주차) 월 이동
-    function movePrevMonth1(){
-        month--;
-        if(month<=0){
-            month=12;
-            year--;
-        }
-        if(month<10){
-            month=String("0"+month);
-        }
-        getNewInfo();
-        }
-    
-    function moveNextMonth1(){
-        month++;
-        if(month>12){
-            month=1;
-            year++;
-        }
-        if(month<10){
-            month=String("0"+month);
-        }
-        getNewInfo();
-    }
-    function getNewInfo1(){
-        for(var i=0;i<7;i++){
             $tdDay.eq(i).text("");
         }
         dayCount=0;
@@ -293,15 +258,9 @@ table.calendar td{
 </div>
 	<div class="graph"> 그래프 자리할곳</div>
 	<div class="weekly">
-		<table>
-		<tr><td>
-	    <a href="#" id="movePrevMonth1"><span id="prevMonth1" class="cal_tit1">&lt;</span></a>
-        <span id="cal_top_year1"></span>년
-        <span id="cal_top_month1"></span>월
-        <a href="#" id="moveNextMonth1"><span id="nextMonth1" class="cal_tit1">&gt;</span></a></td>
-</tr>
+	<table>
 	<tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr>
-	<tr><td></td>
+	<tr>
 	</tr>
 	</table>
 	</div>

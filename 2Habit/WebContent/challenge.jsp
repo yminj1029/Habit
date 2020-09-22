@@ -14,8 +14,10 @@
 <!-- 커스텀 CSS 만들어서 추가하기 -->
 <link rel="stylesheet" href="./css/custom.css" />
 <style>
-	.graph span{display: block; height:15px; line-height:15px; text-align:right;
-	 border-radius:40px; box-sizing: border-box; color:#fff;}
+	
+	.graph span{display:block; height:15px; line-height:15px; text-align:right;
+	 border-radius:40px; box-sizing:border-box; color:#fff;}
+	
 	.graph.stack1 span{background:violet; animation:stack 2s 1;}
 	.graph.stack2 span{background:skyblue; animation:stack2 2s 1;}
 	.graph.stack3 span{background:orange; animation:stack3 2s 1;}
@@ -23,16 +25,18 @@
 	@keyframes stack{
 	0%{ width:0; color: rgba(255,255,255,0);} 
 	40%{ color: rgba(255,255,255,1);} 
-	100%{width:75%; }
+	100%{width:75%;}
 	
 	@keyframes stack2{
 	0%{ width:0; color: rgba(255,255,255,0);} 
-	100%{width:25%; }
+	40%{ color: rgba(255,255,255,1);} 
+	100%{width:50%;}
 	
 	@keyframes stack3{
 	0%{ width:0; color: rgba(255,255,255,0);} 
 	40%{ color: rgba(255,255,255,1);} 
-	100%{width:60%; }
+	100%{width:60%;}
+	
 </style>
 
 

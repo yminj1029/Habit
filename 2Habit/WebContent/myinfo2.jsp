@@ -64,14 +64,50 @@
 					<a class="btn btn-secondary mx-1 mt-2" data-toggle="modal" href="#">회원정보 수정</a>
 				</div>
 				</div>
-				<div>
-					<ul>
-						<li><a class="btn btn-info mx-1 mt-2" data-toggle="modal" href="#registerModal">나의 챌린지 모아보기</a></li>
-						<li><a class="btn btn-secondary mx-1 mt-2" data-toggle="modal" href="#registerModal">나의 인증 모아보기</a></li>
-						<li><a class="btn btn-info mx-1 mt-2" data-toggle="modal" href="#registerModal">나의 후기 모아보기</a></li>
-						<li><a class="btn btn-secondary mx-1 mt-2" data-toggle="modal" href="#registerModal">엔딩 크레딧</a></li>
-					</ul>
-				</div>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Collapsible Group Item #1
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+      1번쨈ㄴㅇㅎㅁㅇㄴ
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Collapsible Group Item #2
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+      2번ㅉ애ㅓㅁㄹ나엏
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Collapsible Group Item #3
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+      3번쨍ㄹㅇㄹㅇ
+      </div>
+    </div>
+  </div>
+</div>
 			</div>
 		</div>
 	</header>
