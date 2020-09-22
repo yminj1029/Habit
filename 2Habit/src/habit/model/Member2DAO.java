@@ -127,11 +127,11 @@ public class Member2DAO {
 	 */
 
 	// 로그인
-	public Member2VO member2Login(String mid, String mpw) {
-		Member2VO user = null;
+	public int member2Login(String mid, String mpw) {
+		int result = 0;
 		try {
 			getConnect();
-			String sql = "select m_id, pw, name, nickname, tel, gender, job, email, point, habit from member2 where mid=? and pw=?";
+			String sql = "select * from member2 where m_id=? and pw=?";
 
 			ps = conn.prepareStatement(sql);
 
@@ -140,17 +140,15 @@ public class Member2DAO {
 
 			rs = ps.executeQuery();
 			if (rs.next()) {
-				String m_id = rs.getString(1);
-				String pw = rs.getString(2);
-				String name = rs.getString(3);
-				String nickname = rs.getString(4);
-				String tel = rs.getString(5);
-				String gender = rs.getString(6);
-				String job = rs.getString(7);
-				String email = rs.getString(8);
-				int point = rs.getInt(9);
-				String habit = rs.getString(10);
-				user = new Member2VO(m_id, pw, name, nickname, tel, gender, job, email, point, habit);
+				if (rs.getString(2).equals(mpw)) {
+					result = 0; // 아이디가 있고, 비밀번호가 같은 경우 .성공
+				} else {
+					// 아이디가 같으나 비밀번호가 다른경우. 실패
+					result = 1;
+				}
+
+			} else {// 아이디가 없는 경우. 실패
+				result = 1;
 			}
 
 		} catch (SQLException e) {
@@ -158,7 +156,7 @@ public class Member2DAO {
 		} finally {
 			dbClose();
 		}
-		return user;
+		return result;
 	}
 	
 	//나의 습관 보기

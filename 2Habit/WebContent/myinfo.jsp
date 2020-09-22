@@ -17,30 +17,72 @@
 
 <body>
 	<div id="content">
-		<!-- Top bar -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="index.jsp">HABIT</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbar">
-        <ul class="navbar-nav mr-auto">
-			<li><a class="nav-link" href="myhabit.jsp">나의습관</a></li>
-      		<li><a class="nav-link" href="challenge.jsp">챌린지게시판</a></li>
-  			<li><a class="nav-link" href="review.jsp">후기게시판</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-item active nav-link dropdown-toggle" id="dropdown" data-toggle="dropdown">마이페이지</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown">
-            <a class="dropdown-item" href="myinfo.jsp">회원정보</a>
-              <a class="dropdown-item" href="index2.jsp">로그아웃</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
+			<!-- Top bar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	      <a class="navbar-brand" href="index.jsp">HABIT</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+	        <span class="navbar-toggler-icon"></span>
+	      </button>
+	
+	      <div class="collapse navbar-collapse" id="navbar">
+	        <ul class="navbar-nav mr-auto">
+				<li><a class="nav-link" href="myhabit.jsp">나의습관</a></li>
+	      		<li><a class="nav-link" href="challenge.jsp">챌린지게시판</a></li>
+	  			<li><a class="nav-link" href="review.jsp">후기게시판</a>
+	          </li>
+	          <li class="nav-item dropdown">
+	            <a class="nav-item active nav-link dropdown-toggle" id="dropdown" data-toggle="dropdown">마이페이지</a>
+	            <div class="dropdown-menu" aria-labelledby="dropdown">
+	            <a class="dropdown-item" href="myinfo.jsp">회원정보</a>
+	              <a class="dropdown-item" href="index2.jsp">로그아웃</a>
+	            </div>
+	          </li>
+	        </ul>
+	      </div>
+	    </nav>
 	</div>
+
+	<!--  Main -->
+<header id="bg">
+	<header id="header2">
+		<div class="container">
+			<div class="jumbotron">
+				<h1>회원정보</h1>
+				<div class="container2">
+				<div class="square profile"><a class="btn btn-secondary mx-1 mt-2" data-toggle="modal"
+				href="#profileModal">프로필사진</a>
+				</div>
+				<div class="square content">
+					<h5>{vo.nickname} 님,</h5>
+					<h6>{vo.m_id}</h6>
+					<h6>{vo.tel}</h6>
+					<h6>{vo.email}</h6>
+					<h6>{vo.gender}</h6>
+					<h6>{vo.job}</h6>
+					<h6>{vo.category}</h6>
+					<p>bgcolor 바꾸기!+버튼 클릭시 펼쳐지게 or modal 띄우기+글씨 커지면 자동으로 밑에 애들 늘리기</p>
+					<a class="btn btn-secondary mx-1 mt-2" data-toggle="modal" href="#">회원정보 수정</a>
+				</div>
+				</div>
+				<div>
+					<ul>
+						<li><a class="btn btn-info mx-1 mt-2" data-toggle="modal" href="#registerModal">나의 챌린지 모아보기</a></li>
+						<li><a class="btn btn-secondary mx-1 mt-2" data-toggle="modal" href="#registerModal">나의 인증 모아보기</a></li>
+						<li><a class="btn btn-info mx-1 mt-2" data-toggle="modal" href="#registerModal">나의 후기 모아보기</a></li>
+						<li><a class="btn btn-secondary mx-1 mt-2" data-toggle="modal" href="#registerModal">엔딩 크레딧</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	
+</header>
+	<footer class="bg-dark mt-4 p-5 text-center" style="color: #FFFFFF;"> Credit @ 2020 빅데이터 3차 윤민지 박한성 정혜원 안예지. </footer>
+	
+
+
+
+
 
 
 

@@ -8,6 +8,11 @@ h5 {
 	font-family: 'Jeju Gothic';
 	font-size: 18px;
 }
+h6 {
+	font-family: 'Jeju Gothic';
+	font-size: 15px;
+}
+
 body{
 	margin:0;
 	padding: 0;
@@ -52,9 +57,84 @@ body{
 }
 
 
+/* myinfo 내 회원정보 칸 */
+#header2 {
+	display: flex;
+	padding: 2rem 1rem;
+	line-height: 500px;
+	align-items: center;
+	transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
+	padding:50px;	
+	background-image: ;
+    max-width: 100%;
+    text-align: center;
+}
+
+.container2{
+	height: 1000px;
+	width: 100%;
+	padding: 30px;
+}
 
 
+.square.profile{
+	width: 250px;
+	height: 250px;
+	line-height: 100px;
+	background-color: white;
+	font-size: 3rem;
+	text-aligh: center;
+	float: left;
+	margin: 10px 20px;
+	padding: 50px;
+	
+}
 
+.square.content{
+	width: 650px ;
+	height: 0 auto;
+	line-height: 100px;
+	background-color: white;
+	font-size: 3rem;
+	text-aligh: left;
+	float: left;
+	margin: 10px 20px;
+	padding: 25px;
+	border: solid 1px black;;
+	background-color: skyblue;;
+}
+
+/* myinfo 내 리스트 */
+
+ul {
+	list-style: none;
+	padding: 5px;
+}
+
+#header2 ul {
+	margin-bottom: 0;
+	list-style: none;
+	padding-left: 0;
+	border-radius: 4px;
+}
+
+#header2 ul li a {
+	display: block;
+	min-width: 7.5rem;
+	height: 2.75rem;
+	line-height: 2.75rem;
+	padding: 0 1.25rem 0 1.45rem;
+	letter-spacing: 0.2rem;
+	font-size: 0.8rem;
+}
+
+#header2 ul li a:hover {
+	background-color: rgba(255, 255, 255, 0.075);
+}
+
+#header2 ul li a:active  {
+	background-color: rgba(255, 255, 255, 0.175);
+}
 
 
 

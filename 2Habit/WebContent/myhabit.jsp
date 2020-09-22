@@ -122,6 +122,7 @@ table.calendar td{
 	</div>
 
 	<!-- Main -->
+	<header id="bg">
 	<!-- 방법1 -->
 	<!-- <div id="wrapper"> -->
 	<!-- <div> -->
@@ -309,7 +310,7 @@ table.calendar td{
 	<!-- </div> -->
 
 	<!-- 방법2 -->
-
+	</header>
 
 	<!-- javascript -->
 	<!-- 제이쿼리 자바스크립트 추가하기 -->

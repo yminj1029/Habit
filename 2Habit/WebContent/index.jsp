@@ -48,7 +48,7 @@
 						<td><a class="nav-link" href="myhabit.jsp">나의습관</a></td>
 						<td><a class="nav-link" href="challenge.jsp">챌린지</a></td>
 						<td><a class="nav-link" href="review.jsp">후기게시판</a></td>
-						<td><a class="nav-link" href="mypage.jsp">마이페이지</a></td>
+						<td><a class="nav-link" href="myinfo.jsp">마이페이지</a></td>
 					</tr>
 				</table>
 			</div>
