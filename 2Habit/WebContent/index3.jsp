@@ -39,7 +39,7 @@
 							<p><input type="text" name="login_id" id="login_id" value="" placeholder="아이디를 입력하세요" /></p>
 							<p><input type="text" name="login_pw" id="login_pw" value="" placeholder="비밀번호를 입력하세요" /></p>
 							<div>
-								<button id ="login">LOGIN</button>
+								<button id ="login" type="button" onclick="location.href='index4.jsp' ">LOGIN</button>
 							</div>
 						</article>
 						
@@ -55,7 +55,7 @@
 							<p><input type="text" name="membership_email" id="membership_email" value="" placeholder="이메일을 입력하세요" /></p>
 							<p><input type="text" name="membership_category" id="membership_category" value="" placeholder="습관을 입력하세요" /></p>
 							<div>
-								<button id ="membership">회원가입</button>
+								<button id ="membership" type="button" onclick="location.href='index3.jsp'">회원가입</button>
 							</div>
 						</article>
 					</div>

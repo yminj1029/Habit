@@ -42,7 +42,7 @@
 
 <!-- Top bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="index.jsp">HABIT</a>
+      <a class="navbar-brand" href="index5.jsp">HABIT</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
         <span class="navbar-toggler-icon"></span>
       </button>
