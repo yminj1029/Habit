@@ -22,8 +22,8 @@ body{
       background-attachment: fixed;
       background-repeat: no-repeat;
       width: 100%;
-   height: 100%;
-   background-size:cover;
+      height: 100%;
+   	  background-size:cover;
      z-index: -1;
   opacity: 0.5;
    }
@@ -34,7 +34,8 @@ body{
 
 <body>
 	<div id="content">
-			<!-- Top bar -->
+
+<!-- Top bar -->
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 	      <a class="navbar-brand" href="index5.jsp">HABIT</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
@@ -50,7 +51,7 @@ body{
 	          <li class="nav-item dropdown">
 	            <a class="nav-item active nav-link dropdown-toggle" id="dropdown" data-toggle="dropdown">마이페이지</a>
 	            <div class="dropdown-menu" aria-labelledby="dropdown">
-	            <a class="dropdown-item" href="./myinfo3.jsp">회원정보</a>
+	            <a class="dropdown-item" href="./myinfo.jsp">회원정보</a>
 	              <a class="dropdown-item" href="./index.jsp">로그아웃</a>
 	            </div>
 	          </li>
@@ -81,77 +82,14 @@ body{
 	</header>
 </header>
 				
-				
-<!-- 모아보기 section -->						
-<section id="header3">
-	<div class="wrap">
-		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-		  <div class="panel panel-default">
-		    <div class="panel-heading" role="tab" id="headingOne">
-		      <h4 class="panel-title">
-		        <a class="btn btn-info mx-1 mt-2" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-		          나의 챌린지 모아보기 </a></h4>
-		    </div>
-		    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-		      <div class="panel-body">
-		      vo.ch_id
-		      </div>
-		    </div>
-		  </div>
-		  <div class="panel panel-default">
-		    <div class="panel-heading" role="tab" id="headingTwo">
-		      <h4 class="panel-title">
-		        <a class="btn btn-secondary mx-1 mt-2" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-		          나의 인증 모아보기
-		        </a>
-		      </h4>
-		    </div>
-		    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-		      <div class="panel-body">
-		      vo.prf_id
-		      </div>
-		    </div>
-		  </div>
-		  <div class="panel panel-default">
-		    <div class="panel-heading" role="tab" id="headingThree">
-		      <h4 class="panel-title">
-		        <a class="btn btn-secondary mx-1 mt-2" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-		          나의 후기 모아보기</a></h4>
-		    </div>
-		    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-		      <div class="panel-body">
-		      vo.r_id
-		      </div>
-		    </div>
-		  </div>
-		  <div class="panel panel-default">
-		    <div class="panel-heading" role="tab" id="headingFour">
-		      <h4 class="panel-title">
-		        <a class="btn btn-secondary mx-1 mt-2" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-		          엔딩 크레딧</a></h4>
-		    </div>
-		    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-		      <div class="panel-body">
-		      완료된 습관 챌린지
-		      </div>
-		    </div>
-		  </div>
-		</div>
-	</div>
-</section>			
-
-
-<footer class="bg-dark mt-4 p-5 text-center" style="color: #FFFFFF;"> Credit @ 2020 빅데이터 3차 윤민지 박한성 정혜원 안예지. </footer>
-	
-
-
-<!-- 회원정보 확인&수정 -->
+			
+<!-- 회원정보 확인 -->
 	<div class="modal fade" id="memberInfo" tabindex="-1" role="dialog"
 		aria-labelledby="modal" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="modal">{vo.ch_name}</h5>
+					<h5 class="modal-title" id="modal">회원정보</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -212,18 +150,18 @@ body{
 	</div>
 
 
-<!-- 챌린지 인증하기 -->
+<!-- 회원정보 수정 -->
 	<div class="modal fade" id="memInfoChange" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="modal">챌린지 인증</h5>
+					<h5 class="modal-title" id="modal">회원정보 수정</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					<form action="./myinfo3.jsp" method="get">
+					<form action="./myinfo.jsp" method="get">
 						<div class="form-row">
 						<div class="form-group col-sm-6">
 							<label>{vo.m_id}</label>
@@ -258,7 +196,7 @@ body{
 					<div class="custom-control custom-radio">
 						<span>
 								<input type="radio" name="jb-radio" id="jb-radio-1" class="custom-control-input">
-								<label class="custom-control-label" for="jb-radio-1">남자</label>
+								<label class="custom-control-label" for="jb-radio-1">남자&emsp;&emsp;&emsp;</label>
 						</span>
 						<span>
 								<input type="radio" name="jb-radio" id="jb-radio-2" class="custom-control-input">
@@ -284,7 +222,7 @@ body{
 					</div>
 						<div class="modal-footer">
 							<input class="btn btn-primary" type="submit" onclick="confirm(수정성공)" value="수정완료" style="color:white;">
-							<a class="btn btn-secondary mx-1 mt-2" data-toggle="modal" href="./myinfo3.jsp" data-dismiss="modal">취소</a>
+							<a class="btn btn-secondary mx-1 mt-2" data-toggle="modal" href="./myinfo.jsp" data-dismiss="modal">취소</a>
 						</div>
 					</form>
 				</div>
@@ -292,6 +230,69 @@ body{
 		</div>
 	</div>
 
+
+				
+<!-- 모아보기 section -->						
+<section id="header3">
+	<div class="wrap">
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+		  <div class="panel panel-default">
+		    <div class="panel-heading" role="tab" id="headingOne">
+		      <h4 class="panel-title">
+		        <a class="btn btn-info mx-1 mt-2" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+		          나의 챌린지 모아보기 </a></h4>
+		    </div>
+		    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+		      <div class="panel-body">
+		      vo.ch_id
+		      </div>
+		    </div>
+		  </div>
+		  <div class="panel panel-default">
+		    <div class="panel-heading" role="tab" id="headingTwo">
+		      <h4 class="panel-title">
+		        <a class="btn btn-secondary mx-1 mt-2" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+		          나의 인증 모아보기
+		        </a>
+		      </h4>
+		    </div>
+		    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+		      <div class="panel-body">
+		      <div class="paenl-list">vo.prf_id</div>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="panel panel-default">
+		    <div class="panel-heading" role="tab" id="headingThree">
+		      <h4 class="panel-title">
+		        <a class="btn btn-secondary mx-1 mt-2" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+		          나의 후기 모아보기</a></h4>
+		    </div>
+		    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+		      <div class="panel-body">
+		      vo.r_id
+		      </div>
+		    </div>
+		  </div>
+		  <div class="panel panel-default">
+		    <div class="panel-heading" role="tab" id="headingFour">
+		      <h4 class="panel-title">
+		        <a class="btn btn-secondary mx-1 mt-2" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+		          엔딩 크레딧</a></h4>
+		    </div>
+		    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+		      <div class="panel-body">
+		      완료된 습관 챌린지
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+</section>			
+
+
+<footer class="bg-dark mt-4 p-5 text-center" style="color: #FFFFFF;"> Credit @ 2020 빅데이터 3차 윤민지 박한성 정혜원 안예지. </footer>
+	
 
 
 
