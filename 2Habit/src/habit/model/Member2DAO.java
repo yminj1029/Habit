@@ -29,7 +29,7 @@ public class Member2DAO {
 	}
 
 	public Connection getConnect() {
-		String url = "jdbc:oracle:thin:@112.187.117.251:1521:XE";
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:XE";
 		String user = "hv";
 		String password = "hv";
 		try {
@@ -124,28 +124,29 @@ public class Member2DAO {
 	 */
 
 	// 로그인
-	public int member2Login(String mid, String mpw) {
+	public int member2Login(Member2VO vo) {
 		int result = 0;
 		try {
-			getConnect();
+			System.out.println("dao로 넘어옴"+vo.getM_id());
+			conn = getConnect();
 			String sql = "select * from member2 where m_id=? and pw=?";
 
 			ps = conn.prepareStatement(sql);
 
-			ps.setString(1, mid);
-			ps.setString(2, mpw);
+			ps.setString(1, vo.getM_id());
+			ps.setString(2, vo.getPw());
 
 			rs = ps.executeQuery();
 			if (rs.next()) {
-				if (rs.getString(2).equals(mpw)) {
-					result = 0; // 아이디가 있고, 비밀번호가 같은 경우 .성공
+				if (rs.getString(3).equals(vo.getPw())) {
+					result = 1; // 아이디가 있고, 비밀번호가 같은 경우 .성공
 				} else {
 					// 아이디가 같으나 비밀번호가 다른경우. 실패
-					result = 1;
+					result = 0;
 				}
 
 			} else {// 아이디가 없는 경우. 실패
-				result = 1;
+				result = 0;
 			}
 
 		} catch (SQLException e) {

@@ -19,35 +19,31 @@ public class Member2LoginController implements InterController{
 	public String requestHandle(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
+		String page=null;
 		String cpath = request.getContextPath();
-		Enumeration<String> em= request.getHeaderNames();
-		PrintWriter out = response.getWriter();
-		while(em.hasMoreElements()) {
-			String name= em.nextElement();
-			String value = request.getHeader(name);
-			System.out.println(name+":"+value);
-		}
 		
 		request.setCharacterEncoding("euc-kr");
-		String mid = request.getParameter("mid");
-		String mpw = request.getParameter("mpw");
+		String userID = request.getParameter("userID");
+		String userPassword = request.getParameter("userPassword");
 		
-		Member2VO vo= new Member2VO();
-		vo.setM_id(mid);
-		vo.setPw(mpw);
+		Member2VO vo = new Member2VO();
+		vo.setM_id(userID);
+		vo.setPw(userPassword);
 		
 		
+		System.out.println(userID);
+		System.out.println(userPassword);
+
 		Member2DAO dao = new Member2DAO();
-		int result= dao.member2Login(mid, mpw);
-		String page=null;
-		if(result==0) {
-			HttpSession session = request.getSession();
-			session.setAttribute("mid", mid); 
-			page="redirect:"+cpath+"/membermain.do";
+		int result= dao.member2Login(vo);
+		if(result==1) {
 			System.out.println("로그인 성공");
+			HttpSession session = request.getSession();
+			session.setAttribute("userID", userID); 
+			page="redirect:"+cpath+"/membermain.do";
 		}else {
-			page="redirect:"+cpath+"login.do";
 			System.out.println("좀망한듯....");
+			page="redirect:"+cpath+"main.do";
 		}
 		return page;
 	}

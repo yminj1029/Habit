@@ -14,7 +14,7 @@ public class MyHabitDAO {
 
 	// 초기화 블럭
 	public Connection getConnect() {
-		String url = "jdbc:oracle:thin:@112.187.117.251:1521:XE";
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:XE";
 		String user = "hv";
 		String password = "hv";
 		try {

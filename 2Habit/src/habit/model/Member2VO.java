@@ -19,6 +19,14 @@ public class Member2VO {
 	private String mr_result;
 	private String chr_result;
 	
+	
+	
+	public Member2VO(String m_id, String pw) {
+		super();
+		this.m_id = m_id;
+		this.pw = pw;
+	}
+
 	public Member2VO(String m_id, String name, String nickname, String tel, String gender, String email) {
 		this.m_id = m_id;
 		this.name = name;

@@ -27,11 +27,11 @@ public class FrontController extends HttpServlet {
 		
 		//각 요청에 따라 처리하기
 		
-		InterController member2controller = null;
+		InterController controller = null;
 		String nextView = null;
 		HandlerMapping mapping = new HandlerMapping();
-		member2controller = mapping.getController(command);
-		nextView = member2controller.requestHandle(request, response);
+		controller = mapping.getController(command);
+		nextView = controller.requestHandle(request, response);
 
 		//view 페이지로 연동하는 부분 
 		if(nextView !=null) {

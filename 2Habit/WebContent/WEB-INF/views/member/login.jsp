@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="cpath" value="${pageContext.request.contextPath}"/>
 <!doctype html>
 <html>
   <head>
@@ -25,7 +27,7 @@
   </head>
 
   <body>
-  
+  <form action="${cpath}/login.do" method="post">
 	 <div id="content">
 		<!-- Top bar -->
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -36,7 +38,7 @@
 	<br><br><br><br><br>
     <div class="container mt-3" style="max-width: 560px;">
 
-      <form method="post" action="./myhabit.jsp">
+      
         <div class="form-group">
           <label>아이디</label>
           <input type="text" name="userID" class="form-control">
@@ -46,8 +48,8 @@
           <input type="password" name="userPassword" class="form-control">
         </div>
         <button type="submit" class="btn btn-primary">로그인</button>
-     	<a class="btn btn-secondary" href="register.jsp">회원가입</a>
-      </form>
+     	<a class="btn btn-secondary" href="register.do">회원가입</a>
+    
     </div>
     </header>
     <footer class="bg-dark mt-4 p-5 text-center" style="color: #FFFFFF;">
@@ -61,5 +63,6 @@
     <script src="./js/popper.min.js"></script>
     <!-- 부트스트랩 자바스크립트 추가하기 -->
     <script src="./js/bootstrap.min.js"></script>
+    </form>
   </body>
 </html>

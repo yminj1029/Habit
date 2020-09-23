@@ -13,6 +13,7 @@
   </head>
 
   <body>
+    <form action="${cpath}/register.do" method="post">
 	<div id="content">
 		<!-- Top bar -->
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -81,5 +82,6 @@
     <script src="./js/popper.min.js"></script>
     <!-- 부트스트랩 자바스크립트 추가하기 -->
     <script src="./js/bootstrap.min.js"></script>
+    </form>
   </body>
 </html>

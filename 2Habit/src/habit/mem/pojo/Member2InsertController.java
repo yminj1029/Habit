@@ -37,7 +37,7 @@ public class Member2InsertController implements InterController{
 		int cnt= dao.member2Insert(vo);
 		String page=null;
 		if(cnt>0) {
-			page="redirect:"+cpath+"/main.do";
+			page="redirect:"+cpath+"/membermain.do";
 		}else {
 			throw new ServletException("error");
 		}
