@@ -19,7 +19,7 @@ import habit.mem.pojo.InterController;
 public class FrontController extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("euc-kr");
+		request.setCharacterEncoding("UTF-8");
 		String reqUrl= request.getRequestURI();
 		String ctxPath = request.getContextPath();
 		String command = reqUrl.substring(ctxPath.length());

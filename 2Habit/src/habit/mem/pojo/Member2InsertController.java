@@ -15,6 +15,7 @@ public class Member2InsertController implements InterController{
 	@Override
 	public String requestHandle(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		String cpath = request.getContextPath();
 		String m_id = request.getParameter("m_id");
 		String pw = request.getParameter("pw");
@@ -40,6 +41,7 @@ public class Member2InsertController implements InterController{
 		Member2DAO dao = new Member2DAO();
 		int cnt= dao.member2Insert(vo);
 		String page=null;
+	
 		if(cnt>0) {
 			System.out.println("회원가입 성공!!!");
 			page="redirect:"+cpath+"/main.do";

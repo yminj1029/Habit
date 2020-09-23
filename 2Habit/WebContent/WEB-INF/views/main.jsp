@@ -56,10 +56,10 @@
 							<p><input type="text" name="tel" id="tel" value="" placeholder="* 핸드폰 번호를 입력하세요" /></p>
 							<div class="custom-control custom-radio">
 							<div>성별을 선택하세요</div>
-								<input type="radio" name="gender" id="male" class="custom-control-input">
-								<label class="custom-control-label" for="male" value="male">남자</label>
-								<input type="radio" name="gender" id="female" class="custom-control-input">
-								<label class="custom-control-label" for="female" value="female">여자</label>
+								<input type="radio" name="gender" id="male" class="custom-control-input" value="M">
+								<label class="custom-control-label" for="male" value="M">남자</label>
+								<input type="radio" name="gender" id="female" class="custom-control-input1" value="F">
+								<label class="custom-control-label" for="female" value="F">여자</label>
 							</div>
 							<p></p>
 							<p><input type="text" name="job" id="job" value="" placeholder="직업을 입력하세요" /></p>
@@ -88,6 +88,9 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+<script type="text/javascript">
+$("input[name=radio_agree]:checked").val() = undefined;
 
+</script>
 	</body>
 </html>
