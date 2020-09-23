@@ -86,7 +86,11 @@ body{
 	<!-- <div> -->
 	<div class="list" align="center">
 	<!-- 테이블을 포문으로 돌려서 DB에 들어있는 수만큼 나타내기 -->
+		
 		<table>
+		<tr>
+		<td><a class="btn btn-primary mx-1 mt-2" data-toggle="modal"
+				href="#newHabit">등록하기</a></td></tr>
 			<a href="javascript:view('viewcode');">물마시기</a>
 			<tr id="viewcode" style="display: none;">
 				<td>Start : 20/09/01</br>
@@ -104,8 +108,202 @@ body{
 		</table>
 	</div>
 	
+
+<!-- 새습관 등록하기 -->
+	<div class="modal fade" id="newHabit" tabindex="-1" role="dialog"
+		aria-labelledby="modal" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modal">새 습관 등록</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="./myhabit.jsp" method="post">
+						<div class="form-row">
+							<div class="form-group col-sm-6">
+								<label>습관명</label> <input type="text" name="challengeName"
+									class="form-control" maxlength="20">
+							</div>
+						</div>
+						<div class="form-row">
+						
+						<div class="form-group col-sm-4">
+                        <label>습관 시작 연도</label>
+                        <select name="challengeStartYear" class="form-control">
+                           <option value="2020" selected>2020</option>
+                           <option value="2021">2021</option>
+                           <option value="2022">2022</option>
+                           <option value="2023">2023</option>
+                           <option value="2024">2024</option>
+                           <option value="2025">2025</option>
+                           <option value="2026">2026</option>
+                           <option value="2027">2027</option>
+                           <option value="2028">2028</option>
+                           <option value="2029">2029</option>
+                           <option value="2030">2030</option>
+                           <option value="2031">2031</option>
+                           <option value="2032">2032</option>
+                        </select>
+                     </div>
+                     <div class="form-group col-sm-4">
+                        <label>시작 월</label>
+                        <select name="challengeStartMonth" class="form-control">
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                           <option value="6">6</option>
+                           <option value="7">7</option>
+                           <option value="8">8</option>
+                           <option value="9" selected>9</option>
+                           <option value="10">10</option>
+                           <option value="11">11</option>
+                           <option value="12">12</option>
+                        </select>
+                     </div>
+                     <div class="form-group col-sm-4">
+                        <label>시작 일</label>
+                        <select name="challengeStartDay" class="form-control">
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                           <option value="6">6</option>
+                           <option value="7">7</option>
+                           <option value="8">8</option>
+                           <option value="9">9</option>
+                           <option value="10">10</option>
+                           <option value="11">11</option>
+                           <option value="12">12</option>
+                           <option value="13">13</option>
+                           <option value="14">14</option>
+                           <option value="15">15</option>
+                           <option value="16">16</option>
+                           <option value="17">17</option>
+                           <option value="18">18</option>
+                           <option value="19">19</option>
+                           <option value="20">20</option>
+                           <option value="21">21</option>
+                           <option value="22">22</option>
+                           <option value="23">23</option>
+                           <option value="24">24</option>
+                           <option value="25">25</option>
+                           <option value="26">26</option>
+                           <option value="27">27</option>
+                           <option value="28" selected>28</option>
+                           <option value="29">29</option>
+                           <option value="30">30</option>
+                           <option value="31">31</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="form-row">
+                     <div class="form-group col-sm-4">
+                        <label>습관 마감 연도</label>
+                        <select name="challengeEndYear" class="form-control">
+                           <option value="2020" selected>2020</option>
+                           <option value="2021">2021</option>
+                           <option value="2022">2022</option>
+                           <option value="2023">2023</option>
+                           <option value="2024">2024</option>
+                           <option value="2025">2025</option>
+                           <option value="2026">2026</option>
+                           <option value="2027">2027</option>
+                           <option value="2028">2028</option>
+                           <option value="2029">2029</option>
+                           <option value="2030">2030</option>
+                           <option value="2031">2031</option>
+                           <option value="2032">2032</option>
+                        </select>
+                     </div>
+                     <div class="form-group col-sm-4">
+                        <label>마감 월</label>
+                        <select name="challengeEndMonth" class="form-control">
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                           <option value="6">6</option>
+                           <option value="7">7</option>
+                           <option value="8">8</option>
+                           <option value="9" selected>9</option>
+                           <option value="10">10</option>
+                           <option value="11">11</option>
+                           <option value="12">12</option>
+                        </select>
+                     </div>
+                     <div class="form-group col-sm-4">
+                        <label>마감 일</label>
+                        <select name="challengeEndDay" class="form-control">
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                           <option value="6">6</option>
+                           <option value="7">7</option>
+                           <option value="8">8</option>
+                           <option value="9">9</option>
+                           <option value="10">10</option>
+                           <option value="11">11</option>
+                           <option value="12">12</option>
+                           <option value="13">13</option>
+                           <option value="14">14</option>
+                           <option value="15">15</option>
+                           <option value="16">16</option>
+                           <option value="17">17</option>
+                           <option value="18">18</option>
+                           <option value="19">19</option>
+                           <option value="20">20</option>
+                           <option value="21">21</option>
+                           <option value="22">22</option>
+                           <option value="23">23</option>
+                           <option value="24">24</option>
+                           <option value="25">25</option>
+                           <option value="26">26</option>
+                           <option value="27">27</option>
+                           <option value="28">28</option>
+                           <option value="29"selected>29</option>
+                           <option value="30">30</option>
+                           <option value="31">31</option>
+                        </select>
+                     </div>
+						
+						</div>
+						<div class="form-group">
+							<label>내용</label>
+							<textarea type="text" name="evaluationContent"
+								class="form-control" maxlength="2048" style="height: 180px;"></textarea>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-sm-6">
+								<label>알람 요일</label> <input type="text" name="alarmDays"
+									class="form-control" maxlength="50" placeholder="예) SUN/M/T/W/TH/F/SAT">
+							</div>
+							<div class="form-group col-sm-6">
+								<label>알람 시간 (24시 단위)</label> <input type="text" name="alarmHour"
+									class="form-control" maxlength="50" placeholder="예) 7/12/16/19/22/24">
+							</div>
+						</div>
+						<div class="modal-footer">
+							<input class="btn btn-primary" type="submit" onclick="newHabit(event)" value="등록완료" style="color:white;">
+							<button type="button" class="btn btn-secondary"	data-dismiss="modal">취소</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	
-	<!-- 달력 -->
+<!-- 달력 -->
 	<div class="calendar1">
    <div class="cal_top">
         <a href="#" id="movePrevMonth"><span id="prevMonth" class="cal_tit">&lt;</span></a>
@@ -314,6 +512,24 @@ body{
 	<script src="./js/pooper.js"></script>
 	<!-- 부트스트랩 자바스크립트 추가하기 -->
 	<script src="./js/bootstrap.min.js"></script>
+
+
+
+<script>	
+		/*챌린지 등록 메소드*/
+		function newHabit(e){
+					var m_id=0;
+					if(!confirm('챌린지 등록을 완료하시겠습니까?')){
+						e.preventDefault();
+					}else{
+						confirmed(e);
+						return m_id;
+					}
+					}
+		function confirmed(e){
+					return alert('챌린지 등록 완료!')			
+				}
+</script>
 
 
 </body>
