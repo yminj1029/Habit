@@ -23,8 +23,8 @@ public class Member2LoginController implements InterController{
 		String cpath = request.getContextPath();
 		
 		request.setCharacterEncoding("euc-kr");
-		String userID = request.getParameter("userID");
-		String userPassword = request.getParameter("userPassword");
+		String userID = request.getParameter("login_id");
+		String userPassword = request.getParameter("login_pw");
 		
 		Member2VO vo = new Member2VO();
 		vo.setM_id(userID);
@@ -43,7 +43,7 @@ public class Member2LoginController implements InterController{
 			page="redirect:"+cpath+"/membermain.do";
 		}else {
 			System.out.println("Á»¸ÁÇÑµí....");
-			page="redirect:"+cpath+"main.do";
+			page="redirect:"+cpath+"/main.do";
 		}
 		return page;
 	}

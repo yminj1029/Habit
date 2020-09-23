@@ -17,13 +17,12 @@ public class HandlerMapping {
 
 		try {
 		mappings.put("/main.do", new MainController());
-		mappings.put("/registerForm.do", new Member2InsertFormController());
 		mappings.put("/register.do", new Member2InsertController());
-		mappings.put("/loginForm.do",new Member2LoginFormController());
 		mappings.put("/login.do", new Member2LoginController());
 		mappings.put("/mypage.do", new Member2MyPageController());
 		mappings.put("/challengeboard.do", new ChallengeListController());
 		mappings.put("/reviewboard.do", new ReivewListController());
+		mappings.put("/membermain.do", new MemberMainController());
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

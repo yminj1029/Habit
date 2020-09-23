@@ -56,18 +56,22 @@ public class Member2DAO {
 	// 회원가입!!
 	public int member2Insert(Member2VO vo) {
 		conn = getConnect();
+		System.out.println(vo.getGender());
+		System.out.println(vo.getPw());
 		// MyBatis
-		String SQL = "insert into member2 values(?,?,?,?,?,?,?)";
+		String SQL = "insert into member2 values(?,?,?,?,?,?,?,?,?,0)";
 		int cnt = -1;// -1=실패의의미
 		try {
 			ps = conn.prepareStatement(SQL);
 			ps.setString(1, vo.getM_id());
-			ps.setString(2, vo.getPw());
-			ps.setString(3, vo.getNickname());
-			ps.setString(4, vo.getTel());
-			ps.setString(5, vo.getEmail());
+			ps.setString(2, vo.getNickname());
+			ps.setString(3, vo.getPw());
+			ps.setNString(4, vo.getName());
+			ps.setString(5, vo.getTel());
 			ps.setString(6, vo.getGender());
 			ps.setString(7, vo.getJob());
+			ps.setString(8, vo.getEmail());
+			ps.setString(9, vo.getHabit());
 			cnt = ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

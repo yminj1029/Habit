@@ -4,15 +4,15 @@ public class Member2VO {
 	//속성을 만들자!!!!
 	
 	private String m_id; 
+	private String nickname; 
 	private String pw; 
 	private String name; 
-	private String nickname; 
 	private String tel; 
 	private String gender;
 	private String job; 
 	private String email;
-	private int point;
 	private String habit;
+	private int point;
 	
 	private String h_name;
 	private String ch_name;
@@ -36,21 +36,21 @@ public class Member2VO {
 		this.email = email;
 	}
 
-	public Member2VO(String m_id, String pw, String name, String nickname, String tel, String gender, String job,
-			String email, int point, String habit) {
+	public Member2VO(String m_id, String nickname, String pw, String name, String tel, String gender, String job,
+			String email, String habit, int point) {
+		super();
 		this.m_id = m_id;
+		this.nickname = nickname;
 		this.pw = pw;
 		this.name = name;
-		this.nickname = nickname;
 		this.tel = tel;
 		this.gender = gender;
 		this.job = job;
 		this.email = email;
-		this.point = point;
 		this.habit = habit;
+		this.point = point;
 	}
-	
-	
+
 	public Member2VO(String h_name, String ch_name, String mr_result, String chr_result) {
 		super();
 		this.h_name = h_name;
