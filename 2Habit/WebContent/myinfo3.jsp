@@ -24,6 +24,8 @@ body{
       width: 100%;
    height: 100%;
    background-size:cover;
+     z-index: -1;
+  opacity: 0.5;
    }
 
 </style>
@@ -58,7 +60,7 @@ body{
 	</div>
 
 	<!--  Main -->
-<header id="bg">
+<header>
 	<header id="header2">
 		<div class="container">
 			<div class="jumbotron">
@@ -70,7 +72,7 @@ body{
 				<div class="square content">
 					<h5>{vo.nickname} 님,</h5>
 					<h6>{vo.email}</h6>
-					<p>bgcolor바꾸기!+버튼클릭시펼쳐지게or modal띄우기+글씨 커지면 자동 늘리기</p>
+					<p>색바꾸기!+버튼클릭시↔or modal띄우기+글씨↑자동 늘리기</p>
 					<a class="btn btn-secondary mx-1 mt-2" data-toggle="modal" href="#">회원정보 수정</a>
 				</div>
 				</div>
