@@ -20,8 +20,8 @@
 					</div>
 					<div class="content">
 						<div class="inner">
-						<h1>HABIT</h1>
-						<p>Hope you Achieve & Become Incredibly Talented</p>
+						<h1>&emsp;&emsp;&emsp;O & O&emsp;&emsp;&emsp;</h1>
+						<p></p>
 						</div>
 					</div>
 					<nav>				<!-- 09.21 -->

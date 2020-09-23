@@ -90,7 +90,7 @@
 
 			</select> <input type="text" name="search" class="form-control mx-1 mt-2"
 				placeholder="내용을 입력하세요.">
-			<button type="submit" class="btn btn-primary mx-1 mt-2">검색</button>
+			<button type="submit" class="btn btn-primary mx-1 mt-2" href="./challenge.jsp">검색</button>
 			<a class="btn btn-primary mx-1 mt-2" data-toggle="modal"
 				href="#registerModal">등록하기</a>
 		</form>

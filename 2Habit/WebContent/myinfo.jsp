@@ -18,14 +18,13 @@
 <title>myHabit</title>
 <style>
 body{
-      background-image: url('./images/sky.png');
+      background-image: url('./images/background.jpg');
       background-attachment: fixed;
       background-repeat: no-repeat;
       width: 100%;
       height: 100%;
    	  background-size:cover;
-     z-index: -1;
-  opacity: 0.5;
+
    }
 
 
