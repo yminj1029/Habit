@@ -440,7 +440,7 @@
 							</div>
 						</div>
 						<div class="modal-footer">
-							<input class="btn btn-primary" type="submit" onclick="confirm(인증 성공)" value="인증완료" style="color:white;">
+							<input class="btn btn-primary" type="submit" onclick="confirm(인증성공)" value="인증완료" style="color:white;">
 							<a class="btn btn-secondary mx-1 mt-2" data-toggle="modal" href="#challViewModal" data-dismiss="modal">취소</a>
 						</div>
 					</form>
