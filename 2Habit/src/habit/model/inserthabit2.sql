@@ -224,5 +224,6 @@ INSERT INTO CRAWLING (Y_ID, Y_TITLE, URL)
 VALUES (62, '휴대폰 사용 금지는 성적향상에 도움을 준다! [반대입안]', 'https://www.youtube.com/watch?v=QJezZgEo1zQ');
 
 
-
 COMMIT
+
+

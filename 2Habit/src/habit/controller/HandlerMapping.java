@@ -2,7 +2,8 @@ package habit.controller;
 
 import java.util.HashMap;
 
-import habit.rv.pojo.ReivewListController;
+import habit.rv.pojo.ReviewListController;
+import habit.rv.pojo.ReviewInsertController;
 import habit.cha.pojo.ChallengeListController;
 import habit.mem.pojo.*;
 
@@ -21,7 +22,8 @@ public class HandlerMapping {
 		mappings.put("/login.do", new Member2LoginController());
 		mappings.put("/mypage.do", new Member2MyPageController());
 		mappings.put("/challengeboard.do", new ChallengeListController());
-		mappings.put("/reviewboard.do", new ReivewListController());
+		mappings.put("/reviewboard.do", new ReviewListController());
+		mappings.put("/reviewwrite.do", new ReviewInsertController());
 		mappings.put("/membermain.do", new MemberMainController());
 		}catch(Exception e) {
 			e.printStackTrace();

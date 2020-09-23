@@ -13,18 +13,18 @@ import habit.model.Member2VO;
 import habit.model.ReviewDAO;
 import habit.model.ReviewVO;
 
-public class ReivewListController implements InterController {
+public class ReviewListController implements InterController {
 
 	@Override
 	public String requestHandle(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		int r_id = Integer.parseInt(request.getParameter("r_id"));
 		ReviewDAO dao = new ReviewDAO();
-		ArrayList<ReviewVO> vo = dao.reviewboard(r_id);
+		ArrayList<ReviewVO> list = dao.reviewboard();
 		//memberContent.jsp·Î º¸³»±ë
-		request.setAttribute("vo", vo);
+		request.setAttribute("list", list);
+		System.out.println("list·Î¹­¿´½¿´ç!");
+		return "/member/review.jsp";
 		
-		return "/member/memberContent.jsp";
 	}
 
 }

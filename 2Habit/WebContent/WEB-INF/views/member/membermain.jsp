@@ -32,7 +32,7 @@
 					<!-- 09.18 -->
 					<li><a href="myhabit.jsp">나의 습관</a></li>
 					<li><a href="challenge.jsp">함께해요!</a></li>
-					<li><a href="review.jsp">REVIEW</a></li>
+					<li><a href="reviewboard.do">REVIEW</a></li>
 					<li><a href="myinfo.jsp">MY PAGE</a></li>
 					<!--<li><a href="#elements">Elements</a></li>-->
 				</ul>

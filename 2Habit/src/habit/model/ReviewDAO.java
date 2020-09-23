@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+
 public class ReviewDAO {
 
 	private Connection conn;
@@ -47,22 +48,22 @@ public class ReviewDAO {
 	}
 	
 	//전체 리뷰보기
-	public ArrayList<ReviewVO> reviewboard(int r_id) {
+	public ArrayList<ReviewVO> reviewboard() {
 
+		System.out.println("dao의 문제람다");
 		ArrayList<ReviewVO> list = new ArrayList<ReviewVO>();
-		String sql = "select ch_id, m_id, r_date, r_file from reviews where r_id= ?";
+		conn = getConnect();
+		String sql = "select r_id, m_id, r_title, r_content, r_date from reviews order by r_id desc";
 		try {
-			getConnect();
 			ps = conn.prepareStatement(sql);
-			ps.setInt(1, r_id);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-				int ch_id = rs.getInt(1);
-				String m_id = rs.getString(2);
-				String r_date = rs.getString(3);
-				String r_file = rs.getString(4);
-
-				ReviewVO vo = new ReviewVO(ch_id, m_id, r_date, r_file);
+				int r_id= rs.getInt("r_id");
+				String m_id = rs.getString("m_id");
+				String r_title = rs.getString("r_title");
+				String r_content = rs.getString("r_content");
+				String r_date = rs.getString("r_date");
+				ReviewVO vo = new ReviewVO(r_id, m_id, r_title, r_content, r_date);
 				list.add(vo);
 			}
 		} catch (SQLException e) {
@@ -97,18 +98,21 @@ public class ReviewDAO {
 	}
 	
 	// 후기작성
-	public int reviewInsert(String m_id, int r_point, String r_file) {
+	public int reviewInsert(String reviewtitle, String reviewcontent, String reviewfile) {
 		ReviewVO vor = new ReviewVO();
 		conn = getConnect();
+		System.out.println("dao는 들어갓는데 에스큐엘이 이상한듯?");
 		// MyBatis
-		String SQL = "insert into re values(REVIEW_SEQ.nextval,CHALLENGE_SEQ,?,?,?,?)";
+		String SQL = "insert into re values(REVIEW_SEQ.nextval,CHALLENGE_SEQ,?,?,?,?,?,?)";
 		int cnt = -1;// -1=실패의의미
 		try {
 			ps = conn.prepareStatement(SQL);
 			ps.setString(1, vor.getM_id());
-			ps.setString(2, vor.getR_date());
-			ps.setInt(3, vor.getR_point());
-			ps.setString(4, vor.getR_file());
+			ps.setString(2, vor.getR_title());
+			ps.setString(3, vor.getR_content());
+			ps.setString(4, vor.getR_date());
+			ps.setInt(5, 50);
+			ps.setString(6, vor.getR_file());
 			cnt = ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -119,4 +123,5 @@ public class ReviewDAO {
 	}
 
 
+	 
 }
