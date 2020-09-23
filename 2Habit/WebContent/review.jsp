@@ -13,6 +13,17 @@
 <link rel="stylesheet" href="./css/bootstrap.min.css" />
 <!-- 커스텀 CSS 만들어서 추가하기 -->
 <link rel="stylesheet" href="./css/custom.css" />
+<style>
+body{
+      background-image: url('./images/bgimg.jpg');
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+   	  background-size:cover;
+
+   }
+</style>
 
 
 <title>HABIT</title>
@@ -45,7 +56,7 @@
     </nav>
 </div>
 	<!-- main -->
-<header id="bg">
+<header>
 	<nav class="navbar navbar-expand-lg navbar-light">
 		<div class="navbar-brand">후기게시판</div>
 	</nav>
@@ -89,6 +100,99 @@
 				<span class="card-text">{vo.r_content}후기내용</span><br>
 			</div>
 		</div>
+		<div class="card bg-light mt-3">
+			<div class="card-header bg-light">
+				<div class="row">
+					<div class="col-8 text-left">
+						여기는 {vo.r_title} &nbsp;<small>{vo.nickname}</small>
+					</div>
+					<div class="col-4 text-right">
+					<span class="text-right" style="color: green;">(추천: 15★)</span>
+						<a class="btn btn-secondary" data-toggle="modal"
+							href="#viewModal">자세히</a>
+					</div>
+				</div>
+			</div>
+			<div class="card-body">
+				<span class="card-text">{vo.r_date}후기작성일</span><br> 
+				<span class="card-text">{vo.r_content}후기내용</span><br>
+			</div>
+		</div>
+		<div class="card bg-light mt-3">
+			<div class="card-header bg-light">
+				<div class="row">
+					<div class="col-8 text-left">
+						여기는 {vo.r_title} &nbsp;<small>{vo.nickname}</small>
+					</div>
+					<div class="col-4 text-right">
+					<span class="text-right" style="color: green;">(추천: 15★)</span>
+						<a class="btn btn-secondary" data-toggle="modal"
+							href="#viewModal">자세히</a>
+					</div>
+				</div>
+			</div>
+			<div class="card-body">
+				<span class="card-text">{vo.r_date}후기작성일</span><br> 
+				<span class="card-text">{vo.r_content}후기내용</span><br>
+			</div>
+		</div>
+		<div class="card bg-light mt-3">
+			<div class="card-header bg-light">
+				<div class="row">
+					<div class="col-8 text-left">
+						여기는 {vo.r_title} &nbsp;<small>{vo.nickname}</small>
+					</div>
+					<div class="col-4 text-right">
+					<span class="text-right" style="color: green;">(추천: 15★)</span>
+						<a class="btn btn-secondary" data-toggle="modal"
+							href="#viewModal">자세히</a>
+					</div>
+				</div>
+			</div>
+			<div class="card-body">
+				<span class="card-text">{vo.r_date}후기작성일</span><br> 
+				<span class="card-text">{vo.r_content}후기내용</span><br>
+			</div>
+		</div>
+		<div class="card bg-light mt-3">
+			<div class="card-header bg-light">
+				<div class="row">
+					<div class="col-8 text-left">
+						여기는 {vo.r_title} &nbsp;<small>{vo.nickname}</small>
+					</div>
+					<div class="col-4 text-right">
+					<span class="text-right" style="color: green;">(추천: 15★)</span>
+						<a class="btn btn-secondary" data-toggle="modal"
+							href="#viewModal">자세히</a>
+					</div>
+				</div>
+			</div>
+			<div class="card-body">
+				<span class="card-text">{vo.r_date}후기작성일</span><br> 
+				<span class="card-text">{vo.r_content}후기내용</span><br>
+			</div>
+		</div>
+		<div class="card bg-light mt-3">
+			<div class="card-header bg-light">
+				<div class="row">
+					<div class="col-8 text-left">
+						여기는 {vo.r_title} &nbsp;<small>{vo.nickname}</small>
+					</div>
+					<div class="col-4 text-right">
+					<span class="text-right" style="color: green;">(추천: 15★)</span>
+						<a class="btn btn-secondary" data-toggle="modal"
+							href="#viewModal">자세히</a>
+					</div>
+				</div>
+			</div>
+			<div class="card-body">
+				<span class="card-text">{vo.r_date}후기작성일</span><br> 
+				<span class="card-text">{vo.r_content}후기내용</span><br>
+			</div>
+		</div>
+		
+		
+		
 	</div>
 
 <!-- 페이지 이동 -->

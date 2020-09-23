@@ -18,7 +18,7 @@
 <title>myHabit</title>
 <style>
 body{
-      background-image: url('./images/background.jpg');
+      background-image: url('./images/bgimg.jpg');
       background-attachment: fixed;
       background-repeat: no-repeat;
       width: 100%;
@@ -532,18 +532,6 @@ body{
 
 
 
-<footer class="bg-dark mt-4 p-5 text-center" style="color: #FFFFFF;"> Credit @ 2020 빅데이터 3차 윤민지 박한성 정혜원 안예지. </footer>
-	
-
-
-
-<!-- javascript -->
-	<!-- 제이쿼리 자바스크립트 추가하기 -->
-	<script src="./js/jquery.min.js"></script>
-	<!-- 파퍼 자바스크립트 추가하기 -->
-	<script src="./js/pooper.js"></script>
-	<!-- 부트스트랩 자바스크립트 추가하기 -->
-	<script src="./js/bootstrap.min.js"></script>
 
 
 <script>
@@ -564,6 +552,14 @@ function proofConfirmed(e){
 
 </script>
 
+<footer class="bg-dark mt-4 p-5 text-center" style="color: #FFFFFF;"> Credit @ 2020 빅데이터 3차 윤민지 박한성 정혜원 안예지. </footer>
+<!-- javascript -->
+	<!-- 제이쿼리 자바스크립트 추가하기 -->
+	<script src="./js/jquery.min.js"></script>
+	<!-- 파퍼 자바스크립트 추가하기 -->
+	<script src="./js/pooper.js"></script>
+	<!-- 부트스트랩 자바스크립트 추가하기 -->
+	<script src="./js/bootstrap.min.js"></script>
 
 </body>
 </html>

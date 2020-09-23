@@ -21,8 +21,23 @@
 <link rel="stylesheet" href="./css/custom.css" />
 
 <title>myHabit</title>
+<style>
+
+body{
+      background-image: url('./images/bgimg.jpg');
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+   	  background-size:cover;
+
+   }
+
+
+</style>
 
 <script language="javascript">
+
 	function view(str) {
 		var obj = document.getElementById(str);
 
@@ -65,7 +80,7 @@
 
 
 	<!-- Main -->
-	<header id="bg">
+	<header>
 	<!-- 방법1 -->
 	<!-- <div id="wrapper"> -->
 	<!-- <div> -->
