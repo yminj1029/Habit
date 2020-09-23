@@ -7,7 +7,7 @@
 		<title>Dimension by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css?1" />
+		<link rel="stylesheet" href="assets/css/main.css?3" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -21,8 +21,8 @@
 					</div>
 					<div class="content">
 						<div class="inner">
-						<h1>HABIT</h1>
-						<p>Hope you Achieve & Become Incredibly Talented</p>
+						<h1>&emsp;&emsp;&emsp;O & O&emsp;&emsp;&emsp;</h1>
+						<p></p>
 						</div>
 					</div>
 					<nav>				<!-- 09.21 -->

@@ -1,4 +1,4 @@
-package habit.mem.pojo;
+package habit.mh.pojo;
 
 import java.io.IOException;
 
@@ -6,13 +6,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Member2InsertFormController implements InterController{
+import habit.mem.pojo.InterController;
+
+public class MyHabitFrontController implements InterController{
 
 	@Override
 	public String requestHandle(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		return "member/register.jsp";
+		return "/member/myhabit.jsp";
 	}
 
 }

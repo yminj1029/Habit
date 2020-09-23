@@ -16,16 +16,6 @@
 <!-- 커스텀 CSS 만들어서 추가하기 -->
 <link rel="stylesheet" href="./css/custom.css" />
 <style>
-
-	body{
-	      background-image: url('./images/bgimg.jpg');
-	      background-attachment: fixed;
-	      background-repeat: no-repeat;
-	      width: 100%;
-	      height: 100%;
-	   	  background-size:cover;
-	
-	   }
 	
 	.graph span{display:block; height:15px; line-height:15px; text-align:right;
 	 border-radius:40px; box-sizing:border-box; color:#fff;}
@@ -49,7 +39,6 @@
 	40%{ color: rgba(255,255,255,1);} 
 	100%{width:60%;}
 	
-	
 </style>
 <title>HABIT</title>
 
@@ -58,22 +47,22 @@
 
 <!-- Top bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="index5.jsp">HABIT</a>
+      <a class="navbar-brand" href="membermain.do">HABIT</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav mr-auto">
-			<li><a class="nav-link" href="myhabit.jsp">나의습관</a></li>
-      		<li class="nav-item active"><a class="nav-link" href="challenge.jsp">챌린지게시판</a></li>
-  			<li><a class="nav-link" href="review.jsp">후기게시판</a>
+			<li><a class="nav-link" href="myhabit.do">나의습관</a></li>
+      		<li class="nav-item active"><a class="nav-link" href="challengeboard.do">챌린지게시판</a></li>
+  			<li><a class="nav-link" href="reviewboard.do">후기게시판</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="dropdown" data-toggle="dropdown">마이페이지</a>
             <div class="dropdown-menu" aria-labelledby="dropdown">
-            <a class="dropdown-item" href="myinfo.jsp">회원정보</a>
-              <a class="dropdown-item" href="index.jsp">로그아웃</a>
+            <a class="dropdown-item" href="myinfo.do">회원정보</a>
+              <a class="dropdown-item" href="main.do">로그아웃</a>
             </div>
           </li>
         </ul>
@@ -81,7 +70,7 @@
     </nav>
 	
 <!-- main -->
-<header>
+<header id="bg">
 	<nav class="navbar navbar-expand-lg navbar-light">
 		<div class="navbar-brand">챌린지게시판</div>
 	</nav>
@@ -126,99 +115,6 @@
 				<p class="card-text">{vo.alarm}</p>
 			</div>
 		</div>
-		<div class="card bg-light mt-3">
-			<div class="card-header bg-light">
-				<div class="row">
-					<div class="col-8 text-left">
-						여기는 {vo.ch_name} &nbsp;<small>{vo.num}</small>
-					</div>
-					<div class="col-4 text-right"><a class="btn btn-secondary" data-toggle="modal"
-							href="#challViewModal">자세히</a></div>
-				</div>
-			</div>
-			<div class="card-body">
-				<p class="card-text">
-					<span>{vo.startDate}</span>
-					<span>{vo.endDate}</span>
-				</p>
-				<p class="card-text">{vo.content}</p>
-				<p class="card-text">{vo.alarm}</p>
-			</div>
-		</div><div class="card bg-light mt-3">
-			<div class="card-header bg-light">
-				<div class="row">
-					<div class="col-8 text-left">
-						여기는 {vo.ch_name} &nbsp;<small>{vo.num}</small>
-					</div>
-					<div class="col-4 text-right"><a class="btn btn-secondary" data-toggle="modal"
-							href="#challViewModal">자세히</a></div>
-				</div>
-			</div>
-			<div class="card-body">
-				<p class="card-text">
-					<span>{vo.startDate}</span>
-					<span>{vo.endDate}</span>
-				</p>
-				<p class="card-text">{vo.content}</p>
-				<p class="card-text">{vo.alarm}</p>
-			</div>
-		</div><div class="card bg-light mt-3">
-			<div class="card-header bg-light">
-				<div class="row">
-					<div class="col-8 text-left">
-						여기는 {vo.ch_name} &nbsp;<small>{vo.num}</small>
-					</div>
-					<div class="col-4 text-right"><a class="btn btn-secondary" data-toggle="modal"
-							href="#challViewModal">자세히</a></div>
-				</div>
-			</div>
-			<div class="card-body">
-				<p class="card-text">
-					<span>{vo.startDate}</span>
-					<span>{vo.endDate}</span>
-				</p>
-				<p class="card-text">{vo.content}</p>
-				<p class="card-text">{vo.alarm}</p>
-			</div>
-		</div><div class="card bg-light mt-3">
-			<div class="card-header bg-light">
-				<div class="row">
-					<div class="col-8 text-left">
-						여기는 {vo.ch_name} &nbsp;<small>{vo.num}</small>
-					</div>
-					<div class="col-4 text-right"><a class="btn btn-secondary" data-toggle="modal"
-							href="#challViewModal">자세히</a></div>
-				</div>
-			</div>
-			<div class="card-body">
-				<p class="card-text">
-					<span>{vo.startDate}</span>
-					<span>{vo.endDate}</span>
-				</p>
-				<p class="card-text">{vo.content}</p>
-				<p class="card-text">{vo.alarm}</p>
-			</div>
-		</div><div class="card bg-light mt-3">
-			<div class="card-header bg-light">
-				<div class="row">
-					<div class="col-8 text-left">
-						여기는 {vo.ch_name} &nbsp;<small>{vo.num}</small>
-					</div>
-					<div class="col-4 text-right"><a class="btn btn-secondary" data-toggle="modal"
-							href="#challViewModal">자세히</a></div>
-				</div>
-			</div>
-			<div class="card-body">
-				<p class="card-text">
-					<span>{vo.startDate}</span>
-					<span>{vo.endDate}</span>
-				</p>
-				<p class="card-text">{vo.content}</p>
-				<p class="card-text">{vo.alarm}</p>
-			</div>
-		</div>
-		
-		
 	</div>
 
 <!-- 페이지 이동 -->
@@ -504,6 +400,15 @@
 
 </header>
 
+<footer class="bg-dark mt-4 p-5 text-center" style="color: #FFFFFF;">Copyright ⓒ 2018 나동빈 All Rights Reserved.</footer>
+<!-- javascript -->
+	<!-- 제이쿼리 자바스크립트 추가하기 -->
+	<script src="./js/jquery.min.js"></script>
+	<!-- 파퍼 자바스크립트 추가하기 -->
+	<script src="./js/pooper.js"></script>
+	<!-- 부트스트랩 자바스크립트 추가하기 -->
+	<script src="./js/bootstrap.min.js"></script>
+	
 <script>	
 		/*챌린지 등록 메소드*/
 		function newChallenge(e){
@@ -535,14 +440,5 @@
 </script>
 	
 
-<footer class="bg-dark mt-4 p-5 text-center" style="color: #FFFFFF;">Copyright ⓒ 2018 나동빈 All Rights Reserved.</footer>
-<!-- javascript -->
-	<!-- 제이쿼리 자바스크립트 추가하기 -->
-	<script src="./js/jquery.min.js"></script>
-	<!-- 파퍼 자바스크립트 추가하기 -->
-	<script src="./js/pooper.js"></script>
-	<!-- 부트스트랩 자바스크립트 추가하기 -->
-	<script src="./js/bootstrap.min.js"></script>
-	
 </body>
 </html>

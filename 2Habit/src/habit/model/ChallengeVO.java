@@ -4,54 +4,36 @@ public class ChallengeVO {
 	//속성을 만들자!!!!
 	
 	private int ch_id; 
-	private String ch_name; 
 	private String m_id;
+	private String ch_name; 
 	private int num; 
+	private String ch_day;
 	private String startdate;
 	private String enddate;
 	private String ch_content;
-	private String ch_file;
-	private String h_day;
 	private String alarm;
+	private String ch_file;
 	
+
+
+	public ChallengeVO(int ch_id, String m_id, String ch_name, int num, String ch_day, String startdate, String enddate,
+			String ch_content, String alarm, String ch_file) {
+		super();
+		this.ch_id = ch_id;
+		this.m_id = m_id;
+		this.ch_name = ch_name;
+		this.num = num;
+		this.ch_day = ch_day;
+		this.startdate = startdate;
+		this.enddate = enddate;
+		this.ch_content = ch_content;
+		this.alarm = alarm;
+		this.ch_file = ch_file;
+	}
+
 	public ChallengeVO() {
 		super();
 	}
-
-
-	
-	public ChallengeVO(int ch_id, String ch_name, int num, String startdate, String enddate, String ch_content,
-			String ch_file, String h_day, String alarm) {
-		super();
-		this.ch_id = ch_id;
-		this.ch_name = ch_name;
-		this.num = num;
-		this.startdate = startdate;
-		this.enddate = enddate;
-		this.ch_content = ch_content;
-		this.ch_file = ch_file;
-		this.h_day = h_day;
-		this.alarm = alarm;
-	}
-
-
-
-	public ChallengeVO(int ch_id, String ch_name, String m_id, int num, String startdate, String enddate,
-			String ch_content, String ch_file, String h_day, String alarm) {
-		super();
-		this.ch_id = ch_id;
-		this.ch_name = ch_name;
-		this.m_id = m_id;
-		this.num = num;
-		this.startdate = startdate;
-		this.enddate = enddate;
-		this.ch_content = ch_content;
-		this.ch_file = ch_file;
-		this.h_day = h_day;
-		this.alarm = alarm;
-	}
-
-
 
 	public int getCh_id() {
 		return ch_id;
@@ -59,6 +41,14 @@ public class ChallengeVO {
 
 	public void setCh_id(int ch_id) {
 		this.ch_id = ch_id;
+	}
+
+	public String getM_id() {
+		return m_id;
+	}
+
+	public void setM_id(String m_id) {
+		this.m_id = m_id;
 	}
 
 	public String getCh_name() {
@@ -75,6 +65,14 @@ public class ChallengeVO {
 
 	public void setNum(int num) {
 		this.num = num;
+	}
+
+	public String getCh_day() {
+		return ch_day;
+	}
+
+	public void setCh_day(String ch_day) {
+		this.ch_day = ch_day;
 	}
 
 	public String getStartdate() {
@@ -101,14 +99,6 @@ public class ChallengeVO {
 		this.ch_content = ch_content;
 	}
 
-	public String getCh_file() {
-		return ch_file;
-	}
-
-	public void setCh_file(String ch_file) {
-		this.ch_file = ch_file;
-	}
-
 	public String getAlarm() {
 		return alarm;
 	}
@@ -117,25 +107,16 @@ public class ChallengeVO {
 		this.alarm = alarm;
 	}
 
-	public String getH_day() {
-		return h_day;
+	public String getCh_file() {
+		return ch_file;
 	}
 
-	public void setH_day(String h_day) {
-		this.h_day = h_day;
-	}
-
-
-
-	public String getM_id() {
-		return m_id;
+	public void setCh_file(String ch_file) {
+		this.ch_file = ch_file;
 	}
 
 
-
-	public void setM_id(String m_id) {
-		this.m_id = m_id;
-	}
+	
 	
 	
 	

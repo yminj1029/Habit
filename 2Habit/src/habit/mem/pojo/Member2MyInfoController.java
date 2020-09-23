@@ -12,7 +12,7 @@ import habit.model.Member2VO;
 import habit.model.Member2DAO;
 
 
-public class Member2MyPageController implements InterController {
+public class Member2MyInfoController implements InterController {
 
 	@Override
 	public String requestHandle(HttpServletRequest request, HttpServletResponse response)
@@ -23,7 +23,7 @@ public class Member2MyPageController implements InterController {
 		//memberContent.jsp·Î º¸³»±ë
 		request.setAttribute("vo", vo);
 		
-		return "/member/memberContent.jsp";
+		return "/member/myinfo.jsp";
 	}
 	
 }

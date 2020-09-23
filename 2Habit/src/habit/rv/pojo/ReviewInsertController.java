@@ -27,7 +27,7 @@ public class ReviewInsertController implements InterController{
 		vo.setR_title(reviewtitle);
 		vo.setR_content(reviewcontent);
 		vo.setR_file(reviewfile);
-		
+		System.out.println("hi"+reviewtitle);
 		ReviewDAO dao = new ReviewDAO();
 		int cnt= dao.reviewInsert(reviewtitle, reviewcontent, reviewfile);
 				

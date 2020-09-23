@@ -37,7 +37,7 @@ public class ChallengeInsertController implements InterController{
 		vo.setEnddate(enddate);
 		vo.setCh_content(ch_content);
 		vo.setCh_file(ch_file);
-		vo.setH_day(h_day);
+		vo.setCh_day(h_day);
 		vo.setAlarm(alarm);
 		
 		ChallengeDAO dao = new ChallengeDAO();

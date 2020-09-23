@@ -22,7 +22,8 @@ public class ChallengeListController implements InterController {
 		ArrayList<ChallengeVO> list = dao.ChallengeAllList();
 			
 			request.setAttribute("list", list);
-			return "member/memberList.jsp";
+			System.out.println(list);
+			return "member/challenge.jsp";
 	}
 
 	
