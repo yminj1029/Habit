@@ -167,8 +167,66 @@ ul {
 }
 
 
+/* myhabit */
 
 
+<style>
 
+.cal_top{
+    text-align: center;
+    font-size: 30px;
+}
+.cal{
+    text-align: center;    
+}
+table.calendar{
+    border: 1px solid black;
+    display: inline-table;
+    text-align: left;
+}
+table.calendar td{
+    vertical-align: top;
+    border: 1px solid skyblue;
+    width: 100px;
+}
+
+.calendar1 {
+	width: 40%;
+	height: 800px;
+	float: left;
+}
+
+.graph {
+	width: 30%;
+	height: 600px;
+	float: left;
+	text-align: center;
+}
+
+.weekly {
+	width: 40%;
+	height: 200px;
+	letter-spacing: 5px;
+	text-align: center;
+	line-height: 300px;
+	float: left;
+}
+
+.total {
+	width: 30%;
+	height: 200px;
+	letter-spacing: 5px;
+	text-align: center;
+	line-height: 300px;
+	float: left;
+}
+
+.list {
+	border: 1px solid pink;
+	width: 15%;
+	height: 800px;
+	float: left;
+}
+</style>
 
 

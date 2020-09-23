@@ -3,6 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
 <meta charset="utf-8">
 
 <!-- 반응형 웹에 관한것 -->
@@ -28,68 +32,6 @@
 			obj.style.display = "";
 	}
 </script>
-
-<style>
-
-.cal_top{
-    text-align: center;
-    font-size: 30px;
-}
-.cal{
-    text-align: center;    
-}
-table.calendar{
-    border: 1px solid black;
-    display: inline-table;
-    text-align: left;
-}
-table.calendar td{
-    vertical-align: top;
-    border: 1px solid skyblue;
-    width: 100px;
-}
-
-.calendar1 {
-	border: 1px solid red;
-	width: 50%;
-	height: 600px;
-	float: left;
-}
-
-.graph {
-	border: 1px solid yellow;
-	width: 30%;
-	height: 600px;
-	float: left;
-}
-
-.weekly {
-	border: 1px solid black;
-	width: 50%;
-	height: 200px;
-	letter-spacing: 5px;
-	text-align: center;
-	line-height: 300px;
-	float: left;
-}
-
-.total {
-	border: 1px solid green;
-	width: 30%;
-	height: 200px;
-	letter-spacing: 5px;
-	text-align: center;
-	line-height: 300px;
-	float: left;
-}
-
-.list {
-	border: 1px solid pink;
-	width: 20%;
-	height: 800px;
-	float: left;
-}
-</style>
 
 </head>
 <body>
@@ -121,6 +63,7 @@ table.calendar td{
 		</nav>
 	</div>
 
+
 	<!-- Main -->
 	<header id="bg">
 	<!-- 방법1 -->
@@ -145,6 +88,9 @@ table.calendar td{
 				</tr>
 		</table>
 	</div>
+	
+	
+	<!-- 달력 -->
 	<div class="calendar1">
    <div class="cal_top">
         <a href="#" id="movePrevMonth"><span id="prevMonth" class="cal_tit">&lt;</span></a>
@@ -155,118 +101,193 @@ table.calendar td{
     <div id="cal_tab" class="cal">
     </div>
  
-<script type="text/javascript">
-    
-    var today = null;
-    var year = null;
-    var month = null;
-    var firstDay = null;
-    var lastDay = null;
-    var $tdDay = null;
-    var $tdSche = null;
- 
-    $(document).ready(function() {
-        drawCalendar();
-        initDate();
-        drawDays();
-        $("#movePrevMonth").on("click", function(){movePrevMonth();});
-        $("#moveNextMonth").on("click", function(){moveNextMonth();});
-    });
-    
-    //calendar 그리기
-    function drawCalendar(){
-        var setTableHTML = "";
-        setTableHTML+='<table class="calendar">';
-        setTableHTML+='<tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr>';
-        for(var i=0;i<6;i++){
-            setTableHTML+='<tr height="80">';
-            for(var j=0;j<7;j++){
-                setTableHTML+='<td style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap">';
-                setTableHTML+='    <div class="cal-day"></div>';
-                setTableHTML+='    <div class="cal-schedule"></div>';
-                setTableHTML+='</td>';
-            }
-            setTableHTML+='</tr>';
-        }
-        setTableHTML+='</table>';
-        $("#cal_tab").html(setTableHTML);
-    }
- 
-    //날짜 초기화
-    function initDate(){
-        $tdDay = $("td div.cal-day")
-        $tdSche = $("td div.cal-schedule")
-        dayCount = 0;
-        today = new Date();
-        year = today.getFullYear();
-        month = today.getMonth()+1;
-        firstDay = new Date(year,month-1,1);
-        lastDay = new Date(year,month,0);
-    }
-    
-    //calendar 날짜표시
-    function drawDays(){
-        $("#cal_top_year").text(year);
-        $("#cal_top_month").text(month);
-        for(var i=firstDay.getDay();i<firstDay.getDay()+lastDay.getDate();i++){
-            $tdDay.eq(i).text(++dayCount);
-        }
-        for(var i=0;i<42;i+=7){
-            $tdDay.eq(i).css("color","red");
-        }
-        for(var i=6;i<42;i+=7){
-            $tdDay.eq(i).css("color","blue");
-        }
-    }
- 
-    //calendar 월 이동
-    function movePrevMonth(){
-        month--;
-        if(month<=0){
-            month=12;
-            year--;
-        }
-        if(month<10){
-            month=String("0"+month);
-        }
-        getNewInfo();
-        }
-    
-    function moveNextMonth(){
-        month++;
-        if(month>12){
-            month=1;
-            year++;
-        }
-        if(month<10){
-            month=String("0"+month);
-        }
-        getNewInfo();
-    }
-
-    
-    function getNewInfo(){
-        for(var i=0;i<42;i++){
-            $tdDay.eq(i).text("");
-        }
-        dayCount=0;
-        firstDay = new Date(year,month-1,1);
-        lastDay = new Date(year,month,0);
-        drawDays();
-    }
-</script>
+	<script type="text/javascript">
+	    
+	    var today = null;
+	    var year = null;
+	    var month = null;
+	    var firstDay = null;
+	    var lastDay = null;
+	    var $tdDay = null;
+	    var $tdSche = null;
+	 
+	    $(document).ready(function() {
+	        drawCalendar();
+	        initDate();
+	        drawDays();
+	        $("#movePrevMonth").on("click", function(){movePrevMonth();});
+	        $("#moveNextMonth").on("click", function(){moveNextMonth();});
+	    });
+	    
+	    //calendar 그리기
+	    function drawCalendar(){
+	        var setTableHTML = "";
+	        setTableHTML+='<table class="calendar">';
+	        setTableHTML+='<tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr>';
+	        for(var i=0;i<6;i++){
+	            setTableHTML+='<tr height="120">';
+	            for(var j=0;j<7;j++){
+	                setTableHTML+='<td style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap">';
+	                setTableHTML+='    <div class="cal-day"></div>';
+	                setTableHTML+='    <div class="cal-schedule"></div>';
+	                setTableHTML+='</td>';
+	            }
+	            setTableHTML+='</tr>';
+	        }
+	        setTableHTML+='</table>';
+	        $("#cal_tab").html(setTableHTML);
+	    }
+	 
+	    //날짜 초기화
+	    function initDate(){
+	        $tdDay = $("td div.cal-day")
+	        $tdSche = $("td div.cal-schedule")
+	        dayCount = 0;
+	        today = new Date();
+	        year = today.getFullYear();
+	        month = today.getMonth()+1;
+	        firstDay = new Date(year,month-1,1);
+	        lastDay = new Date(year,month,0);
+	    }
+	    
+	    //calendar 날짜표시
+	    function drawDays(){
+	        $("#cal_top_year").text(year);
+	        $("#cal_top_month").text(month);
+	        for(var i=firstDay.getDay();i<firstDay.getDay()+lastDay.getDate();i++){
+	            $tdDay.eq(i).text(++dayCount);
+	        }
+	        for(var i=0;i<42;i+=7){
+	            $tdDay.eq(i).css("color","red");
+	        }
+	        for(var i=6;i<42;i+=7){
+	            $tdDay.eq(i).css("color","blue");
+	        }
+	    }
+	 
+	    //calendar 월 이동
+	    function movePrevMonth(){
+	        month--;
+	        if(month<=0){
+	            month=12;
+	            year--;
+	        }
+	        if(month<10){
+	            month=String("0"+month);
+	        }
+	        getNewInfo();
+	        }
+	    
+	    function moveNextMonth(){
+	        month++;
+	        if(month>12){
+	            month=1;
+	            year++;
+	        }
+	        if(month<10){
+	            month=String("0"+month);
+	        }
+	        getNewInfo();
+	    }
+	
+	    
+	    function getNewInfo(){
+	        for(var i=0;i<42;i++){
+	            $tdDay.eq(i).text("");
+	        }
+	        dayCount=0;
+	        firstDay = new Date(year,month-1,1);
+	        lastDay = new Date(year,month,0);
+	        drawDays();
+	    }
+	</script>
 </div>
-	<div class="graph"> 그래프 자리할곳</div>
-	<div class="weekly">
-	<table>
-	<tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr>
-	<tr>
-	</tr>
-	</table>
+
+	<!-- 그래프 -->
+	<div class="graph">
+	<br/><br/><br/><br/>
+	<canvas id="mylineChart" width="700" height="500"></canvas>
+		<script>
+			var ctx = document.getElementById('mylineChart');
+			var mylineChart = new Chart(ctx, {
+				type: 'line',
+				data: {
+					labels: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
+					datasets: [{
+						label: '# 주간 습관',
+						data: [12, 18, 3, 5, 2, 3, 13],
+						backgroundColor: 'rgba(102, 102, 204, 0.2)',
+						borderColor: 'rgba(000, 000, 102, 1)',
+						borderWidth: 1,
+						lineTension: 0
+					}]
+				},
+				options: {
+					responsive: false,
+					scales: {
+						yAxes: [{
+							ticks: {
+								beginAtZero: true
+							}
+						}]
+					},
+				}
+			});
+		</script>
+	 	</div>
+	
+	<!-- 주간 그래프 -->
+
+	
+	
+	<div class="total">
+	<h4 style= "text-algin:center">주간 습관</h4>
+	<canvas id="myChart" width="700" height="200"></canvas>
+		<script>
+			var ctx = document.getElementById('myChart');
+			var myChart = new Chart(ctx, {
+				type: 'bar',
+				data: {
+					labels: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
+					datasets: [{
+						label: '# 주간 습관',
+						data: [12, 18, 3, 5, 2, 3, 13],
+						backgroundColor: [
+							'rgba(255, 99, 132, 0.2)',
+							'rgba(54, 162, 235, 0.2)',
+							'rgba(255, 206, 86, 0.2)',
+							'rgba(75, 192, 192, 0.2)',
+							'rgba(153, 102, 255, 0.2)',
+							'rgba(255, 159, 64, 0.2)',
+							'rgba(153, 153, 153, 0.2)'
+						],
+						borderColor: [
+							'rgba(255, 99, 132, 1)',
+							'rgba(54, 162, 235, 1)',
+							'rgba(255, 206, 86, 1)',
+							'rgba(75, 192, 192, 1)',
+							'rgba(153, 102, 255, 1)',
+							'rgba(255, 159, 64, 1)',
+							'rgba(153, 153, 153, 1)'
+						],
+						borderWidth: 1
+					}]
+				},
+				options: {
+					responsive: false,
+					scales: {
+						yAxes: [{
+							ticks: {
+								beginAtZero: true
+							}
+						}]
+					},
+				}
+			});
+		</script>
+	
 	</div>
-	<div class="total">total</div>
-	<!-- </div> -->
-	<!-- </div> -->
+
 
 	<!-- 방법2 -->
 	</header>
