@@ -85,9 +85,11 @@ body{
 	<!-- <div id="wrapper"> -->
 	<!-- <div> -->
 	<div class="list" align="center">
+	<a href="" style="text-align: left; color: black" ><h2>습관생성</h2></a></br>
 	<!-- 테이블을 포문으로 돌려서 DB에 들어있는 수만큼 나타내기 -->
+	
 		<table>
-			<a href="javascript:view('viewcode');">물마시기</a>
+			<a href="javascript:view('viewcode');"></a>
 			<tr id="viewcode" style="display: none;">
 				<td>Start : 20/09/01</br>
 				End : 20/10/01</br>

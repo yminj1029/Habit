@@ -56,9 +56,9 @@
 							<p><input type="text" name="tel" id="tel" value="" placeholder="* 핸드폰 번호를 입력하세요" /></p>
 							<div class="custom-control custom-radio">
 							<div>성별을 선택하세요</div>
-								<input type="radio" name="gender" id="male" class="custom-control-input" value="M">
+								<input type="radio" name="gender" id="male" class="custom-control-input" value="남">
 								<label class="custom-control-label" for="male" value="M">남자</label>
-								<input type="radio" name="gender" id="female" class="custom-control-input1" value="F">
+								<input type="radio" name="gender" id="female" class="custom-control-input1" value="여">
 								<label class="custom-control-label" for="female" value="F">여자</label>
 							</div>
 							<p></p>

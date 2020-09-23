@@ -172,11 +172,11 @@ ul {
 
 <style>
 
-.cal_top{
+div.cal_top{
     text-align: center;
     font-size: 30px;
 }
-.cal{
+div.cal{
     text-align: center;    
 }
 table.calendar{
