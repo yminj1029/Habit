@@ -114,7 +114,7 @@ table.calendar td{
 						data-toggle="dropdown">마이페이지</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown">
 							<a class="dropdown-item" href="myinfo.jsp">회원정보</a> <a
-								class="dropdown-item" href="index2.jsp">로그아웃</a>
+								class="dropdown-item" href="index.jsp">로그아웃</a>
 						</div></li>
 				</ul>
 			</div>
