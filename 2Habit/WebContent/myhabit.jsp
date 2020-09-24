@@ -530,14 +530,13 @@ body{
 <script>	
 		/*챌린지 등록 메소드*/
 		function newHabit(e){
-					var m_id=0;
-					if(!confirm('챌린지 등록을 완료하시겠습니까?')){
+					if(confirm('챌린지 등록을 완료하시겠습니까?')){
 						e.preventDefault();
-						
-						
-					}else{
+						location.href='myhabit.jsp';
+
 						confirmed(e);
-						return m_id;
+					}else{
+						return
 					}
 					}
 		function confirmed(e){
