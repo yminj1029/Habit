@@ -4,6 +4,8 @@
 <html>
 <head>
 
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 
 <meta charset="utf-8">
 <!-- 반응형 웹에 관한것 -->
@@ -26,31 +28,6 @@ body{
    	  background-size:cover;
 
    }
-
-
-/*나의 챌린지 확인 페이지*/	
-	.graph span{display:block; height:15px; line-height:15px; text-align:right;
-	 border-radius:40px; box-sizing:border-box; color:#fff;}
-	
-	.graph.stack1 span{background:violet; animation:stack 2s 1;}
-	.graph.stack2 span{background:skyblue; animation:stack2 2s 1;}
-	.graph.stack3 span{background:orange; animation:stack3 2s 1;}
-	
-	@keyframes stack{
-	0%{ width:0; color: rgba(255,255,255,0);} 
-	40%{ color: rgba(255,255,255,1);} 
-	100%{width:75%;}
-	
-	@keyframes stack2{
-	0%{ width:0; color: rgba(255,255,255,0);} 
-	40%{ color: rgba(255,255,255,1);} 
-	100%{width:50%;}
-	
-	@keyframes stack3{
-	0%{ width:0; color: rgba(255,255,255,0);} 
-	40%{ color: rgba(255,255,255,1);} 
-	100%{width:60%;}
-	
 
 </style>
 
@@ -286,6 +263,7 @@ body{
 				      </div>
 				</div>
 			</div>
+			
 			<div class="panel panel-default">
 				<div class="panel-heading" role="tab" id="headingThree">
 				      <h4 class="panel-title">
@@ -298,6 +276,7 @@ body{
 				      </div>
 				</div>
 			</div>
+			
 			<div class="panel panel-default">
 				<div class="panel-heading" role="tab" id="headingFour">
 				      <h4 class="panel-title">
@@ -306,7 +285,7 @@ body{
 				</div>
 				<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
 				      <div class="panel-body">
-				      완료된 습관 챌린지
+				      <a data-toggle="modal" href="#viewpEndModal">vo.ch_name</a>
 				      </div>
 				</div>
 			</div>
@@ -326,6 +305,7 @@ body{
 					</button>
 				</div>
 				<div class="modal-body">
+				
 			<form action="./myinfo.jsp" method="get">
 						<div class="form-row">
 							<div class="form-group col-sm-6">
@@ -355,21 +335,54 @@ body{
 								<label>{vo.file}</label>
 							</div>
 						</div>
-						<div class="form-row">
-							<div class="form-group col-sm-12">
-								<div class="graph stack1"><span style="width: 75%;">{vo.name}{vo.point} 75%</span></div>
-							</div>
-						</div>
-						<div class="form-row">
-							<div class="form-group col-sm-12">
-								<div class="graph stack2"><span style="width: 25%;">25%</span></div>
-							</div>
-						</div>
-						<div class="form-row">
-							<div class="form-group col-sm-12">
-								<div class="graph stack3"><span style="width: 60%;">60%</span></div>
-							</div>
-						</div>
+						
+						
+						<canvas id="myhorizChart" width="400" height="200"></canvas>
+							<script>
+							var ctx = document.getElementById('myhorizChart');
+							var myhorizChart = new Chart(ctx, {
+								type: 'horizontalBar',
+								data: {
+									labels: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
+									datasets: [{
+										label: '# OOO챌린지',
+										data: [12, 18, 3, 5, 2, 3, 13],
+										backgroundColor: [
+											'rgba(255, 99, 132, 0.2)',
+											'rgba(54, 162, 235, 0.2)',
+											'rgba(255, 206, 86, 0.2)',
+											'rgba(75, 192, 192, 0.2)',
+											'rgba(153, 102, 255, 0.2)',
+											'rgba(255, 159, 64, 0.2)',
+											'rgba(153, 153, 153, 0.2)'
+										],
+										borderColor: [
+											'rgba(255, 99, 132, 1)',
+											'rgba(54, 162, 235, 1)',
+											'rgba(255, 206, 86, 1)',
+											'rgba(75, 192, 192, 1)',
+											'rgba(153, 102, 255, 1)',
+											'rgba(255, 159, 64, 1)',
+											'rgba(153, 153, 153, 1)'
+										],
+										borderWidth: 1
+									}]
+								},
+								options: {
+									responsive: false,
+									scales: {
+										xAxes: [{
+											ticks: {
+												beginAtZero: true
+											}
+										}]
+									},
+								}
+							});
+							</script>
+						
+						
+						
 					<div class="modal-footer">
 						<a class="btn btn-warning" data-toggle="modal" href="#proofModal" data-dismiss="modal" style="color:white;">인증하기</a>
 						<button type="button" class="btn btn-secondary"	data-dismiss="modal">닫기</button>
@@ -521,6 +534,45 @@ body{
 								<span class="text-right" style="color: green;">추천: 15★</span>
 							</div>
 						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary"
+								data-dismiss="modal">취소</button>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- 완료 습관 챌린지  -->
+
+<div class="modal fade" id="viewpEndModal" tabindex="-1" role="dialog"
+		aria-labelledby="modal" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modal">완료 챌린지 모음_{vo.ch_name}</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+						<div class="form-row">
+							<div class="form-group col-sm-8">
+								<label>챌린지명1</label>&emsp;&emsp;&emsp;<label>{vo.ch_name}</label>>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-sm-8">
+								<label>챌린지명2</label>&emsp;&emsp;&emsp;<label>{vo.ch_name}</label>>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-sm-8">
+								<label>챌린지명3</label>&emsp;&emsp;&emsp;<label>{vo.ch_name}</label>>
+							</div>
+						</div>
+						
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary"
 								data-dismiss="modal">취소</button>

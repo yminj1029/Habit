@@ -16,6 +16,20 @@ public class ChallengeVO {
 	
 
 
+	public ChallengeVO(String m_id, String ch_name, int num, String ch_day, String startdate, String enddate,
+			String ch_content, String alarm, String ch_file) {
+		super();
+		this.m_id = m_id;
+		this.ch_name = ch_name;
+		this.num = num;
+		this.ch_day = ch_day;
+		this.startdate = startdate;
+		this.enddate = enddate;
+		this.ch_content = ch_content;
+		this.alarm = alarm;
+		this.ch_file = ch_file;
+	}
+
 	public ChallengeVO(int ch_id, String m_id, String ch_name, int num, String ch_day, String startdate, String enddate,
 			String ch_content, String alarm, String ch_file) {
 		super();

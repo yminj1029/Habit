@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class MyHabitDAO {
 
@@ -43,6 +44,7 @@ public class MyHabitDAO {
 		//내습관생성하기
 		public int myhabitProduce(String m_id, String h_name, String h_day, String h_startdate, String h_enddate, String h_alarm) {
 			int cnt = 0;
+			System.out.println("dao까지 접근?");
 			try {
 				getConnect();
 				String sql = "insert into my_habit values(MY_HABIT_SEQ.nextval,?,?,?,?,?,?)";
@@ -57,10 +59,36 @@ public class MyHabitDAO {
 				cnt = ps.executeUpdate();
 
 			} catch (SQLException e) {
+				System.out.println("sql이상");
 				e.printStackTrace();
 			} finally {
 				dbClose();
 			}
 			return cnt;
+		}
+		
+		//myhabit페이지의 습관내용. 
+		public ArrayList<Member2VO> member2Mypage(String m_id) {
+
+			ArrayList<Member2VO> list = new ArrayList<Member2VO>();
+			String sql = "select mh.h_name, c.ch_name, mr.mr_result, cr.chr_result from my_habit mh, challenge c, my_result mr, challenge_result cr where  mh.m_id= ?";
+			try {
+				getConnect();
+				ps = conn.prepareStatement(sql);
+				ps.setString(1, m_id);
+				rs = ps.executeQuery();
+				while (rs.next()) {
+					String h_name = rs.getString(1);
+					String ch_name = rs.getString(2);
+					String mr_result = rs.getString(3);
+					String chr_result = rs.getString(4);
+
+					Member2VO Vot = new Member2VO(h_name, ch_name, mr_result, chr_result);
+					list.add(Vot);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return list;
 		}
 }
