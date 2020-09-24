@@ -21,6 +21,19 @@
 <!-- 커스텀 CSS 만들어서 추가하기 -->
 <link rel="stylesheet" href="./css/custom.css" />
 
+<style>
+body{
+      background-image: url('./images/bgimg.jpg');
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+   	  background-size:cover;
+
+   }
+</style>
+
+
 <title>HABIT</title>
 
 </head>
@@ -51,7 +64,7 @@
     </nav>
 	
 <!-- main -->
-<header id="bg">
+<header>
 	<nav class="navbar navbar-expand-lg navbar-light">
 		<div class="navbar-brand">챌린지게시판</div>
 	</nav>
