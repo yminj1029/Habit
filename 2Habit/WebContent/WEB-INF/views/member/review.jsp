@@ -110,11 +110,11 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
+					<form action="reviewwrite.do" method="get">
 				<div class="modal-body">
-					<form action="./review.jsp" method="get">
 						<div class="form-row">
 							<div class="form-group col-sm-6">
-								<label>후기 제목</label> <input type="text" name="reviewName"
+								<label>후기 제목</label> <input type="text" name="reviewtitle"
 									class="form-control" maxlength="20">
 							</div>
 						</div>
@@ -124,16 +124,7 @@
 									class="form-control" maxlength="20">
 							</div>
 						</div>
-						<div class="form-row">
-							<div class="form-group col-sm-6">
-								<label>챌린지 시작일</label> <input type="text" name="chall_startdate"
-									class="form-control" maxlength="20">
-							</div>
-							<div class="form-group col-sm-6">
-								<label>챌린지 마감일</label> <input type="text" name="chall_enddate"
-									class="form-control" maxlength="20">
-							</div>
-						</div>
+					
 						<div class="form-group">
 							<label>내용</label>
 							<textarea type="text" name="reviewContent"
