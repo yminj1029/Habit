@@ -229,4 +229,11 @@ table.calendar td{
 }
 </style>
 
+/* challenge */
 
+.ch_graph {
+	width: 30%;
+	height: 600px;
+	float: left;
+	text-align: center;
+}
