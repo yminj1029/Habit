@@ -1,7 +1,8 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-	
+<c:set var="cpath" value="${pageContext.request.contextPath}"/>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,11 +78,12 @@
 		</form>
 
 <!-- 챌린지 -->
+<c:forEach var="vo" items="${list}">
 		<div class="card bg-light mt-3">
 			<div class="card-header bg-light">
 				<div class="row">
 					<div class="col-8 text-left">
-						여기는 {vo.ch_name} &nbsp;<small>{vo.num}</small>
+						여기는 ${vo.ch_name} &nbsp;<small>${vo.num}</small>
 					</div>
 					<div class="col-4 text-right"><a class="btn btn-secondary" data-toggle="modal"
 							href="#challViewModal">자세히</a></div>
@@ -89,15 +91,16 @@
 			</div>
 			<div class="card-body">
 				<p class="card-text">
-					<span>{vo.startDate}</span>
-					<span>{vo.endDate}</span>
+					<span>${vo.startdate}</span>
+					<span>${vo.enddate}</span>
 				</p>
-				<p class="card-text">{vo.content}</p>
-				<p class="card-text">{vo.alarm}</p>
+				<p class="card-text">${vo.ch_content}</p>
+				<p class="card-text">${vo.alarm}</p>
 			</div>
-		</div>
-	</div>
 
+		</div>
+</c:forEach>
+	</div>
 <!-- 페이지 이동 -->
 <!-- 페이지 이동 get방식으로 할까 스크롤 다운으로 할까? -->
 	<ul class="pagination justify-content-center mt-3">

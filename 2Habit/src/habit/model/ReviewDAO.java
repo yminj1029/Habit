@@ -52,7 +52,7 @@ public class ReviewDAO {
 
 		ArrayList<ReviewVO> list = new ArrayList<ReviewVO>();
 		conn = getConnect();
-		String sql = "select r_id, m_id, r_title, r_content, r_date from reviews order by r_id desc";
+		String sql = "select * from review";
 		try {
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -119,7 +119,34 @@ public class ReviewDAO {
 		return cnt;
 	}
 
-	
+	//후기자세히보기
+	 public ReviewVO reviewContent(int r_id) { 
+		 ReviewVO vo=null; 
+		 conn=getConnect(); 
+		 String SQL = "select * from review where r_id=?";
+	  
+	  try { 
+		  ps=conn.prepareStatement(SQL); 
+		  ps.setInt(1, r_id);
+	  rs=ps.executeQuery();
+	  
+	  if(rs.next()) {
+		  r_id=rs.getInt("r_id"); 
+		  int ch_id = rs.getInt("ch_id");
+		  String m_id=rs.getString("m_id"); 
+		  String r_title=rs.getString("r_title"); 
+		  String r_content=rs.getString("r_content");
+		  String r_date=rs.getString("r_date");
+		  int r_point=rs.getInt("r_point"); 
+		  String r_file=rs.getString("r_file");
+		  vo=new ReviewVO(r_id, ch_id, m_id, r_title, r_content, r_date, r_point, r_file);
+		  } 
+	  } catch (Exception e) { e.printStackTrace(); 
+	  }finally {
+	  dbClose(); 
+	  } 
+	  return vo; 
+	  }
 
 
 	 

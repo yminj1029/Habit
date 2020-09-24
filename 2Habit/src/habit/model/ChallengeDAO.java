@@ -152,23 +152,22 @@ public class ChallengeDAO {
 	public ArrayList<ChallengeVO> ChallengeAllList() {
 		ArrayList<ChallengeVO> list = new ArrayList<ChallengeVO>();
 		conn = getConnect();
-		System.out.println("sql 문장이 잘 실행이되나요?");
-		String SQL="select * from challenge order by ch_id desc";
+		String SQL="select * from challenge";
 		try {
 			ps=conn.prepareStatement(SQL);
 			rs = ps.executeQuery();  //rs는 커서. 커서는 뒤로 한칸씩 이동해가면서 있으면 오고, 없으면 빠져나옴.
 			while(rs.next()) {
 				int ch_id = rs.getInt("ch_id");
-				String ch_name = rs.getString("ch_name");
 				String m_id = rs.getString("m_id");
+				String ch_name = rs.getString("ch_name");
 				int num = rs.getInt("num");
+				String ch_day = rs.getString("ch_day");
 				String startdate = rs.getString("startdate");
 				String enddate = rs.getString("enddate");
 				String ch_content = rs.getString("ch_content");
-				String ch_file = rs.getString("ch_file");
-				String h_day = rs.getString("h_day");
 				String alarm = rs.getString("alarm");
-				ChallengeVO vo = new ChallengeVO(ch_id,ch_name,m_id,num,startdate,enddate,ch_content,ch_file, h_day, alarm); //vo로 묶고!!!
+				String ch_file = rs.getString("ch_file");
+				ChallengeVO vo = new ChallengeVO(ch_id,m_id,ch_name,num, ch_day, startdate,enddate,ch_content,alarm, ch_file); //vo로 묶고!!!
 				list.add(vo); //어레이리스트에 담고!!!
 			}
 		} catch (SQLException e) {

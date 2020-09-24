@@ -1,5 +1,7 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,11 +73,12 @@
 		</form>
 
 <!-- 후기1개 -->
+<c:forEach var="vo" items="${list}">
 		<div class="card bg-light mt-3">
 			<div class="card-header bg-light">
 				<div class="row">
 					<div class="col-8 text-left">
-						여기는 {vo.r_title} &nbsp;<small>{vo.nickname}</small>
+						여기는 ${vo.r_title} &nbsp;<small>${vo.m_id}</small>
 					</div>
 					<div class="col-4 text-right">
 					<span class="text-right" style="color: green;">(추천: 15★)</span>
@@ -85,10 +88,11 @@
 				</div>
 			</div>
 			<div class="card-body">
-				<span class="card-text">{vo.r_date}후기작성일</span><br> 
-				<span class="card-text">{vo.r_content}후기내용</span><br>
+				<span class="card-text">${vo.r_date}후기작성일</span><br> 
+				<span class="card-text">${vo.r_content}후기내용</span><br>
 			</div>
 		</div>
+	</c:forEach>
 	</div>
 
 <!-- 페이지 이동 -->
@@ -153,7 +157,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="modal">후기 제목_{vo.r_name}</h5>
+					<h5 class="modal-title" id="modal">후기 제목_${vo.r_name}</h5>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -163,28 +167,25 @@
 					<form action="./review.jsp" method="post">
 						<div class="form-row">
 							<div class="form-group col-sm-6">
-								<label>챌린지명</label>  <div>{vo.ch_name}</div>
+								<label>리뷰명</label>  <div>${vo.r_title}</div>
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="form-group col-sm-6">
-								<label>닉네임</label> <div>{vo.nickname}</div>
+								<label>ID</label> <div>${vo.m_id}</div>
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="form-group col-sm-6">
-								<label>챌린지 시작일</label>  <div>{vo.startDate}</div>
+								<label>날짜</label>  <div>${vo.r_date}</div>
 							</div>
 							<div class="form-group col-sm-6">
-								<label>챌린지 마감일</label>  <div>{vo.endDate}</div>
+								<label>내용</label>  <div>${vo.r_content}</div>
 							</div>
-						</div>
-						<div class="form-group">
-							<label>내용</label> <div>{vo.r_content}</div>
 						</div>
 						<div class="form-row">
 							<div class="form-group col-sm-6">
-								<label>첨부파일</label>  <div>{vo.startDate}</div>
+								<label>첨부파일</label>  <div>${vo.r_file}</div>
 							</div>
 						</div>
 						<div class="modal-footer">

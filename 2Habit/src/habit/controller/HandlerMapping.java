@@ -3,6 +3,7 @@ package habit.controller;
 import java.util.HashMap;
 
 import habit.rv.pojo.ReviewListController;
+import habit.rv.pojo.ReviewContenetController;
 import habit.rv.pojo.ReviewInsertController;
 import habit.cha.pojo.ChallengeInsertController;
 import habit.cha.pojo.ChallengeListController;
@@ -32,6 +33,7 @@ public class HandlerMapping {
 		mappings.put("/myhabit.do", new MyHabitFrontController());
 		mappings.put("/myhabitwrite.do", new MyHabitProduceController());
 		mappings.put("/infoupdate.do", new Member2UpdateController());
+		mappings.put("/reviewcontent.do", new ReviewContenetController());
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
