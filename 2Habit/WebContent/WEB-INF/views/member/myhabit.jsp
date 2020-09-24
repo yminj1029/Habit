@@ -85,15 +85,20 @@ body{
 	<!-- <div id="wrapper"> -->
 	<!-- <div> -->
 	<div class="list" align="center">
-	<a href="" style="text-align: left; color: black" ><h2>습관생성</h2></a></br>
 	<!-- 테이블을 포문으로 돌려서 DB에 들어있는 수만큼 나타내기 -->
-	
+		
+		
+		<a class="btn btn-primary mx-1 mt-2" data-toggle="modal"
+				href="#newHabit">새 습관 등록</a><br><br>
 		<table>
-			<a href="javascript:view('viewcode');"></a>
+		<a href="javascript:view('viewcode');">물마시기</a>
 			<tr id="viewcode" style="display: none;">
-				<td>Start : 20/09/01</br>
-				End : 20/10/01</br>
+				<td>Start : 2020.09.01</br>
+				End : 2020.10.01</br>
 				Alarm : 15:00</td>
+				<td><form action="./myhabit.jsp" method="get">
+				<input class="btn btn-warning" type="submit" onclick="newHabit(event)" value="습관체크" style="color:white;">
+				</form></td>
 				</tr>
 		</table>
 				<table>
@@ -106,8 +111,207 @@ body{
 		</table>
 	</div>
 	
+
+<!-- 새습관 등록하기 -->
+	<div class="modal fade" id="newHabit" tabindex="-1" role="dialog"
+		aria-labelledby="modal" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modal">새 습관 등록</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+					<form action="myhabitwrite.do" method="post">
+				<div class="modal-body">
+						<div class="form-row">
+							<div class="form-group col-sm-6">
+								<label>습관명</label> <input type="text" name="h_name"
+									class="form-control" maxlength="20">
+							</div>
+						</div>
+						<div class="form-row">
+						
+						<div class="form-group col-sm-4">
+                        <label>습관 시작 연도</label>
+                        <select name="habitStartYear" class="form-control">
+                           <option value="선택" selected>선택</option>
+                           <option value="2020">2020</option>
+                           <option value="2021">2021</option>
+                           <option value="2022">2022</option>
+                           <option value="2023">2023</option>
+                           <option value="2024">2024</option>
+                           <option value="2025">2025</option>
+                           <option value="2026">2026</option>
+                           <option value="2027">2027</option>
+                           <option value="2028">2028</option>
+                           <option value="2029">2029</option>
+                           <option value="2030">2030</option>
+                           <option value="2031">2031</option>
+                           <option value="2032">2032</option>
+                        </select>
+                     </div>
+                     <div class="form-group col-sm-4">
+                        <label>시작 월</label>
+                        <select name="habitStartMonth" class="form-control">
+                           <option value="선택" selected>선택</option>
+                           <option value="1">01</option>
+                           <option value="2">02</option>
+                           <option value="3">03</option>
+                           <option value="4">04</option>
+                           <option value="5">05</option>
+                           <option value="6">06</option>
+                           <option value="7">07</option>
+                           <option value="8">08</option>
+                           <option value="9">09</option>
+                           <option value="10">10</option>
+                           <option value="11">11</option>
+                           <option value="12">12</option>
+                        </select>
+                     </div>
+                     <div class="form-group col-sm-4">
+                        <label>시작 일</label>
+                        <select name="habitStartDay" class="form-control">
+                           <option value="선택" selected>선택</option>
+                           <option value="1">01</option>
+                           <option value="2">02</option>
+                           <option value="3">03</option>
+                           <option value="4">04</option>
+                           <option value="5">05</option>
+                           <option value="6">06</option>
+                           <option value="7">07</option>
+                           <option value="8">08</option>
+                           <option value="9">09</option>
+                           <option value="10">10</option>
+                           <option value="11">11</option>
+                           <option value="12">12</option>
+                           <option value="13">13</option>
+                           <option value="14">14</option>
+                           <option value="15">15</option>
+                           <option value="16">16</option>
+                           <option value="17">17</option>
+                           <option value="18">18</option>
+                           <option value="19">19</option>
+                           <option value="20">20</option>
+                           <option value="21">21</option>
+                           <option value="22">22</option>
+                           <option value="23">23</option>
+                           <option value="24">24</option>
+                           <option value="25">25</option>
+                           <option value="26">26</option>
+                           <option value="27">27</option>
+                           <option value="28">28</option>
+                           <option value="29">29</option>
+                           <option value="30">30</option>
+                           <option value="31">31</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="form-row">
+                     <div class="form-group col-sm-4">
+                        <label>습관 마감 연도</label>
+                        <select name="habitEndYear" class="form-control">
+                           <option value="선택" selected>선택</option>
+                           <option value="2020">2020</option>
+                           <option value="2021">2021</option>
+                           <option value="2022">2022</option>
+                           <option value="2023">2023</option>
+                           <option value="2024">2024</option>
+                           <option value="2025">2025</option>
+                           <option value="2026">2026</option>
+                           <option value="2027">2027</option>
+                           <option value="2028">2028</option>
+                           <option value="2029">2029</option>
+                           <option value="2030">2030</option>
+                           <option value="2031">2031</option>
+                           <option value="2032">2032</option>
+                        </select>
+                     </div>
+                     <div class="form-group col-sm-4">
+                        <label>마감 월</label>
+                        <select name="habitEndMonth" class="form-control">
+                           <option value="선택" selected>선택</option>
+                           <option value="1">01</option>
+                           <option value="2">02</option>
+                           <option value="3">03</option>
+                           <option value="4">04</option>
+                           <option value="5">05</option>
+                           <option value="6">06</option>
+                           <option value="7">07</option>
+                           <option value="8">08</option>
+                           <option value="9">09</option>
+                           <option value="10">10</option>
+                           <option value="11">11</option>
+                           <option value="12">12</option>
+                        </select>
+                     </div>
+                     <div class="form-group col-sm-4">
+                        <label>마감 일</label>
+                        <select name="habitEndDay" class="form-control">
+                           <option value="선택"selected>선택</option>
+                           <option value="1">01</option>
+                           <option value="2">02</option>
+                           <option value="3">03</option>
+                           <option value="4">04</option>
+                           <option value="5">05</option>
+                           <option value="6">06</option>
+                           <option value="7">07</option>
+                           <option value="8">08</option>
+                           <option value="9">09</option>
+                           <option value="10">10</option>
+                           <option value="11">11</option>
+                           <option value="12">12</option>
+                           <option value="13">13</option>
+                           <option value="14">14</option>
+                           <option value="15">15</option>
+                           <option value="16">16</option>
+                           <option value="17">17</option>
+                           <option value="18">18</option>
+                           <option value="19">19</option>
+                           <option value="20">20</option>
+                           <option value="21">21</option>
+                           <option value="22">22</option>
+                           <option value="23">23</option>
+                           <option value="24">24</option>
+                           <option value="25">25</option>
+                           <option value="26">26</option>
+                           <option value="27">27</option>
+                           <option value="28">28</option>
+                           <option value="29">29</option>
+                           <option value="30">30</option>
+                           <option value="31">31</option>
+                        </select>
+                     </div>
+						
+						</div>
+					
+						<div class="form-row">
+							<div class="form-group col-sm-6">
+								<label>알람 요일</label> <input type="text" name="alarmDays"
+									class="form-control" maxlength="50" placeholder="예) SUN/M/T/W/TH/F/SAT">
+							</div>
+							<div class="form-group col-sm-6">
+							<form name=exf1>
+								<B>알람설정 :</B>
+									<input type=text name=h size=2>시  <input type=text name=m size=2> 분 <input type=text name=s size=2>초 
+									<input type=button name=b onclick=setAlarm() value="Set Alarm"><input type=button name=r onclick=clearAlarm() value="Turn Alarm Off"><BR>
+							</form>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<input class="btn btn-primary" type="submit" onclick="newHabit(event)" value="등록완료" style="color:white;">
+							<button type="button" class="btn btn-secondary"	data-dismiss="modal">취소</button>
+						</div>
+				</div>
+					</form>
+			</div>
+		</div>
+	</div>
+
 	
-	<!-- 달력 -->
+<!-- 달력 -->
 	<div class="calendar1">
    <div class="cal_top">
         <a href="#" id="movePrevMonth"><span id="prevMonth" class="cal_tit">&lt;</span></a>
@@ -316,6 +520,26 @@ body{
 	<script src="./js/pooper.js"></script>
 	<!-- 부트스트랩 자바스크립트 추가하기 -->
 	<script src="./js/bootstrap.min.js"></script>
+
+
+
+<script>	
+		/*챌린지 등록 메소드*/
+		function newHabit(e){
+					var m_id=0;
+					if(!confirm('습관 등록을 완료하시겠습니까?')){
+						e.preventDefault();
+						
+						
+					}else{
+						confirmed(e);
+						return m_id;
+					}
+					}
+		function confirmed(e){
+					return alert('습관 등록 완료!')	
+				}
+</script>
 
 
 </body>

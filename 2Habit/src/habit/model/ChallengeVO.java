@@ -16,6 +16,8 @@ public class ChallengeVO {
 	
 
 
+
+
 	public ChallengeVO(int ch_id, String m_id, String ch_name, int num, String ch_day, String startdate, String enddate,
 			String ch_content, String alarm, String ch_file) {
 		super();

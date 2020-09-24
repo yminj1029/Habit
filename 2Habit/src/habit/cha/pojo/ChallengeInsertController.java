@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import habit.mem.pojo.InterController;
 import habit.model.ChallengeDAO;
@@ -18,34 +19,41 @@ public class ChallengeInsertController implements InterController{
 	public String requestHandle(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String cpath = request.getContextPath();
-		String m_id = request.getParameter("m_id");
-		String ch_name = request.getParameter("ch_name");
-		int num = Integer.parseInt(request.getParameter("num"));
-		String startdate = request.getParameter("startdate");
-		String enddate = request.getParameter("enddate");
-		String ch_content = request.getParameter("ch_content");
-		String ch_file = request.getParameter("ch_file");
-		String h_day = request.getParameter("h_day");
-		String alarm = request.getParameter("alarm");
+		HttpSession session = request.getSession();
+		
+		String m_id = (String) session.getAttribute("userID");
+		String ch_name = request.getParameter("challengeName");
+		String ch_startdate = request.getParameter("challengeStartYear")+request.getParameter("challengeStartMonth")+request.getParameter("challengeStartDay");
+		String ch_enddate = request.getParameter("challengeEndYear")+request.getParameter("challengeEndMonth")+request.getParameter("challengeEndDay");
+		int num = Integer.parseInt(request.getParameter("limitNum"));
+		String ch_content = request.getParameter("evaluationContent");
+		String ch_file = request.getParameter("file");
+		String ch_day = request.getParameter("alarmDays");
+		String alarm = request.getParameter("alarmHour");
+	
+		System.out.println(m_id);
+		System.out.println(ch_startdate);
+		System.out.println(ch_enddate);
 		
 		ChallengeVO vo = new ChallengeVO();
 		vo.setM_id(m_id);
 		vo.setCh_name(ch_name);
 		vo.setNum(num);
-		vo.setStartdate(startdate);
-		vo.setStartdate(startdate);
-		vo.setEnddate(enddate);
+		vo.setCh_day(ch_day);
+		vo.setStartdate(ch_startdate);
+		vo.setEnddate(ch_enddate);
 		vo.setCh_content(ch_content);
-		vo.setCh_file(ch_file);
-		vo.setCh_day(h_day);
 		vo.setAlarm(alarm);
+		vo.setCh_file(ch_file);
+		
 		
 		ChallengeDAO dao = new ChallengeDAO();
 		int cnt= dao.challengeInsert(vo);
 		String page=null;
 		if(cnt>0) {
-			page="redirect:"+cpath+"/list.do";
+			page="redirect:"+cpath+"/challengeboard.do";
 		}else {
+			System.out.println("¾ÈµÅ!!!¤Ì¤Ð");
 			throw new ServletException("error");
 		}
 		return page;

@@ -22,22 +22,22 @@
 <div id="content">
 	<!-- Top bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="index5.jsp">HABIT</a>
+      <a class="navbar-brand" href="membermain.do">HABIT</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav mr-auto">
-			<li><a class="nav-link" href="myhabit.jsp">나의습관</a></li>
-      		<li><a class="nav-link" href="challenge.jsp">챌린지게시판</a></li>
-  			<li class="nav-item active"><a class="nav-link" href="review.jsp">후기게시판</a>
+			<li><a class="nav-link" href="myhabit.do">나의습관</a></li>
+      		<li><a class="nav-link" href="challengeboard.do">챌린지게시판</a></li>
+  			<li class="nav-item active"><a class="nav-link" href="reviewboard.do">후기게시판</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="dropdown" data-toggle="dropdown">마이페이지</a>
             <div class="dropdown-menu" aria-labelledby="dropdown">
-            <a class="dropdown-item" href="myinfo.jsp">회원정보</a>
-              <a class="dropdown-item" href="index2.jsp">로그아웃</a>
+            <a class="dropdown-item" href="myinfo.do">회원정보</a>
+              <a class="dropdown-item" href="main.do">로그아웃</a>
             </div>
           </li>
         </ul>
@@ -120,7 +120,7 @@
 						</div>
 						<div class="form-row">
 							<div class="form-group col-sm-6">
-								<label>챌린지명</label> <input type="text" name="challengeName"
+								<label>챌린지ID</label> <input type="text" name="challengeID"
 									class="form-control" maxlength="20">
 							</div>
 						</div>

@@ -1,9 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cpath" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
 
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 
 <meta charset="utf-8">
 <!-- 반응형 웹에 관한것 -->
@@ -26,31 +30,6 @@ body{
    	  background-size:cover;
 
    }
-
-
-/*나의 챌린지 확인 페이지*/	
-	.graph span{display:block; height:15px; line-height:15px; text-align:right;
-	 border-radius:40px; box-sizing:border-box; color:#fff;}
-	
-	.graph.stack1 span{background:violet; animation:stack 2s 1;}
-	.graph.stack2 span{background:skyblue; animation:stack2 2s 1;}
-	.graph.stack3 span{background:orange; animation:stack3 2s 1;}
-	
-	@keyframes stack{
-	0%{ width:0; color: rgba(255,255,255,0);} 
-	40%{ color: rgba(255,255,255,1);} 
-	100%{width:75%;}
-	
-	@keyframes stack2{
-	0%{ width:0; color: rgba(255,255,255,0);} 
-	40%{ color: rgba(255,255,255,1);} 
-	100%{width:50%;}
-	
-	@keyframes stack3{
-	0%{ width:0; color: rgba(255,255,255,0);} 
-	40%{ color: rgba(255,255,255,1);} 
-	100%{width:60%;}
-	
 
 </style>
 
@@ -96,8 +75,9 @@ body{
 				href="#profileModal">프로필사진</a>
 				</div>
 				<div class="square content">
-					<h5>{vo.nickname} 님,</h5>
-					<h6>{vo.email}</h6>
+					<h5>${vo.nickname} 님, 오늘도 화이팅!</h5>
+					<h6>당신의 포인트 점수는...!!! : ${vo.point}</h6>
+					<h6>${vo.email}</h6>
 					<a class="btn btn-secondary mx-1 mt-2" data-toggle="modal" href="#memberInfo">회원정보 수정</a>
 				</div>
 				</div>
@@ -121,47 +101,42 @@ body{
 				<div class="modal-body">
 					<div class="form-row">
 						<div class="form-group col-sm-6">
-							<label>{vo.m_id}</label>
+							<label>${vo.m_id}</label>
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-sm-6">
-							<label>{vo.pw}</label>
+							<label>${vo.name}</label>
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-sm-6">
-							<label>{vo.name}</label>
-						</div>
-					</div>
-					<div class="form-row">
-						<div class="form-group col-sm-6">
-                        <label>{vo.nickname}</label>
+                        <label>${vo.nickname}</label>
                      </div>
                   	</div>
 					<div class="form-row">
 						<div class="form-group col-sm-4">
-							<label>{vo.tel}</label>
+							<label>${vo.tel}</label>
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-sm-4">
-							<label>{vo.gender}</label>
+							<label>${vo.gender}</label>
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-sm-4">
-							<label>{vo.job}</label>
+							<label>${vo.job}</label>
 						</div>
 					</div>
 						<div class="form-row">
 						<div class="form-group col-sm-4">
-							<label>{vo.email}</label>
+							<label>${vo.email}</label>
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-sm-4">
-							<label>{vo.category}</label>
+							<label>${vo.habit}</label>
 						</div>
 					</div>
 					<div class="modal-footer">
@@ -185,30 +160,30 @@ body{
 					</button>
 				</div>
 				<div class="modal-body">
-					<form action="./myinfo.jsp" method="get">
+					<form action="infoupdate.do" method="get">
 						<div class="form-row">
 						<div class="form-group col-sm-6">
-							<label>{vo.m_id}</label>
+							<label>${vo.m_id}</label>
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-sm-6">
-							<input type="text" name="membership_pw" id="membership_pw" value="" placeholder="{pw}" />
+							<input type="text" name="pw" id="pw" value="pw" placeholder="${pw}" />
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-sm-6">
-							<input type="text" name="membership_name" id="membership_name" value="" placeholder="{vo.name}" />
+							<input type="text" name="name" id="name" value="${vo.name}" placeholder="${vo.name}" />
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-sm-6">
-                        <input type="text" name="membership_nick" id="membership_nick" value="" placeholder="{vo.nickname}" />
+                        <input type="text" name="nick" id="nick" value="" placeholder="${vo.nickname}" />
                      </div>
                   	</div>
 					<div class="form-row">
 						<div class="form-group col-sm-4">
-							<input type="text" name="membership_tel" id="membership_tel" value="" placeholder="{vo.tel}" />
+							<input type="text" name="tel" id="tel" value="" placeholder="${vo.tel}" />
 						</div>
 					</div>
 					<div class="form-row">
@@ -219,29 +194,29 @@ body{
 						<div class="form-group col-sm-6">
 					<div class="custom-control custom-radio">
 						<span>
-								<input type="radio" name="jb-radio" id="jb-radio-1" class="custom-control-input">
-								<label class="custom-control-label" for="jb-radio-1">남자&emsp;&emsp;&emsp;</label>
+								<input type="radio" name="gender" id="male" class="custom-control-input">
+								<label class="custom-control-label" for="male">남자&emsp;&emsp;&emsp;</label>
 						</span>
 						<span>
-								<input type="radio" name="jb-radio" id="jb-radio-2" class="custom-control-input">
-								<label class="custom-control-label" for="jb-radio-2">여자</label>
+								<input type="radio" name="gender" id="female" class="custom-control-input">
+								<label class="custom-control-label" for="female">여자</label>
 								</span>
 						</div>
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-sm-4">
-							<input type="text" name="membership_job" id="membership_job" value="" placeholder="{vo.job}" />
+							<input type="text" name="job" id="job" value="" placeholder="${vo.job}" />
 						</div>
 					</div>
 						<div class="form-row">
 						<div class="form-group col-sm-4">
-							<input type="text" name="membership_email" id="membership_email" value="" placeholder="{vo.email}" />
+							<input type="text" name="email" id="email" value="" placeholder="${vo.email}" />
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-sm-4">
-							<input type="text" name="membership_category" id="membership_category" value="" placeholder="{vo.category}" />
+							<input type="text" name="habit" id="habit" value="" placeholder="${vo.habit}" />
 						</div>
 					</div>
 						<div class="modal-footer">
@@ -286,6 +261,7 @@ body{
 				      </div>
 				</div>
 			</div>
+			
 			<div class="panel panel-default">
 				<div class="panel-heading" role="tab" id="headingThree">
 				      <h4 class="panel-title">
@@ -298,6 +274,7 @@ body{
 				      </div>
 				</div>
 			</div>
+			
 			<div class="panel panel-default">
 				<div class="panel-heading" role="tab" id="headingFour">
 				      <h4 class="panel-title">
@@ -306,7 +283,7 @@ body{
 				</div>
 				<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
 				      <div class="panel-body">
-				      완료된 습관 챌린지
+				      <a data-toggle="modal" href="#viewpEndModal">vo.ch_name</a>
 				      </div>
 				</div>
 			</div>
@@ -326,6 +303,7 @@ body{
 					</button>
 				</div>
 				<div class="modal-body">
+				
 			<form action="./myinfo.jsp" method="get">
 						<div class="form-row">
 							<div class="form-group col-sm-6">
@@ -355,21 +333,54 @@ body{
 								<label>{vo.file}</label>
 							</div>
 						</div>
-						<div class="form-row">
-							<div class="form-group col-sm-12">
-								<div class="graph stack1"><span style="width: 75%;">{vo.name}{vo.point} 75%</span></div>
-							</div>
-						</div>
-						<div class="form-row">
-							<div class="form-group col-sm-12">
-								<div class="graph stack2"><span style="width: 25%;">25%</span></div>
-							</div>
-						</div>
-						<div class="form-row">
-							<div class="form-group col-sm-12">
-								<div class="graph stack3"><span style="width: 60%;">60%</span></div>
-							</div>
-						</div>
+						
+						
+						<canvas id="myhorizChart" width="400" height="200"></canvas>
+							<script>
+							var ctx = document.getElementById('myhorizChart');
+							var myhorizChart = new Chart(ctx, {
+								type: 'horizontalBar',
+								data: {
+									labels: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
+									datasets: [{
+										label: '# OOO챌린지',
+										data: [12, 18, 3, 5, 2, 3, 13],
+										backgroundColor: [
+											'rgba(255, 99, 132, 0.2)',
+											'rgba(54, 162, 235, 0.2)',
+											'rgba(255, 206, 86, 0.2)',
+											'rgba(75, 192, 192, 0.2)',
+											'rgba(153, 102, 255, 0.2)',
+											'rgba(255, 159, 64, 0.2)',
+											'rgba(153, 153, 153, 0.2)'
+										],
+										borderColor: [
+											'rgba(255, 99, 132, 1)',
+											'rgba(54, 162, 235, 1)',
+											'rgba(255, 206, 86, 1)',
+											'rgba(75, 192, 192, 1)',
+											'rgba(153, 102, 255, 1)',
+											'rgba(255, 159, 64, 1)',
+											'rgba(153, 153, 153, 1)'
+										],
+										borderWidth: 1
+									}]
+								},
+								options: {
+									responsive: false,
+									scales: {
+										xAxes: [{
+											ticks: {
+												beginAtZero: true
+											}
+										}]
+									},
+								}
+							});
+							</script>
+						
+						
+						
 					<div class="modal-footer">
 						<a class="btn btn-warning" data-toggle="modal" href="#proofModal" data-dismiss="modal" style="color:white;">인증하기</a>
 						<button type="button" class="btn btn-secondary"	data-dismiss="modal">닫기</button>
@@ -521,6 +532,45 @@ body{
 								<span class="text-right" style="color: green;">추천: 15★</span>
 							</div>
 						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary"
+								data-dismiss="modal">취소</button>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- 완료 습관 챌린지  -->
+
+<div class="modal fade" id="viewpEndModal" tabindex="-1" role="dialog"
+		aria-labelledby="modal" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modal">완료 챌린지 모음_{vo.ch_name}</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+						<div class="form-row">
+							<div class="form-group col-sm-8">
+								<label>챌린지명1</label>&emsp;&emsp;&emsp;<label>{vo.ch_name}</label>>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-sm-8">
+								<label>챌린지명2</label>&emsp;&emsp;&emsp;<label>{vo.ch_name}</label>>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-sm-8">
+								<label>챌린지명3</label>&emsp;&emsp;&emsp;<label>{vo.ch_name}</label>>
+							</div>
+						</div>
+						
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary"
 								data-dismiss="modal">취소</button>

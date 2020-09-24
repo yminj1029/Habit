@@ -5,6 +5,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+
 <meta charset="utf-8">
 <!-- 반응형 웹에 관한것 -->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,31 +20,7 @@
 <link rel="stylesheet" href="./css/bootstrap.min.css" />
 <!-- 커스텀 CSS 만들어서 추가하기 -->
 <link rel="stylesheet" href="./css/custom.css" />
-<style>
-	
-	.graph span{display:block; height:15px; line-height:15px; text-align:right;
-	 border-radius:40px; box-sizing:border-box; color:#fff;}
-	
-	.graph.stack1 span{background:violet; animation:stack 2s 1;}
-	.graph.stack2 span{background:skyblue; animation:stack2 2s 1;}
-	.graph.stack3 span{background:orange; animation:stack3 2s 1;}
-	
-	@keyframes stack{
-	0%{ width:0; color: rgba(255,255,255,0);} 
-	40%{ color: rgba(255,255,255,1);} 
-	100%{width:75%;}
-	
-	@keyframes stack2{
-	0%{ width:0; color: rgba(255,255,255,0);} 
-	40%{ color: rgba(255,255,255,1);} 
-	100%{width:50%;}
-	
-	@keyframes stack3{
-	0%{ width:0; color: rgba(255,255,255,0);} 
-	40%{ color: rgba(255,255,255,1);} 
-	100%{width:60%;}
-	
-</style>
+
 <title>HABIT</title>
 
 </head>
@@ -137,8 +118,8 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body">
-					<form action="./challenge.jsp" method="post">
+				<div class="modal-body"> <!-- 9.24 첼린지입력 폼테그 -->
+					<form action="challengewrite.do" method="post">
 						<div class="form-row">
 							<div class="form-group col-sm-6">
 								<label>챌린지명</label> <input type="text" name="challengeName"
@@ -150,7 +131,7 @@
 						<div class="form-group col-sm-4">
                         <label>챌린지 시작 연도</label>
                         <select name="challengeStartYear" class="form-control">
-                           <option value="2020" selected>2020</option>
+                           <option value="2020">2020</option>
                            <option value="2021">2021</option>
                            <option value="2022">2022</option>
                            <option value="2023">2023</option>
@@ -168,15 +149,15 @@
                      <div class="form-group col-sm-4">
                         <label>시작 월</label>
                         <select name="challengeStartMonth" class="form-control">
-                           <option value="1">1</option>
-                           <option value="2">2</option>
-                           <option value="3">3</option>
-                           <option value="4">4</option>
-                           <option value="5">5</option>
-                           <option value="6">6</option>
-                           <option value="7">7</option>
-                           <option value="8">8</option>
-                           <option value="9" selected>9</option>
+                           <option value="1">01</option>
+                           <option value="2">02</option>
+                           <option value="3">03</option>
+                           <option value="4">04</option>
+                           <option value="5">05</option>
+                           <option value="6">06</option>
+                           <option value="7">07</option>
+                           <option value="8">08</option>
+                           <option value="9">09</option>
                            <option value="10">10</option>
                            <option value="11">11</option>
                            <option value="12">12</option>
@@ -185,88 +166,15 @@
                      <div class="form-group col-sm-4">
                         <label>시작 일</label>
                         <select name="challengeStartDay" class="form-control">
-                           <option value="1">1</option>
-                           <option value="2">2</option>
-                           <option value="3">3</option>
-                           <option value="4">4</option>
-                           <option value="5">5</option>
-                           <option value="6">6</option>
-                           <option value="7">7</option>
-                           <option value="8">8</option>
-                           <option value="9">9</option>
-                           <option value="10">10</option>
-                           <option value="11">11</option>
-                           <option value="12">12</option>
-                           <option value="13">13</option>
-                           <option value="14">14</option>
-                           <option value="15">15</option>
-                           <option value="16">16</option>
-                           <option value="17">17</option>
-                           <option value="18">18</option>
-                           <option value="19">19</option>
-                           <option value="20">20</option>
-                           <option value="21">21</option>
-                           <option value="22">22</option>
-                           <option value="23">23</option>
-                           <option value="24">24</option>
-                           <option value="25">25</option>
-                           <option value="26">26</option>
-                           <option value="27">27</option>
-                           <option value="28" selected>28</option>
-                           <option value="29">29</option>
-                           <option value="30">30</option>
-                           <option value="31">31</option>
-                        </select>
-                     </div>
-                  </div>
-                  <div class="form-row">
-                     <div class="form-group col-sm-4">
-                        <label>챌린지 마감 연도</label>
-                        <select name="challengeEndYear" class="form-control">
-                           <option value="2020" selected>2020</option>
-                           <option value="2021">2021</option>
-                           <option value="2022">2022</option>
-                           <option value="2023">2023</option>
-                           <option value="2024">2024</option>
-                           <option value="2025">2025</option>
-                           <option value="2026">2026</option>
-                           <option value="2027">2027</option>
-                           <option value="2028">2028</option>
-                           <option value="2029">2029</option>
-                           <option value="2030">2030</option>
-                           <option value="2031">2031</option>
-                           <option value="2032">2032</option>
-                        </select>
-                     </div>
-                     <div class="form-group col-sm-4">
-                        <label>마감 월</label>
-                        <select name="challengeEndMonth" class="form-control">
-                           <option value="1">1</option>
-                           <option value="2">2</option>
-                           <option value="3">3</option>
-                           <option value="4">4</option>
-                           <option value="5">5</option>
-                           <option value="6">6</option>
-                           <option value="7">7</option>
-                           <option value="8">8</option>
-                           <option value="9" selected>9</option>
-                           <option value="10">10</option>
-                           <option value="11">11</option>
-                           <option value="12">12</option>
-                        </select>
-                     </div>
-                     <div class="form-group col-sm-4">
-                        <label>마감 일</label>
-                        <select name="challengeEndDay" class="form-control">
-                           <option value="1">1</option>
-                           <option value="2">2</option>
-                           <option value="3">3</option>
-                           <option value="4">4</option>
-                           <option value="5">5</option>
-                           <option value="6">6</option>
-                           <option value="7">7</option>
-                           <option value="8">8</option>
-                           <option value="9">9</option>
+                           <option value="1">01</option>
+                           <option value="2">02</option>
+                           <option value="3">03</option>
+                           <option value="4">04</option>
+                           <option value="5">05</option>
+                           <option value="6">06</option>
+                           <option value="7">07</option>
+                           <option value="8">08</option>
+                           <option value="9">09</option>
                            <option value="10">10</option>
                            <option value="11">11</option>
                            <option value="12">12</option>
@@ -286,7 +194,80 @@
                            <option value="26">26</option>
                            <option value="27">27</option>
                            <option value="28">28</option>
-                           <option value="29"selected>29</option>
+                           <option value="29">29</option>
+                           <option value="30">30</option>
+                           <option value="31">31</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="form-row">
+                     <div class="form-group col-sm-4">
+                        <label>챌린지 마감 연도</label>
+                        <select name="challengeEndYear" class="form-control">
+                           <option value="2020">2020</option>
+                           <option value="2021">2021</option>
+                           <option value="2022">2022</option>
+                           <option value="2023">2023</option>
+                           <option value="2024">2024</option>
+                           <option value="2025">2025</option>
+                           <option value="2026">2026</option>
+                           <option value="2027">2027</option>
+                           <option value="2028">2028</option>
+                           <option value="2029">2029</option>
+                           <option value="2030">2030</option>
+                           <option value="2031">2031</option>
+                           <option value="2032">2032</option>
+                        </select>
+                     </div>
+                     <div class="form-group col-sm-4">
+                        <label>마감 월</label>
+                        <select name="challengeEndMonth" class="form-control">
+                           <option value="1">01</option>
+                           <option value="2">02</option>
+                           <option value="3">03</option>
+                           <option value="4">04</option>
+                           <option value="5">05</option>
+                           <option value="6">06</option>
+                           <option value="7">07</option>
+                           <option value="8">08</option>
+                           <option value="9">09</option>
+                           <option value="10">10</option>
+                           <option value="11">11</option>
+                           <option value="12">12</option>
+                        </select>
+                     </div>
+                     <div class="form-group col-sm-4">
+                        <label>마감 일</label>
+                        <select name="challengeEndDay" class="form-control">
+                           <option value="1">01</option>
+                           <option value="2">02</option>
+                           <option value="3">03</option>
+                           <option value="4">04</option>
+                           <option value="5">05</option>
+                           <option value="6">06</option>
+                           <option value="7">07</option>
+                           <option value="8">08</option>
+                           <option value="9">09</option>
+                           <option value="10">10</option>
+                           <option value="11">11</option>
+                           <option value="12">12</option>
+                           <option value="13">13</option>
+                           <option value="14">14</option>
+                           <option value="15">15</option>
+                           <option value="16">16</option>
+                           <option value="17">17</option>
+                           <option value="18">18</option>
+                           <option value="19">19</option>
+                           <option value="20">20</option>
+                           <option value="21">21</option>
+                           <option value="22">22</option>
+                           <option value="23">23</option>
+                           <option value="24">24</option>
+                           <option value="25">25</option>
+                           <option value="26">26</option>
+                           <option value="27">27</option>
+                           <option value="28">28</option>
+                           <option value="29">29</option>
                            <option value="30">30</option>
                            <option value="31">31</option>
                         </select>
@@ -372,21 +353,55 @@
 								<label>{vo.file}</label>
 							</div>
 						</div>
-						<div class="form-row">
-							<div class="form-group col-sm-12">
-								<div class="graph stack1"><span style="width: 75%;">{vo.name}{vo.point} 75%</span></div>
-							</div>
-						</div>
-						<div class="form-row">
-							<div class="form-group col-sm-12">
-								<div class="graph stack2"><span style="width: 25%;">25%</span></div>
-							</div>
-						</div>
-						<div class="form-row">
-							<div class="form-group col-sm-12">
-								<div class="graph stack3"><span style="width: 60%;">60%</span></div>
-							</div>
-						</div>
+						
+						
+						<canvas id="myhorizChart" width="400" height="200"></canvas>
+
+							<script>
+							
+							var ctx = document.getElementById('myhorizChart');
+							var myhorizChart = new Chart(ctx, {
+								type: 'horizontalBar',
+								data: {
+									labels: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
+									datasets: [{
+										label: '# OOO챌린지',
+										data: [12, 18, 3, 5, 2, 3, 13],
+										backgroundColor: [
+											'rgba(255, 99, 132, 0.2)',
+											'rgba(54, 162, 235, 0.2)',
+											'rgba(255, 206, 86, 0.2)',
+											'rgba(75, 192, 192, 0.2)',
+											'rgba(153, 102, 255, 0.2)',
+											'rgba(255, 159, 64, 0.2)',
+											'rgba(153, 153, 153, 0.2)'
+										],
+										borderColor: [
+											'rgba(255, 99, 132, 1)',
+											'rgba(54, 162, 235, 1)',
+											'rgba(255, 206, 86, 1)',
+											'rgba(75, 192, 192, 1)',
+											'rgba(153, 102, 255, 1)',
+											'rgba(255, 159, 64, 1)',
+											'rgba(153, 153, 153, 1)'
+										],
+										borderWidth: 1
+									}]
+								},
+								options: {
+									responsive: false,
+									scales: {
+										xAxes: [{
+											ticks: {
+												beginAtZero: true
+											}
+										}]
+									},
+								}
+							});
+							</script>
+						
+						
 					<div class="modal-footer">
 				     	<input class="btn btn-warning" type="submit" onclick="joinClicked(event)" value="참여" style="color:white;">
 						<button type="button" class="btn btn-secondary"	data-dismiss="modal">닫기</button>
