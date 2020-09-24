@@ -2,7 +2,8 @@
     pageEncoding="EUC-KR"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<%  %>
+<%
+ %>
 
 <!DOCTYPE html>
 <HTML>
@@ -76,6 +77,39 @@ if(Notification.permission==="granted"){
 }
 </script>
 
+
+
+
+
+<!-- 요일 알람 -->
+<script>
+timepickerdialog = new TimePickerDialog(AddAlarmActivity.this,
+        new TimePickerDialog.OnTimeSetListener() {
+
+    @Override
+    public void onTimeSet(TimePicker view, int hourOfDay,
+                          int minute) {
+
+        Calendar ca = Calendar.getInstance();
+        ca.set(Calendar.HOUR_OF_DAY,hourOfDay);
+        ca.set(Calendar.MINUTE,minute);
+        ca.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
+        ca.set(Calendar.SECOND, 0);
+        ca.set(Calendar.MILLISECOND, 0);
+
+        AlarmManager alarmManager;
+        alarmManager = (AlarmManager) AddAlarmActivity.this.getSystemService(ALARM_SERVICE);
+        Intent intent;
+
+        intent = new Intent(AddAlarmActivity.this, AlarmReceiver.class);
+        pendingIntent = PendingIntent.getBroadcast(AddAlarmActivity.this, 0, intent, 0);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, ca.getTimeInMillis(), 1000*60*60*24, pendingIntent);
+    
+        calendar.add(Calendar. Date, 1);
+    }
+    };
+
+</script>
 
 </body>
 </html>
