@@ -120,7 +120,7 @@
 						</div>
 						<div class="form-row">
 							<div class="form-group col-sm-6">
-								<label>챌린지명</label> <input type="text" name="challengeName"
+								<label>챌린지ID</label> <input type="text" name="challengeID"
 									class="form-control" maxlength="20">
 							</div>
 						</div>

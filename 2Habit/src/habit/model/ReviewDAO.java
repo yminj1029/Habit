@@ -98,21 +98,21 @@ public class ReviewDAO {
 	}
 	
 	// 후기작성
-	public int reviewInsert(String reviewtitle, String reviewcontent, String reviewfile) {
-		ReviewVO vor = new ReviewVO();
+	public int reviewInsert(ReviewVO vo) {
 		conn = getConnect();
+		System.out.println(vo.getM_id());
 		System.out.println("dao는 들어갓는데 에스큐엘이 이상한듯?");
 		// MyBatis
-		String SQL = "insert into re values(REVIEW_SEQ.nextval,CHALLENGE_SEQ,?,?,?,?,?,?)";
+		String SQL = "insert into review values(REVIEW_SEQ.nextval,?,?,?,?,sysdate,?,?)";
 		int cnt = -1;// -1=실패의의미
 		try {
 			ps = conn.prepareStatement(SQL);
-			ps.setString(1, vor.getM_id());
-			ps.setString(2, vor.getR_title());
-			ps.setString(3, vor.getR_content());
-			ps.setString(4, vor.getR_date());
+			ps.setInt(1, vo.getCh_id());
+			ps.setString(2, vo.getM_id());
+			ps.setString(3, vo.getR_title());
+			ps.setString(4, vo.getR_content());
 			ps.setInt(5, 50);
-			ps.setString(6, vor.getR_file());
+			ps.setString(6, vo.getR_file());
 			cnt = ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -121,6 +121,8 @@ public class ReviewDAO {
 		}
 		return cnt;
 	}
+
+	
 
 
 	 
