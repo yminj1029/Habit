@@ -20,7 +20,8 @@
 <input type=text name=ch size=2>시<input type=text name=cm size=2>분 <input type=text name=cs size=2>초
 </form>
 
-<script>
+
+<script type="text/javascript">
 var alarmTimer = null;
 var alarmSet;
 function setAlarm()   { alarmSet = true;  }
@@ -43,31 +44,29 @@ function countTime() {
   document.exf1.cm.value = nowTime.getMinutes();
   document.exf1.cs.value = nowTime.getSeconds();
   if (matchH() && matchM() && matchS()) {
-    alert("뚜뚜뚜뚜...일어나세요... ");
+	  showNotification();
   }
 }
 onload=initAlarm;
 
-</script>
 
-<script type="text/javascript">
 /* notification */
 
 function showNotification(){
-	const notification = new Notification("New message from O&O", {
+	const notification = new Notification("New message from REBIT", {
 		body: "삐빅- 주먹쥐고 일어서! 오늘의 습관을 체크하세요",
-		icon: "https://127.0.0.1:8081/images/bada.jpg"
+		icon: "./images/rebitLogo.png"
 	});
 	notification.onclick=(e)=>{
-		window.location.href="https://google.com";
+		window.location.href="https://www.youtube.com/watch?v=2QLj17Hh1lA";
 	}
 }
 
 // default, granted, denied
 console.log(Notification.permission);
-
+// setAlarm 시간이 자동으로 되도록 연결! sysdate_dy.equals('vo.day')????? 알아서 알람 맞춰져야함..
 if(Notification.permission==="granted"){
-	showNotification();
+	setAlarm();
 }else if(Notification.permission!=="denied"){
 	Notification.requestPermission().time(permission=>{
 		if(permission==="granted"){
