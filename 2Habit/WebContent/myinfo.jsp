@@ -263,6 +263,7 @@ body{
 				      </div>
 				</div>
 			</div>
+			
 			<div class="panel panel-default">
 				<div class="panel-heading" role="tab" id="headingThree">
 				      <h4 class="panel-title">
@@ -275,6 +276,7 @@ body{
 				      </div>
 				</div>
 			</div>
+			
 			<div class="panel panel-default">
 				<div class="panel-heading" role="tab" id="headingFour">
 				      <h4 class="panel-title">
@@ -283,7 +285,7 @@ body{
 				</div>
 				<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
 				      <div class="panel-body">
-				      완료된 습관 챌린지
+				      <a data-toggle="modal" href="#viewpEndModal">vo.ch_name</a>
 				      </div>
 				</div>
 			</div>
@@ -532,6 +534,45 @@ body{
 								<span class="text-right" style="color: green;">추천: 15★</span>
 							</div>
 						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary"
+								data-dismiss="modal">취소</button>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- 완료 습관 챌린지  -->
+
+<div class="modal fade" id="viewpEndModal" tabindex="-1" role="dialog"
+		aria-labelledby="modal" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modal">완료 챌린지 모음_{vo.ch_name}</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+						<div class="form-row">
+							<div class="form-group col-sm-8">
+								<label>챌린지명1</label>&emsp;&emsp;&emsp;<label>{vo.ch_name}</label>>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-sm-8">
+								<label>챌린지명2</label>&emsp;&emsp;&emsp;<label>{vo.ch_name}</label>>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-sm-8">
+								<label>챌린지명3</label>&emsp;&emsp;&emsp;<label>{vo.ch_name}</label>>
+							</div>
+						</div>
+						
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary"
 								data-dismiss="modal">취소</button>

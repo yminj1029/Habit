@@ -533,15 +533,13 @@ body{
 					var m_id=0;
 					if(!confirm('챌린지 등록을 완료하시겠습니까?')){
 						e.preventDefault();
-						
-						
 					}else{
 						confirmed(e);
 						return m_id;
 					}
 					}
 		function confirmed(e){
-					return alert('챌린지 등록 완료!')	
+					return alert('챌린지 등록 완료!')			
 				}
 </script>
 
