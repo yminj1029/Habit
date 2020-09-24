@@ -149,15 +149,15 @@
                      <div class="form-group col-sm-4">
                         <label>시작 월</label>
                         <select name="challengeStartMonth" class="form-control">
-                           <option value="1">1</option>
-                           <option value="2">2</option>
-                           <option value="3">3</option>
-                           <option value="4">4</option>
-                           <option value="5">5</option>
-                           <option value="6">6</option>
-                           <option value="7">7</option>
-                           <option value="8">8</option>
-                           <option value="9">9</option>
+                           <option value="1">01</option>
+                           <option value="2">02</option>
+                           <option value="3">03</option>
+                           <option value="4">04</option>
+                           <option value="5">05</option>
+                           <option value="6">06</option>
+                           <option value="7">07</option>
+                           <option value="8">08</option>
+                           <option value="9">09</option>
                            <option value="10">10</option>
                            <option value="11">11</option>
                            <option value="12">12</option>
@@ -166,15 +166,15 @@
                      <div class="form-group col-sm-4">
                         <label>시작 일</label>
                         <select name="challengeStartDay" class="form-control">
-                           <option value="1">1</option>
-                           <option value="2">2</option>
-                           <option value="3">3</option>
-                           <option value="4">4</option>
-                           <option value="5">5</option>
-                           <option value="6">6</option>
-                           <option value="7">7</option>
-                           <option value="8">8</option>
-                           <option value="9">9</option>
+                           <option value="1">01</option>
+                           <option value="2">02</option>
+                           <option value="3">03</option>
+                           <option value="4">04</option>
+                           <option value="5">05</option>
+                           <option value="6">06</option>
+                           <option value="7">07</option>
+                           <option value="8">08</option>
+                           <option value="9">09</option>
                            <option value="10">10</option>
                            <option value="11">11</option>
                            <option value="12">12</option>
@@ -222,15 +222,15 @@
                      <div class="form-group col-sm-4">
                         <label>마감 월</label>
                         <select name="challengeEndMonth" class="form-control">
-                           <option value="1">1</option>
-                           <option value="2">2</option>
-                           <option value="3">3</option>
-                           <option value="4">4</option>
-                           <option value="5">5</option>
-                           <option value="6">6</option>
-                           <option value="7">7</option>
-                           <option value="8">8</option>
-                           <option value="9">9</option>
+                           <option value="1">01</option>
+                           <option value="2">02</option>
+                           <option value="3">03</option>
+                           <option value="4">04</option>
+                           <option value="5">05</option>
+                           <option value="6">06</option>
+                           <option value="7">07</option>
+                           <option value="8">08</option>
+                           <option value="9">09</option>
                            <option value="10">10</option>
                            <option value="11">11</option>
                            <option value="12">12</option>
@@ -239,15 +239,15 @@
                      <div class="form-group col-sm-4">
                         <label>마감 일</label>
                         <select name="challengeEndDay" class="form-control">
-                           <option value="1">1</option>
-                           <option value="2">2</option>
-                           <option value="3">3</option>
-                           <option value="4">4</option>
-                           <option value="5">5</option>
-                           <option value="6">6</option>
-                           <option value="7">7</option>
-                           <option value="8">8</option>
-                           <option value="9">9</option>
+                           <option value="1">01</option>
+                           <option value="2">02</option>
+                           <option value="3">03</option>
+                           <option value="4">04</option>
+                           <option value="5">05</option>
+                           <option value="6">06</option>
+                           <option value="7">07</option>
+                           <option value="8">08</option>
+                           <option value="9">09</option>
                            <option value="10">10</option>
                            <option value="11">11</option>
                            <option value="12">12</option>
