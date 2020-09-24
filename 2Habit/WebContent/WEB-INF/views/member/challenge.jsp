@@ -131,7 +131,7 @@
 						<div class="form-group col-sm-4">
                         <label>챌린지 시작 연도</label>
                         <select name="challengeStartYear" class="form-control">
-                           <option value="2020" selected>2020</option>
+                           <option value="2020">2020</option>
                            <option value="2021">2021</option>
                            <option value="2022">2022</option>
                            <option value="2023">2023</option>
@@ -157,7 +157,7 @@
                            <option value="6">6</option>
                            <option value="7">7</option>
                            <option value="8">8</option>
-                           <option value="9" selected>9</option>
+                           <option value="9">9</option>
                            <option value="10">10</option>
                            <option value="11">11</option>
                            <option value="12">12</option>
@@ -193,7 +193,7 @@
                            <option value="25">25</option>
                            <option value="26">26</option>
                            <option value="27">27</option>
-                           <option value="28" selected>28</option>
+                           <option value="28">28</option>
                            <option value="29">29</option>
                            <option value="30">30</option>
                            <option value="31">31</option>
@@ -204,7 +204,7 @@
                      <div class="form-group col-sm-4">
                         <label>챌린지 마감 연도</label>
                         <select name="challengeEndYear" class="form-control">
-                           <option value="2020" selected>2020</option>
+                           <option value="2020">2020</option>
                            <option value="2021">2021</option>
                            <option value="2022">2022</option>
                            <option value="2023">2023</option>
@@ -230,7 +230,7 @@
                            <option value="6">6</option>
                            <option value="7">7</option>
                            <option value="8">8</option>
-                           <option value="9" selected>9</option>
+                           <option value="9">9</option>
                            <option value="10">10</option>
                            <option value="11">11</option>
                            <option value="12">12</option>
@@ -267,7 +267,7 @@
                            <option value="26">26</option>
                            <option value="27">27</option>
                            <option value="28">28</option>
-                           <option value="29"selected>29</option>
+                           <option value="29">29</option>
                            <option value="30">30</option>
                            <option value="31">31</option>
                         </select>

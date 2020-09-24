@@ -51,21 +51,23 @@ public class ChallengeDAO {
 	public int challengeInsert(ChallengeVO vo) {
 		conn = getConnect();
 		// MyBatis
-		String SQL = "insert into challenge values(seq_num.nextval,?,?,?,?,?,?,?,?,?)";
+		System.out.println("안녕!" +vo.getStartdate());
+		String SQL = "insert into challenge values(challenge_seq.nextval,?,?,?,?,?,?,?,?,?)";
 		int cnt = -1;// -1=실패의의미
 		try {
 			ps = conn.prepareStatement(SQL);
 			ps.setString(1, vo.getM_id());
 			ps.setString(2, vo.getCh_name());
 			ps.setInt(3, vo.getNum());
-			ps.setString(4, vo.getStartdate());
-			ps.setString(5, vo.getEnddate());
-			ps.setString(6, vo.getCh_content());
-			ps.setString(7, vo.getCh_file());
-			ps.setString(8, vo.getCh_day());
-			ps.setString(9, vo.getAlarm());
+			ps.setString(4, vo.getCh_day());
+			ps.setString(5, vo.getStartdate());
+			ps.setString(6, vo.getEnddate());
+			ps.setString(7, vo.getCh_content());
+			ps.setString(8, vo.getAlarm());
+			ps.setString(9, vo.getCh_file());
 			cnt = ps.executeUpdate();
 		} catch (Exception e) {
+			System.out.println("sql");
 			e.printStackTrace();
 		} finally {
 			dbClose();

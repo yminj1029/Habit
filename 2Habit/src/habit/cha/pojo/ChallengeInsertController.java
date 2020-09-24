@@ -32,18 +32,19 @@ public class ChallengeInsertController implements InterController{
 		String alarm = request.getParameter("alarmHour");
 	
 		System.out.println(m_id);
+		System.out.println(ch_startdate);
 		System.out.println(ch_enddate);
 		
 		ChallengeVO vo = new ChallengeVO();
 		vo.setM_id(m_id);
 		vo.setCh_name(ch_name);
 		vo.setNum(num);
-		vo.setStartdate(ch_startdate);
-		vo.setStartdate(ch_enddate);
-		vo.setCh_content(ch_content);
-		vo.setCh_file(ch_file);
 		vo.setCh_day(ch_day);
+		vo.setStartdate(ch_startdate);
+		vo.setEnddate(ch_enddate);
+		vo.setCh_content(ch_content);
 		vo.setAlarm(alarm);
+		vo.setCh_file(ch_file);
 		
 		
 		ChallengeDAO dao = new ChallengeDAO();
