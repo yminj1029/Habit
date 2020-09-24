@@ -50,7 +50,6 @@ public class ReviewDAO {
 	//전체 리뷰보기
 	public ArrayList<ReviewVO> reviewboard() {
 
-		System.out.println("dao의 문제람다");
 		ArrayList<ReviewVO> list = new ArrayList<ReviewVO>();
 		conn = getConnect();
 		String sql = "select r_id, m_id, r_title, r_content, r_date from reviews order by r_id desc";
@@ -100,8 +99,6 @@ public class ReviewDAO {
 	// 후기작성
 	public int reviewInsert(ReviewVO vo) {
 		conn = getConnect();
-		System.out.println(vo.getM_id());
-		System.out.println("dao는 들어갓는데 에스큐엘이 이상한듯?");
 		// MyBatis
 		String SQL = "insert into review values(REVIEW_SEQ.nextval,?,?,?,?,sysdate,?,?)";
 		int cnt = -1;// -1=실패의의미

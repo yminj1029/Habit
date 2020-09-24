@@ -21,20 +21,20 @@ public class Member2VO {
 	
 	
 	
-	public Member2VO(String m_id, String pw) {
+	public Member2VO(String m_id, String nickname, String name, String tel, String gender, String job, String email,
+			String habit, int point) {
 		super();
 		this.m_id = m_id;
-		this.pw = pw;
-	}
-
-	public Member2VO(String m_id, String name, String nickname, String tel, String gender, String email) {
-		this.m_id = m_id;
-		this.name = name;
 		this.nickname = nickname;
+		this.name = name;
 		this.tel = tel;
 		this.gender = gender;
+		this.job = job;
 		this.email = email;
+		this.habit = habit;
+		this.point = point;
 	}
+
 
 	public Member2VO(String m_id, String nickname, String pw, String name, String tel, String gender, String job,
 			String email, String habit, int point) {
@@ -50,6 +50,37 @@ public class Member2VO {
 		this.habit = habit;
 		this.point = point;
 	}
+
+
+	public Member2VO(String m_id, String nickname, String name, String tel, String gender, String job, String email,
+			int point) {
+		super();
+		this.m_id = m_id;
+		this.nickname = nickname;
+		this.name = name;
+		this.tel = tel;
+		this.gender = gender;
+		this.job = job;
+		this.email = email;
+		this.point = point;
+	}
+
+	public Member2VO(String m_id, String pw) {
+		super();
+		this.m_id = m_id;
+		this.pw = pw;
+	}
+
+	public Member2VO(String m_id, String name, String nickname, String tel, String gender, String email) {
+		this.m_id = m_id;
+		this.name = name;
+		this.nickname = nickname;
+		this.tel = tel;
+		this.gender = gender;
+		this.email = email;
+	}
+
+	
 
 	public Member2VO(String h_name, String ch_name, String mr_result, String chr_result) {
 		super();

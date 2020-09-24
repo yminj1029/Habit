@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cpath" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,8 +75,9 @@ body{
 				href="#profileModal">프로필사진</a>
 				</div>
 				<div class="square content">
-					<h5>{vo.nickname} 님,</h5>
-					<h6>{vo.email}</h6>
+					<h5>${vo.nickname} 님, 오늘도 화이팅!</h5>
+					<h6>당신의 포인트 점수는...!!! : ${vo.point}</h6>
+					<h6>${vo.email}</h6>
 					<a class="btn btn-secondary mx-1 mt-2" data-toggle="modal" href="#memberInfo">회원정보 수정</a>
 				</div>
 				</div>
@@ -98,47 +101,42 @@ body{
 				<div class="modal-body">
 					<div class="form-row">
 						<div class="form-group col-sm-6">
-							<label>{vo.m_id}</label>
+							<label>${vo.m_id}</label>
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-sm-6">
-							<label>{vo.pw}</label>
+							<label>${vo.name}</label>
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-sm-6">
-							<label>{vo.name}</label>
-						</div>
-					</div>
-					<div class="form-row">
-						<div class="form-group col-sm-6">
-                        <label>{vo.nickname}</label>
+                        <label>${vo.nickname}</label>
                      </div>
                   	</div>
 					<div class="form-row">
 						<div class="form-group col-sm-4">
-							<label>{vo.tel}</label>
+							<label>${vo.tel}</label>
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-sm-4">
-							<label>{vo.gender}</label>
+							<label>${vo.gender}</label>
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-sm-4">
-							<label>{vo.job}</label>
+							<label>${vo.job}</label>
 						</div>
 					</div>
 						<div class="form-row">
 						<div class="form-group col-sm-4">
-							<label>{vo.email}</label>
+							<label>${vo.email}</label>
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-sm-4">
-							<label>{vo.category}</label>
+							<label>${vo.habit}</label>
 						</div>
 					</div>
 					<div class="modal-footer">
@@ -162,30 +160,30 @@ body{
 					</button>
 				</div>
 				<div class="modal-body">
-					<form action="./myinfo.jsp" method="get">
+					<form action="infoupdate.do" method="get">
 						<div class="form-row">
 						<div class="form-group col-sm-6">
-							<label>{vo.m_id}</label>
+							<label>${vo.m_id}</label>
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-sm-6">
-							<input type="text" name="membership_pw" id="membership_pw" value="" placeholder="{pw}" />
+							<input type="text" name="pw" id="pw" value="pw" placeholder="${pw}" />
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-sm-6">
-							<input type="text" name="membership_name" id="membership_name" value="" placeholder="{vo.name}" />
+							<input type="text" name="name" id="name" value="${vo.name}" placeholder="${vo.name}" />
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-sm-6">
-                        <input type="text" name="membership_nick" id="membership_nick" value="" placeholder="{vo.nickname}" />
+                        <input type="text" name="nick" id="nick" value="" placeholder="${vo.nickname}" />
                      </div>
                   	</div>
 					<div class="form-row">
 						<div class="form-group col-sm-4">
-							<input type="text" name="membership_tel" id="membership_tel" value="" placeholder="{vo.tel}" />
+							<input type="text" name="tel" id="tel" value="" placeholder="${vo.tel}" />
 						</div>
 					</div>
 					<div class="form-row">
@@ -196,29 +194,29 @@ body{
 						<div class="form-group col-sm-6">
 					<div class="custom-control custom-radio">
 						<span>
-								<input type="radio" name="jb-radio" id="jb-radio-1" class="custom-control-input">
-								<label class="custom-control-label" for="jb-radio-1">남자&emsp;&emsp;&emsp;</label>
+								<input type="radio" name="gender" id="male" class="custom-control-input">
+								<label class="custom-control-label" for="male">남자&emsp;&emsp;&emsp;</label>
 						</span>
 						<span>
-								<input type="radio" name="jb-radio" id="jb-radio-2" class="custom-control-input">
-								<label class="custom-control-label" for="jb-radio-2">여자</label>
+								<input type="radio" name="gender" id="female" class="custom-control-input">
+								<label class="custom-control-label" for="female">여자</label>
 								</span>
 						</div>
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-sm-4">
-							<input type="text" name="membership_job" id="membership_job" value="" placeholder="{vo.job}" />
+							<input type="text" name="job" id="job" value="" placeholder="${vo.job}" />
 						</div>
 					</div>
 						<div class="form-row">
 						<div class="form-group col-sm-4">
-							<input type="text" name="membership_email" id="membership_email" value="" placeholder="{vo.email}" />
+							<input type="text" name="email" id="email" value="" placeholder="${vo.email}" />
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-sm-4">
-							<input type="text" name="membership_category" id="membership_category" value="" placeholder="{vo.category}" />
+							<input type="text" name="habit" id="habit" value="" placeholder="${vo.habit}" />
 						</div>
 					</div>
 						<div class="modal-footer">

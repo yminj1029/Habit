@@ -7,6 +7,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import habit.model.Member2VO;
 import habit.model.Member2DAO;
@@ -17,10 +18,10 @@ public class Member2MyInfoController implements InterController {
 	@Override
 	public String requestHandle(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String m_id = request.getParameter("m_id");
+		HttpSession session = request.getSession();
+		String m_id = (String) session.getAttribute("userID");
 		Member2DAO dao = new Member2DAO();
-		ArrayList<Member2VO> vo = dao.member2Mypage(m_id);
-		//memberContent.jsp·Î º¸³»±ë
+		Member2VO vo = dao.member2Content(m_id);
 		request.setAttribute("vo", vo);
 		
 		return "/member/myinfo.jsp";

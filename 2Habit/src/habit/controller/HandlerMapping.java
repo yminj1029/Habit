@@ -31,6 +31,7 @@ public class HandlerMapping {
 		mappings.put("/membermain.do", new MemberMainController());
 		mappings.put("/myhabit.do", new MyHabitFrontController());
 		mappings.put("/myhabitwrite.do", new MyHabitProduceController());
+		mappings.put("/infoupdate.do", new Member2UpdateController());
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
