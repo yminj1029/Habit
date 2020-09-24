@@ -87,15 +87,18 @@ body{
 	<div class="list" align="center">
 	<!-- 테이블을 포문으로 돌려서 DB에 들어있는 수만큼 나타내기 -->
 		
+		
+		<a class="btn btn-primary mx-1 mt-2" data-toggle="modal"
+				href="#newHabit">새 습관 등록</a><br><br>
 		<table>
-		<tr>
-		<td><a class="btn btn-primary mx-1 mt-2" data-toggle="modal"
-				href="#newHabit">등록하기</a></td></tr>
-			<a href="javascript:view('viewcode');">물마시기</a>
+		<a href="javascript:view('viewcode');">물마시기</a>
 			<tr id="viewcode" style="display: none;">
-				<td>Start : 20/09/01</br>
-				End : 20/10/01</br>
+				<td>Start : 2020.09.01</br>
+				End : 2020.10.01</br>
 				Alarm : 15:00</td>
+				<td><form action="./myhabit.jsp" method="get">
+				<input class="btn btn-warning" type="submit" onclick="newHabit(event)" value="습관체크" style="color:white;">
+				</form></td>
 				</tr>
 		</table>
 				<table>
@@ -288,8 +291,11 @@ body{
 									class="form-control" maxlength="50" placeholder="예) SUN/M/T/W/TH/F/SAT">
 							</div>
 							<div class="form-group col-sm-6">
-								<label>알람 시간 (24시 단위)</label> <input type="text" name="alarmHour"
-									class="form-control" maxlength="50" placeholder="예) 7/12/16/19/22/24">
+							<form name=exf1>
+								<B>알람설정 :</B>
+									<input type=text name=h size=2>시  <input type=text name=m size=2> 분 <input type=text name=s size=2>초 
+									<input type=button name=b onclick=setAlarm() value="Set Alarm"><input type=button name=r onclick=clearAlarm() value="Turn Alarm Off"><BR>
+							</form>
 							</div>
 						</div>
 						<div class="modal-footer">
