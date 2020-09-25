@@ -47,7 +47,7 @@ public class MyHabitDAO {
 			System.out.println("dao까지 접근?");
 			try {
 				getConnect();
-				String sql = "insert into my_habit values(MY_HABIT_SEQ.nextval,?,?,?,to_char(startdate, 'YYYY-MM-DD'),to_char(enddate, 'YYYY-MM-DD'),to_char(alarm, 'HH:MM:SS'))";
+				String sql = "insert into my_habit values(MY_HABIT_SEQ.nextval,?,?,?,?,?,?)";
 				ps = conn.prepareStatement(sql);
 				ps.setString(1, m_id);
 				ps.setString(2, h_name);
@@ -91,4 +91,33 @@ public class MyHabitDAO {
 			}
 			return list;
 		}
+		
+		//myhabit 리스트 
+		public ArrayList<MyHabitVO> myhabitList(String m_id) {
+
+			ArrayList<MyHabitVO> list = new ArrayList<MyHabitVO>();
+			String sql = "select * from my_habit where m_id= ?";
+			try {
+				getConnect();
+				ps = conn.prepareStatement(sql);
+				ps.setString(1, m_id);
+				rs = ps.executeQuery();
+				while (rs.next()) {
+					int h_id = rs.getInt("h_id");
+					System.out.println(h_id);
+					m_id = rs.getString("m_id");
+					String h_name = rs.getString("h_name");
+					String h_day = rs.getString("h_day");
+					String h_startdate = rs.getString("h_startdate");
+					String h_enddate = rs.getString("h_enddate");
+					String h_alarm = rs.getString("h_alarm");
+					MyHabitVO vo = new MyHabitVO(h_id, m_id, h_name,h_day, h_startdate, h_enddate, h_alarm);
+					list.add(vo);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return list;
+		}
 }
+

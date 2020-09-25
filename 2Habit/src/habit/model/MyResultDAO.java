@@ -47,7 +47,7 @@ public class MyResultDAO {
 	}
 
 	//나의 습관 보기
-	public ArrayList<MyResultVO> member2Mypage(String m_id) {
+	public ArrayList<MyResultVO> myHabitFront(String m_id) {
 
 		ArrayList<MyResultVO> list = new ArrayList<MyResultVO>();
 		String sql = "select mr_date, mr_result from my_result where m_id= ?";

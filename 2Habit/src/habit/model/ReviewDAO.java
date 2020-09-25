@@ -52,7 +52,7 @@ public class ReviewDAO {
 
 		ArrayList<ReviewVO> list = new ArrayList<ReviewVO>();
 		conn = getConnect();
-		String sql = "select * from review";
+		String sql = "select * from review order by r_id desc";
 		try {
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
