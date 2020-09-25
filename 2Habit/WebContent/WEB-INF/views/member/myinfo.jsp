@@ -243,7 +243,7 @@ body{
 				</div>
 				<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 				      <div class="panel-body">
-				      	<a data-toggle="modal" href="#myChall">vo.ch_id</a>
+				      	<a data-toggle="modal" href="#myChall">{vo.ch_id}</a>
 				      </div>
 				</div>
 			</div>
@@ -265,26 +265,14 @@ body{
 			<div class="panel panel-default">
 				<div class="panel-heading" role="tab" id="headingThree">
 				      <h4 class="panel-title">
-				        <a class="btn btn-info mx-1 mt-2" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+				        <a class="btn btn-info mx-1 mt-2" data-toggle="collapse" data-parent="#accordion" href="#viewpReviewModal">
 				          나의 후기 모아보기</a></h4>
 				</div>
 				<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 				      <div class="panel-body">
-				      <a data-toggle="modal" href="#viewpReviewModal">vo.r_id</a>
+				      <a data-toggle="modal" href="#viewpReviewModal">.r_title}</a>
 				      </div>
-				</div>
-			</div>
-			
-			<div class="panel panel-default">
-				<div class="panel-heading" role="tab" id="headingFour">
-				      <h4 class="panel-title">
-				        <a class="btn btn-secondary mx-1 mt-2" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-				          엔딩 크레딧</a></h4>
-				</div>
-				<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-				      <div class="panel-body">
-				      <a data-toggle="modal" href="#viewpEndModal">vo.ch_name</a>
-				      </div>
+				
 				</div>
 			</div>
 		</div>

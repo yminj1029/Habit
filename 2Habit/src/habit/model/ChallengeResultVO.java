@@ -3,13 +3,26 @@ package habit.model;
 public class ChallengeResultVO {
 	//속성을 만들자!!!!
 	
-	//private int ch_id; 
-	//private int chm_id; 
-	//private int prf_id;
+	private int ch_id; 
+	private int chm_id; 
+	private int prf_id;
 	private String ch_name;
 	private String startdate;
 	private String enddate;
 	private String chr_result;
+	
+	
+	public ChallengeResultVO(int ch_id, int chm_id, int prf_id, String ch_name, String startdate, String enddate,
+			String chr_result) {
+		super();
+		this.ch_id = ch_id;
+		this.chm_id = chm_id;
+		this.prf_id = prf_id;
+		this.ch_name = ch_name;
+		this.startdate = startdate;
+		this.enddate = enddate;
+		this.chr_result = chr_result;
+	}
 	public ChallengeResultVO(String ch_name, String startdate, String enddate, String chr_result) {
 		super();
 		this.ch_name = ch_name;

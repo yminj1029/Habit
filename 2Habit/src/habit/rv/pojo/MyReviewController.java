@@ -1,35 +1,33 @@
-package habit.mem.pojo;
+package habit.rv.pojo;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import habit.model.Member2VO;
+import habit.mem.pojo.InterController;
 import habit.model.ReviewDAO;
 import habit.model.ReviewVO;
-import habit.model.Member2DAO;
 
-
-public class Member2MyInfoController implements InterController {
+public class MyReviewController implements InterController{
 
 	@Override
 	public String requestHandle(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		ReviewDAO dao = new ReviewDAO();
+		String cpath = request.getContextPath();
 		HttpSession session = request.getSession();
-		String m_id = (String) session.getAttribute("userID");
-		Member2DAO dao = new Member2DAO();
-		Member2VO vo = dao.member2Content(m_id);
-		request.setAttribute("vo", vo);
 		
-		ReviewDAO daoR = new ReviewDAO();
-		ArrayList<ReviewVO> list2 = daoR.myReview(m_id);
-		System.out.println(list2);
+		String m_id = (String) session.getAttribute("userID");
+		System.out.println(m_id);
+		
+		ArrayList<ReviewVO> list = dao.myReview(m_id);
+		request.setAttribute("list", list);
+		System.out.println("list·Î¹­¿´½¿´ç!");
 		return "/member/myinfo.jsp";
 	}
-	
+
 }

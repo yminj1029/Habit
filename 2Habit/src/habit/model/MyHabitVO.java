@@ -21,6 +21,12 @@ public class MyHabitVO {
 		this.h_enddate = h_enddate;
 		this.h_alarm = h_alarm;
 	}
+	public int getH_id() {
+		return h_id;
+	}
+	public void setH_id(int h_id) {
+		this.h_id = h_id;
+	}
 	public MyHabitVO(int h_id, String m_id, String h_name, String h_day, String h_startdate, String h_enddate,
 			String h_alarm) {
 		super();

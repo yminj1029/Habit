@@ -15,6 +15,22 @@ public class ReviewVO {
 
 
 
+	public ReviewVO(int r_id, String m_id, String r_title, String r_content, String r_date, int r_point,
+			String r_file) {
+		super();
+		this.r_id = r_id;
+		this.m_id = m_id;
+		this.r_title = r_title;
+		this.r_content = r_content;
+		this.r_date = r_date;
+		this.r_point = r_point;
+		this.r_file = r_file;
+	}
+
+
+
+
+
 	public ReviewVO(int r_id, String m_id, String r_title, String r_content, String r_date) {
 		super();
 		this.r_id = r_id;

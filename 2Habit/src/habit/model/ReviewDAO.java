@@ -149,5 +149,34 @@ public class ReviewDAO {
 	  }
 
 
+	 //자기가 쓴 후기 목록 보기, 클릭하면 자세한 내용 나오기 : myinfo.jsp에 나와야함!
+	 
+	 public ArrayList<ReviewVO> myReview(String m_id) {
+			ArrayList<ReviewVO> list = new ArrayList<ReviewVO>();
+			conn = getConnect();
+			System.out.println("sql?");
+			String sql = "select * from review where m_id=? order by r_id desc";
+			try {
+				ps = conn.prepareStatement(sql);
+				ps.setString(1, m_id);
+				rs = ps.executeQuery();
+				while (rs.next()) {
+					int r_id= rs.getInt("r_id");
+				    m_id = rs.getString("m_id");
+					String r_title = rs.getString("r_title");
+					String r_content = rs.getString("r_content");
+					String r_date = rs.getString("r_date");
+					int r_point=rs.getInt("r_point"); 
+					String r_file=rs.getString("r_file");
+					ReviewVO vo = new ReviewVO(r_id, m_id, r_title, r_content, r_date, r_point, r_file);
+					list.add(vo);
+				}
+			} catch (SQLException e) {
+				System.out.println("sql문장 살펴보기");
+				e.printStackTrace();
+			}
+			return list;
+		}
+		
 	 
 }
