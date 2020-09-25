@@ -243,7 +243,7 @@ body{
 				</div>
 				<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 				      <div class="panel-body">
-				      	<a data-toggle="modal" href="#myChall">{vo.ch_id}</a>
+				      	<a data-toggle="modal" href="#myChall">물 1.5L 마시기</a>
 				      </div>
 				</div>
 			</div>
@@ -265,7 +265,7 @@ body{
 			<div class="panel panel-default">
 				<div class="panel-heading" role="tab" id="headingThree">
 				      <h4 class="panel-title">
-				        <a class="btn btn-info mx-1 mt-2" data-toggle="collapse" data-parent="#accordion" href="#viewpReviewModal">
+				        <a class="btn btn-info mx-1 mt-2" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 				          나의 후기 모아보기</a></h4>
 				</div>
 				<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
@@ -275,6 +275,7 @@ body{
 				
 				</div>
 			</div>
+	
 		</div>
 	</div>
 </section>			
@@ -285,7 +286,7 @@ body{
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="modal">{vo.ch_name}</h5>
+					<h5 class="modal-title" id="modal">물 1.5L 마시기</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -295,33 +296,22 @@ body{
 			<form action="./myinfo.jsp" method="get">
 						<div class="form-row">
 							<div class="form-group col-sm-6">
-								<label>방장닉네임</label> <label>{vo.nickname}</label>
+								<label>방장닉네임</label> <label> ymj </label>
 							</div>
 						</div>
 					<div class="form-row">
 						<div class="form-group col-sm-6">
-                        <label>{vo.startDate}-{vo.endDate}</label>
+                        <label>START : 2020-09-25 </label><label>END : 2021-09-25</label>
                      </div>
                   	</div>
 					<div class="form-row">
 						<div class="form-group col-sm-4">
-							<label>{vo.num}</label>
+							<label>6</label>
 						</div>
 					</div>
 						<div class="form-group">
-							<div>{vo.ch_content}</div>
+							<div>물 1.5L 마시기는 건강과 피부미용에 좋습니다.</div>
 						</div>
-						<div class="form-row">
-							<div class="form-group col-sm-6">
-							<div>{vo.alarm_days}{vo.alarm_hour}</div>
-							</div>
-						</div>
-						<div class="form-row">
-							<div class="form-group col-sm-6">
-								<label>{vo.file}</label>
-							</div>
-						</div>
-						
 						
 						<canvas id="myhorizChart" width="400" height="200"></canvas>
 							<script>
@@ -329,9 +319,9 @@ body{
 							var myhorizChart = new Chart(ctx, {
 								type: 'horizontalBar',
 								data: {
-									labels: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
+									labels: ['ymj', 'bhs', 'aaj', 'but', 'gri', 'jhw'],
 									datasets: [{
-										label: '# OOO챌린지',
+										label: '물 1.5L 마시기',
 										data: [12, 18, 3, 5, 2, 3, 13],
 										backgroundColor: [
 											'rgba(255, 99, 132, 0.2)',
@@ -340,7 +330,6 @@ body{
 											'rgba(75, 192, 192, 0.2)',
 											'rgba(153, 102, 255, 0.2)',
 											'rgba(255, 159, 64, 0.2)',
-											'rgba(153, 153, 153, 0.2)'
 										],
 										borderColor: [
 											'rgba(255, 99, 132, 1)',
@@ -349,7 +338,6 @@ body{
 											'rgba(75, 192, 192, 1)',
 											'rgba(153, 102, 255, 1)',
 											'rgba(255, 159, 64, 1)',
-											'rgba(153, 153, 153, 1)'
 										],
 										borderWidth: 1
 									}]
