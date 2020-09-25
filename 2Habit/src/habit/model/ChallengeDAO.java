@@ -96,7 +96,9 @@ public class ChallengeDAO {
 	//챌린지 게시판 내용을 수정해보자!!!
 	public int ChallengeUpdate(ChallengeVO vo) {
 		conn=getConnect();
-		String SQL = "update challenge set ch_name=?, num=?, startdate=?, enddate=?, ch_content=?, ch_file=? h_day=?, alarm=?, where ch_id=?, m_id=?";
+		String SQL = "update challenge set ch_name=?, num=?, to_char(startdate, 'YYYY-MM-DD'), "
+				+ "to_char(enddate, 'YYYY-MM-DD'), ch_content=?, ch_file=? h_day=?, to_char(alarm, 'HH:MM:SS'), "
+				+ "where ch_id=?, m_id=?";
 		int cnt=-1;
 		try {
 			ps.setString(1, vo.getCh_name());
@@ -124,7 +126,8 @@ public class ChallengeDAO {
 	public ArrayList<ChallengeVO> challengeSeach(String search) {
 
 		ArrayList<ChallengeVO> list = new ArrayList<ChallengeVO>();
-		String sql = "select * from challenge where ch_name=?";
+		String sql = "select ch_name, num, to_char(startdate, 'YYYY-MM-DD'), to_char(enddate, 'YYYY-MM-DD'), "
+				+ "ch_content, to_char(alarm, 'HH:MM:SS') from challenge where ch_name=?";
 		try {
 			getConnect();
 			ps = conn.prepareStatement(sql);
@@ -152,7 +155,8 @@ public class ChallengeDAO {
 	public ArrayList<ChallengeVO> ChallengeAllList() {
 		ArrayList<ChallengeVO> list = new ArrayList<ChallengeVO>();
 		conn = getConnect();
-		String SQL="select * from challenge";
+		String SQL="select ch_id, m_id, ch_name, num, ch_day, to_char(startdate, 'YYYY-MM-DD'), "
+				+ "to_char(enddate, 'YYYY-MM-DD'), ch_content, to_char(alarm, 'HH:MM:SS'), ch_file from challenge";
 		try {
 			ps=conn.prepareStatement(SQL);
 			rs = ps.executeQuery();  //rs는 커서. 커서는 뒤로 한칸씩 이동해가면서 있으면 오고, 없으면 빠져나옴.

@@ -47,7 +47,7 @@ public class MyHabitDAO {
 			System.out.println("dao까지 접근?");
 			try {
 				getConnect();
-				String sql = "insert into my_habit values(MY_HABIT_SEQ.nextval,?,?,?,?,?,?)";
+				String sql = "insert into my_habit values(MY_HABIT_SEQ.nextval,?,?,?,to_char(startdate, 'YYYY-MM-DD'),to_char(enddate, 'YYYY-MM-DD'),to_char(alarm, 'HH:MM:SS'))";
 				ps = conn.prepareStatement(sql);
 				ps.setString(1, m_id);
 				ps.setString(2, h_name);
