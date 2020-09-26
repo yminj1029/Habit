@@ -69,19 +69,27 @@ public class MyResultDAO {
 		return list;
 		
 	}
-		   public int myResult(int h_id, String m_id) {
+//나의 결과가 들어옴
+	public int myResult(int h_id, String m_id) {
 				int cnt = 0;
 				try {
 					System.out.println("여기 ~ ~");
 					conn = getConnect();
-					String sql1 = "insert into my_result values(?,my_result_seq.nextval,?,sysdate,?,?)";
+					String sql1= "select * from my_result where h_id=? and m_id=? and to_char(mr_date,'YYYYMMDD')=to_char(sysdate,'YYYYMMDD')";
 					ps = conn.prepareStatement(sql1);
-					 
-					ps.setInt(1, h_id); // pw
-					ps.setString(2, m_id); // 핸드폰
-					ps.setString(3, "달성");
-					ps.setInt(4, 10);
-					cnt = ps.executeUpdate();
+					ps.setInt(1, h_id);
+					ps.setString(2, m_id);
+					rs = ps.executeQuery();
+					if(!rs.next()) {
+						sql1 = "insert into my_result values(?,my_result_seq.nextval,?,sysdate,?,?)";
+						ps = conn.prepareStatement(sql1);
+						 
+						ps.setInt(1, h_id); // pw
+						ps.setString(2, m_id); // 핸드폰
+						ps.setString(3, "달성");
+						ps.setInt(4, 500);
+						cnt = ps.executeUpdate();
+					}
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
@@ -89,10 +97,66 @@ public class MyResultDAO {
 				return cnt;
 			}
 		
-
+		   
+		   //포인트 증가시키기!!!
+		   public int Point(String m_id, String mr_date) {
+			   int point = 0;
+			   String sql = "select * from my_result where m_id=? and to_char(mr_date, 'YYYYMMDD')=?";
+			   try {
+				   conn= getConnect();
+					ps = conn.prepareStatement(sql);
+					ps.setString(1, m_id);
+					ps.setString(2, mr_date);
+					rs = ps.executeQuery();
+					
+					while (rs.next()) {
+						point += 50;
+					}
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			   
+			return point;
+		   }
 	
-	
-	
-	
+		   public int Bunmo(String m_id, String mr_date) {
+			   int bunmo =0;
+			   String sql = "select distinct h_id from my_result where m_id=?";
+			   try {
+				   conn= getConnect();
+					ps = conn.prepareStatement(sql);
+					ps.setString(1, m_id);
+					ps.setString(2, mr_date);
+					rs = ps.executeQuery();
+					
+					while (rs.next()) {
+						bunmo++;
+					}
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			   
+			return bunmo;
+		   }
+		   
+		   public int Bunja(String m_id, String mr_date) {
+			   int bunja =0;
+			   String sql = "select * from my_result where m_id=? and to_char(mr_date, 'YYYYMMDD')=?";
+			   try {
+				   conn= getConnect();
+					ps = conn.prepareStatement(sql);
+					ps.setString(1, m_id);
+					ps.setString(2, mr_date);
+					rs = ps.executeQuery();
+					
+					while (rs.next()) {
+						bunja++;
+					}
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			   
+			return bunja;
+		   }
 	
 }

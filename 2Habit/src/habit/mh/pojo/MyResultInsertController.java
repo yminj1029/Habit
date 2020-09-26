@@ -29,7 +29,8 @@ public class MyResultInsertController implements InterController{
 			System.out.println("성공!!");
 			page="redirect:"+cpath+"/myhabit.do";
 		}else {
-			throw new ServletException("error");
+			System.out.println("실패");
+			page="redirect:"+cpath+"/myhabit.do";
 		}
 		return page;
 	}
