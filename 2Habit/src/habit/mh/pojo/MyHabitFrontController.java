@@ -25,10 +25,10 @@ public class MyHabitFrontController implements InterController{
 		HttpSession session = request.getSession();
 		
 		String m_id = (String) session.getAttribute("userID");
-		System.out.println(m_id);
+		//System.out.println(m_id);
 		MyHabitDAO dao = new MyHabitDAO();
 		ArrayList<MyHabitVO> list = dao.myhabitList(m_id);
-		System.out.println(list);
+		//System.out.println(list);
 		request.setAttribute("list", list);
 			return "/member/myhabit.jsp";
 	}

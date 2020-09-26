@@ -104,7 +104,7 @@ public class MyHabitDAO {
 				rs = ps.executeQuery();
 				while (rs.next()) {
 					int h_id = rs.getInt("h_id");
-					System.out.println(h_id);
+				//	System.out.println(h_id);
 					m_id = rs.getString("m_id");
 					String h_name = rs.getString("h_name");
 					String h_day = rs.getString("h_day");

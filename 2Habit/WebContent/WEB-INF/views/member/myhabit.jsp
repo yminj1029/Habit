@@ -2,6 +2,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+String j = "01";
+String k = "02";
+String l = "03";
+String m = "04";
+String n = "05";
+String o = "06";
+String p = "07";
+String q = "08";
+String r = "09";
+
+
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -189,7 +202,8 @@ body {
 			</c:forEach>
 		</table>
 		</div>
-
+		
+		
 
 		<!-- 새습관 등록하기 -->
 		<div class="modal fade" id="newHabit" tabindex="-1" role="dialog"
@@ -204,6 +218,8 @@ body {
 						</button>
 					</div>
 					<form action="myhabitwrite.do" method="post">
+					
+
 						<div class="modal-body">
 							<div class="form-row">
 								<div class="form-group col-sm-6">
@@ -233,18 +249,18 @@ body {
 									</select>
 								</div>
 								<div class="form-group col-sm-4">
-									<label>시작 월</label> <select name="habitStartMonth"
-										class="form-control">
+									<label>시작 월</label> 
+									<select name="habitStartMonth" class="form-control">
 										<option value="선택" selected>선택</option>
-										<option value="1">01</option>
-										<option value="2">02</option>
-										<option value="3">03</option>
-										<option value="4">04</option>
-										<option value="5">05</option>
-										<option value="6">06</option>
-										<option value="7">07</option>
-										<option value="8">08</option>
-										<option value="9">09</option>
+										<option value="<%= j%>">01</option>
+										<option value="<%= k%>">02</option>
+										<option value="<%= l%>">03</option>
+										<option value="<%= m%>">04</option>
+										<option value="<%= n%>">05</option>
+										<option value="<%= o%>">06</option>
+										<option value="<%= p%>">07</option>
+										<option value="<%= q%>">08</option>
+										<option value="<%= r%>">09</option>
 										<option value="10">10</option>
 										<option value="11">11</option>
 										<option value="12">12</option>
@@ -254,15 +270,15 @@ body {
 									<label>시작 일</label> <select name="habitStartDay"
 										class="form-control">
 										<option value="선택" selected>선택</option>
-										<option value="1">01</option>
-										<option value="2">02</option>
-										<option value="3">03</option>
-										<option value="4">04</option>
-										<option value="5">05</option>
-										<option value="6">06</option>
-										<option value="7">07</option>
-										<option value="8">08</option>
-										<option value="9">09</option>
+										<option value="<%= j%>">01</option>
+										<option value="<%= k%>">02</option>
+										<option value="<%= l%>">03</option>
+										<option value="<%= m%>">04</option>
+										<option value="<%= n%>">05</option>
+										<option value="<%= o%>">06</option>
+										<option value="<%= p%>">07</option>
+										<option value="<%= q%>">08</option>
+										<option value="<%= r%>">09</option>
 										<option value="10">10</option>
 										<option value="11">11</option>
 										<option value="12">12</option>
@@ -312,15 +328,15 @@ body {
 									<label>마감 월</label> <select name="habitEndMonth"
 										class="form-control">
 										<option value="선택" selected>선택</option>
-										<option value="1">01</option>
-										<option value="2">02</option>
-										<option value="3">03</option>
-										<option value="4">04</option>
-										<option value="5">05</option>
-										<option value="6">06</option>
-										<option value="7">07</option>
-										<option value="8">08</option>
-										<option value="9">09</option>
+										<option value="<%= j%>">01</option>
+										<option value="<%= k%>">02</option>
+										<option value="<%= l%>">03</option>
+										<option value="<%= m%>">04</option>
+										<option value="<%= n%>">05</option>
+										<option value="<%= o%>">06</option>
+										<option value="<%= p%>">07</option>
+										<option value="<%= q%>">08</option>
+										<option value="<%= r%>">09</option>
 										<option value="10">10</option>
 										<option value="11">11</option>
 										<option value="12">12</option>
@@ -330,15 +346,15 @@ body {
 									<label>마감 일</label> <select name="habitEndDay"
 										class="form-control">
 										<option value="선택" selected>선택</option>
-										<option value="1">01</option>
-										<option value="2">02</option>
-										<option value="3">03</option>
-										<option value="4">04</option>
-										<option value="5">05</option>
-										<option value="6">06</option>
-										<option value="7">07</option>
-										<option value="8">08</option>
-										<option value="9">09</option>
+										<option value="<%= j%>">01</option>
+										<option value="<%= k%>">02</option>
+										<option value="<%= l%>">03</option>
+										<option value="<%= m%>">04</option>
+										<option value="<%= n%>">05</option>
+										<option value="<%= o%>">06</option>
+										<option value="<%= p%>">07</option>
+										<option value="<%= q%>">08</option>
+										<option value="<%= r%>">09</option>
 										<option value="10">10</option>
 										<option value="11">11</option>
 										<option value="12">12</option>

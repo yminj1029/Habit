@@ -26,11 +26,12 @@ public class MyHabitProduceController implements InterController{
 		String h_enddate = request.getParameter("habitEndYear")+request.getParameter("habitEndMonth")+request.getParameter("habitEndDay");
 		String h_day = request.getParameter("alarmDays");
 		String h_alarm = request.getParameter("off");
-		System.out.println(m_id);
-		System.out.println(h_name);
+	//	System.out.println(m_id);
+	//	System.out.println(h_name);
 		System.out.println(h_startdate);
-		System.out.println(h_day);
-		System.out.println(h_alarm);
+		System.out.println(h_enddate);
+	//	System.out.println(h_day);
+	//	System.out.println(h_alarm);
 		MyHabitVO vo = new MyHabitVO();
 		vo.setM_id(m_id);
 		vo.setH_name(h_name);
