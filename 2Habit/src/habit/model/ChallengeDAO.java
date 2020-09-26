@@ -180,7 +180,34 @@ public class ChallengeDAO {
 	}
 
 
-	
+	 public ChallengeVO challengeContent(int ch_id) { 
+		 ChallengeVO vo=null; 
+		 conn=getConnect(); 
+		 String SQL = "select * from challenge where ch_id=?";
+	  
+	  try { 
+		  ps=conn.prepareStatement(SQL); 
+		  ps.setInt(1, ch_id);
+	  rs=ps.executeQuery();
+	  
+	  if(rs.next()) {
+		  ch_id = rs.getInt("ch_id");
+		  String m_id=rs.getString("m_id"); 
+		  String ch_name=rs.getString("ch_name"); 
+		  int num=rs.getInt("num");
+		  String ch_day=rs.getString("ch_day");
+		  String startdate=rs.getString("startdate");
+		  String enddate=rs.getString("enddate");
+		  String ch_content=rs.getString("ch_content");
+		  String ch_file=rs.getString("ch_file");
+		  vo=new ChallengeVO(ch_id, m_id, ch_name, num, ch_day, startdate, enddate, ch_content, ch_file);
+		  } 
+	  } catch (Exception e) { e.printStackTrace(); 
+	  }finally {
+	  dbClose(); 
+	  } 
+	  return vo; 
+	  }
 	
 	
 }

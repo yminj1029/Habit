@@ -176,8 +176,10 @@ body {
 						<input type=button name=b onclick=setAlarm() value="Set Alarm"><input type=button name=r onclick=clearAlarm() value="Turn Alarm Off"><BR>
 						<input type=hidden name=ch size=2><input type=hidden name=cm size=2><input type=hidden name=cs size=2>
 					</form>
-					
-						<li><input class="btn btn-warning" type="submit" onclick="" value="습관체크" style="color:white;"></li>
+					<form action="myresult.do" >
+						<input type ="hidden" name="h_id" value="${vo.h_id}">
+						<li><input class="btn btn-warning" type="submit" onclick="joinClicked(event)" value="습관체크" style="color:white;"></li>
+					</form>
 					</ul>
 						
 						
@@ -613,6 +615,18 @@ body {
 		}
 		function confirmed(e) {
 			return alert('습관 등록 완료!')
+		}
+		function joinClicked(e){
+			var m_id=0;
+			if(!confirm('체크하시겠습니까?')){
+				e.preventDefault();
+			}else{
+				joined(e);
+				return m_id;
+			}
+			}
+		function joined(e){
+			return alert('역시! 오늘도 해낼 줄 알았어요!')			
 		}
 	</script>
 

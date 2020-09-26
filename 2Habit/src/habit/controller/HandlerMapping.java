@@ -6,11 +6,13 @@ import habit.rv.pojo.ReviewListController;
 import habit.rv.pojo.MyReviewController;
 import habit.rv.pojo.ReviewContenetController;
 import habit.rv.pojo.ReviewInsertController;
+import habit.cha.pojo.ChallengeContenetController;
 import habit.cha.pojo.ChallengeInsertController;
 import habit.cha.pojo.ChallengeListController;
 import habit.mem.pojo.*;
 import habit.mh.pojo.MyHabitFrontController;
 import habit.mh.pojo.MyHabitProduceController;
+import habit.mh.pojo.MyResultInsertController;
 
 public class HandlerMapping {
 	private HashMap<String, InterController> mappings;
@@ -36,6 +38,8 @@ public class HandlerMapping {
 		mappings.put("/infoupdate.do", new Member2UpdateController());
 		mappings.put("/reviewcontent.do", new ReviewContenetController());
 		mappings.put("/myreview.do", new MyReviewController());
+		mappings.put("/myresult.do", new MyResultInsertController());
+		mappings.put("/challengecontent.do", new ChallengeContenetController());
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

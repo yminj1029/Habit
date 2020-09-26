@@ -83,19 +83,18 @@
 			<div class="card-header bg-light">
 				<div class="row">
 					<div class="col-8 text-left">
-						여기는 ${vo.ch_name} &nbsp;<small>${vo.num}</small>
+						 <small>${vo.ch_id}</small> ${vo.ch_name} &nbsp;
 					</div>
 					<div class="col-4 text-right"><a class="btn btn-secondary" data-toggle="modal"
-							href="#challViewModal">자세히</a></div>
+							onclick="joinClicked(event)">참여</a></div>
 				</div>
 			</div>
 			<div class="card-body">
 				<p class="card-text">
-					<span>${vo.startdate}</span>
-					<span>${vo.enddate}</span>
-				</p>
-				<p class="card-text">${vo.ch_content}</p>
-				<p class="card-text">${vo.alarm}</p>
+					<span>START : ${vo.startdate}</span>
+					<br><span>END : ${vo.enddate}</span>
+					<br><span>정원수 : ${vo.num}</span>
+				<br><p class="card-text">${vo.ch_content}</p>
 			</div>
 
 		</div>
@@ -318,42 +317,39 @@
 <!-- 챌린지 구성원보기 -->
 	<div class="modal fade" id="challViewModal" tabindex="-1" role="dialog"
 		aria-labelledby="modal" aria-hidden="true">
+			<form action="challengecontent.do" method="get">
+<input type ="hidden" name="h_id" value="${vo.ch_id}">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="modal">{vo.ch_name}</h5>
+					<h5 class="modal-title" id="modal">${vo.ch_name}</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-			<form action="./challenge.jsp?" method="get">
 						<div class="form-row">
 							<div class="form-group col-sm-6">
-								<label>방장닉네임</label> <label>{vo.nickname}</label>
+								<label>방장닉네임</label> <label>${vo.m_id}</label>
 							</div>
 						</div>
 					<div class="form-row">
 						<div class="form-group col-sm-6">
-                        <label>{vo.startDate}-{vo.endDate}</label>
+                        <label>${vo.startdate}-${vo.enddate}</label>
                      </div>
                   	</div>
 					<div class="form-row">
 						<div class="form-group col-sm-4">
-							<label>{vo.num}</label>
+							<label>${vo.num}</label>
 						</div>
 					</div>
 						<div class="form-group">
-							<div>{vo.ch_content}</div>
+							<div>${vo.ch_content}</div>
 						</div>
+						
 						<div class="form-row">
 							<div class="form-group col-sm-6">
-							<div>{vo.alarm_days}{vo.alarm_hour}</div>
-							</div>
-						</div>
-						<div class="form-row">
-							<div class="form-group col-sm-6">
-								<label>{vo.file}</label>
+								<label>${vo.file}</label>
 							</div>
 						</div>
 						
@@ -404,17 +400,16 @@
 							});
 							</script>
 						
-						
+						</form>
 					<div class="modal-footer">
 				     	<input class="btn btn-warning" type="submit" onclick="joinClicked(event)" value="참여" style="color:white;">
 						<button type="button" class="btn btn-secondary"	data-dismiss="modal">닫기</button>
 					</div>
-			</form>
 				</div>
 			</div>
 		</div>
 	</div>
-	
+
 
 </header>
 

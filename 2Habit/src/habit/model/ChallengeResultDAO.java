@@ -66,5 +66,27 @@ public class ChallengeResultDAO {
 			return list;
 
 		}
+		
+		//challnegeresult DAO
+		   public int ChallengeResult(int h_id, String m_id) {
+				int cnt = 0;
+				try {
+					System.out.println("여기 ~ ~");
+					conn = getConnect();
+					String sql1 = "insert into my_result values(?,my_result_seq.nextval,?,sysdate,?,?)";
+					ps = conn.prepareStatement(sql1);
+					 
+					ps.setInt(1, h_id); // pw
+					ps.setString(2, m_id); // 핸드폰
+					ps.setString(3, "달성");
+					ps.setInt(4, 10);
+					cnt = ps.executeUpdate();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+
+				return cnt;
+			}
+		
 
 }
