@@ -67,6 +67,8 @@ public class ReviewDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally {
+			dbClose();
 		}
 		return list;
 	}
@@ -92,6 +94,8 @@ public class ReviewDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally {
+			dbClose();
 		}
 		return list;
 	}
@@ -174,6 +178,8 @@ public class ReviewDAO {
 			} catch (SQLException e) {
 				System.out.println("sql문장 살펴보기");
 				e.printStackTrace();
+			}finally {
+				dbClose();
 			}
 			return list;
 		}

@@ -143,6 +143,8 @@ public class ChallengeDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally {
+			dbClose();
 		}
 		return list;
 	}

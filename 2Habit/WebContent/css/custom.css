@@ -116,9 +116,9 @@ body{
 	text-aligh: center;
 	float: left;
 	margin: 10px 20px;
-	padding: 50px;
-	
+	align-items: center;
 }
+
 
 .square.content{
 	width: 650px ;

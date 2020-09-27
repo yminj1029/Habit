@@ -129,7 +129,7 @@ public class MyResultDAO {
 		   
 	
 		   public int Bunmo(String m_id) {
-			   int bunmo =0;
+			   int bunmo =1;
 			   String sql = "select distinct h_id from my_result where m_id=?";
 			   try {
 				   conn= getConnect();
@@ -142,9 +142,7 @@ public class MyResultDAO {
 					}
 				} catch (SQLException e) {
 					e.printStackTrace();
-				} finally {
-					dbClose();
-				}
+				} 
 			   
 			return bunmo;
 		   }
@@ -164,9 +162,7 @@ public class MyResultDAO {
 					}
 				} catch (SQLException e) {
 					e.printStackTrace();
-				} finally {
-					dbClose();
-				}
+				} 
 			   
 			return bunja;
 		   }

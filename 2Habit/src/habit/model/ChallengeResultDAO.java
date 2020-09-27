@@ -62,6 +62,8 @@ public class ChallengeResultDAO {
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
+			}finally {
+				dbClose();
 			}
 			return list;
 
@@ -83,6 +85,8 @@ public class ChallengeResultDAO {
 					cnt = ps.executeUpdate();
 				} catch (SQLException e) {
 					e.printStackTrace();
+				}finally {
+					dbClose();
 				}
 
 				return cnt;

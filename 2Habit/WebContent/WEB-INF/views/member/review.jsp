@@ -77,7 +77,7 @@
 		<div class="card bg-light mt-3">
 			<div class="card-header bg-light">
 				<div class="row">
-					<div class="col-8 text-left">
+					<div class="col-8 text-left" style="font-weight:bold; font-size:1.3rem;">
 						여기는 ${vo.r_title} &nbsp;<small>${vo.m_id}</small>
 					</div>
 					<div class="col-4 text-right">

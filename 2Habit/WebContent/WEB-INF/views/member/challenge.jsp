@@ -82,10 +82,10 @@
 		<div class="card bg-light mt-3">
 			<div class="card-header bg-light">
 				<div class="row">
-					<div class="col-8 text-left">
+					<div class="col-8 text-left" style="font-weight:bold; font-size:1.3rem;">
 						 <small>${vo.ch_id}</small> ${vo.ch_name} &nbsp;
 					</div>
-					<div class="col-4 text-right"><a class="btn btn-secondary" data-toggle="modal"
+					<div class="col-4 text-right"><a class="btn btn-danger" data-toggle="modal"
 							onclick="joinClicked(event)">참여</a></div>
 				</div>
 			</div>

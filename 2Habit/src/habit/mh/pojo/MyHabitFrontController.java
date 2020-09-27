@@ -39,7 +39,7 @@ public class MyHabitFrontController implements InterController{
 	          for(int i=20200924; i <= 20200930; i++) {
 	               String mr_date = Integer.toString(i);
 	               int bunja = dao2.Bunja(m_id, mr_date);
-	               sb1.append(dao2.percent(bunja, bunmo));
+	               sb1.append(bunja/bunmo*100);
 	               sb1.append(",");
 	            }
 	         request.setAttribute("list3", sb1.toString());
@@ -53,9 +53,9 @@ public class MyHabitFrontController implements InterController{
 	                   sb2.append(",");
 //	                   count++;
 	                }
-//	         for (int i = 0; i < point.length; i++) {
-//				System.out.println(i+1 +"ÀÏÀº"+point[i]);
-//			}
+	     
+//				System.out.println(sb2);
+			
 	         request.setAttribute("list2", sb2.toString());    
 	         
 			return "/member/myhabit.jsp";

@@ -71,8 +71,8 @@ body{
 			<div class="jumbotron">
 				<h1>회원정보</h1>
 				<div class="container2">
-				<div class="square profile"><a class="btn btn-secondary mx-1 mt-2" data-toggle="modal"
-				href="#profileModal">프로필사진</a>
+				<div class="square profile">
+					<img class="lion" src="./images/O&O_Logo.png" style="max-width: 250px; max-height: 250px;">
 				</div>
 				<div class="square content">
 					<h5>${vo.nickname} 님, 오늘도 화이팅!</h5>

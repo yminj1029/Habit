@@ -122,9 +122,9 @@ body {
 
 /* notification */
 	function showNotification(){
-		const notification = new Notification("New message from REBIT", {
-			body: "삐빅- 주먹쥐고 일어서! 오늘의 습관을 체크하세요",
-			icon: "./images/rebitLogo.png"
+		const notification = new Notification("오늘도 O&O해요!", {
+			body: "삐빅- 오늘도 해낸 당신에게!",
+			icon: "./images/O&O_Logo.png"
 		});
 		notification.onclick=(e)=>{
 			window.location.href="https://www.youtube.com/watch?v=2QLj17Hh1lA";
@@ -179,29 +179,60 @@ body {
 					<details>
 		
 					<summary>${vo.h_name}</summary>
-						
+					
+					<div class="form-group col-sm-12">	
 					<ul>
 						<li>Start : ${vo.h_startdate}</li>
 						<li>End : ${vo.h_enddate}</li>
-						<form name=exf1>
-						<B>알람설정 :</B>
-						<input type=text name=h size=2>시  <input type=text name=m size=2> 분 <input type=text name=s size=2>초 
-						<input type=button name=b onclick=setAlarm() value="Set Alarm"><input type=button name=r onclick=clearAlarm() value="Turn Alarm Off"><BR>
-						<input type=hidden name=ch size=2><input type=hidden name=cm size=2><input type=hidden name=cs size=2>
-					</form>
-					<form action="myresult.do" >
-						<input type ="hidden" name="h_id" value="${vo.h_id}">
-						<li><input class="btn btn-warning" type="button" onclick="joinClicked(event)" value="습관체크" style="color:white;"></li>
-					</form>
 					</ul>
-						
-						
+					</div>
+					<div class="form-group col-sm-12" align="center">	
+					<div class="form-row" align="center">
+						&emsp;&emsp;<a class="btn btn-success mx-1 mt-2" data-toggle="modal" href="#newAlarm">알람등록</a>
+						<form action="myresult.do" >
+							<input type ="hidden" name="h_id" value="${vo.h_id}">
+							<input class="btn btn-warning mx-1 mt-2" type="button" onclick="joinClicked(event)" value="습관체크" style="color:white;"></form>
+					</div>
+					</div>						
 					</details>
 					
 				
 			</c:forEach>
 		</table>
 		</div>
+		
+		
+		<!-- 알람 등록하기 -->
+		<div class="modal fade" id="newAlarm" tabindex="-1" role="dialog"
+			aria-labelledby="modal" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modal">알람등록</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+						<div class="modal-body">
+							<div class="form-group col-sm-6">
+							<form name=exf1>
+								<B>알람설정</B>
+								<input type=text name=h size=2>시  <input type=text name=m size=2> 분 <input type=text name=s size=2>초 <br>
+								<input type=button name=r onclick=clearAlarm() value="Turn Alarm Off"><BR>
+								<input type=hidden name=ch size=2><input type=hidden name=cm size=2><input type=hidden name=cs size=2>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<input class="btn btn-warning" type=button name=b onclick=setAlarm() value="알람실행" style="color: white;" data-dismiss="modal">
+								<button type="button" class="btn btn-secondary"
+									data-dismiss="modal">취소</button>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		
 		
 		
 
