@@ -2,6 +2,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+String j = "01";
+String k = "02";
+String l = "03";
+String m = "04";
+String n = "05";
+String o = "06";
+String p = "07";
+String q = "08";
+String r = "09";
+
+
+%>
 <!DOCTYPE html>
 <html>
 <head>
