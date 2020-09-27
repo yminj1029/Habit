@@ -158,7 +158,7 @@ body {
 				href="#newHabit">새 습관 등록</a><br>
 			<br>
 		<table>
-			<c:forEach var="vo" items="${list}">
+			<c:forEach var="vo" items="${list1}">
 				
 					<%-- <tr>
 						<td>
@@ -544,23 +544,29 @@ body {
 			</script>
 		</div>
 
-		<!-- 그래프 -->
+			<!-- 그래프 -->
 		<div class="graph">
-			<br />
-			<br />
 			<br />
 			<br />
 			<canvas id="mylineChart" width="700" height="500"></canvas>
 			<script>
+			
+				let temp = '${list2}'.split(',');
+				let list3 = '${list3}'.split(',');
+				
+				console.log(temp);
+				
+			
 				var ctx = document.getElementById('mylineChart');
 				var mylineChart = new Chart(ctx, {
 					type : 'line',
 					data : {
-						labels : [ '일요일', '월요일', '화요일', '수요일', '목요일', '금요일',
-								'토요일' ],
+						labels : [ '1', '2', '3', '4', '5', '6',
+								'7','8','9','10','11','12','13','14','15','16','17','18',
+								'19','20','21','22','23','24','25','26','27','28','29','30'],
 						datasets : [ {
-							label : '# 주간 습관',
-							data : [ 12, 18, 3, 5, 2, 3, 13 ],
+							label : '# 한달 습관',
+							data : temp,
 							backgroundColor : 'rgba(102, 102, 204, 0.2)',
 							borderColor : 'rgba(000, 000, 102, 1)',
 							borderWidth : 1,
@@ -572,16 +578,18 @@ body {
 						scales : {
 							yAxes : [ {
 								ticks : {
-									beginAtZero : true
+									beginAtZero : true,
+									max: 500,
+									fontSize : 14,
 								}
 							} ]
 						},
 					}
 				});
+				
 			</script>
 		</div>
-
-		<!-- 주간 그래프 -->
+			<!-- 주간 그래프 -->
 
 
 
@@ -593,11 +601,11 @@ body {
 				var myChart = new Chart(ctx, {
 					type : 'bar',
 					data : {
-						labels : [ '일요일', '월요일', '화요일', '수요일', '목요일', '금요일',
-								'토요일' ],
+						labels : [ '목요일', '금요일', '토요일', '일요일', '월요일', '화요일',
+								'수요일' ],
 						datasets : [ {
 							label : '# 주간 습관',
-							data : [ 12, 18, 3, 5, 2, 3, 13 ],
+							data : list3,
 							backgroundColor : [ 'rgba(255, 99, 132, 0.2)',
 									'rgba(54, 162, 235, 0.2)',
 									'rgba(255, 206, 86, 0.2)',

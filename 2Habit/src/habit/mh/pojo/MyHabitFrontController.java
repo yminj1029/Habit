@@ -31,32 +31,32 @@ public class MyHabitFrontController implements InterController{
 		request.setAttribute("list1", list);
 	
 		// 일주일치를 막대 그래프로 뽑아보깅
-		 int[] percent = new int[7];
+		// int[] percent = new int[7];
+			StringBuilder sb1 = new StringBuilder();
 	        MyResultDAO dao2 = new MyResultDAO();
-        int num = 0;
-	     
+     
 	        int bunmo = dao2.Bunmo(m_id);
-	          for(int i=20200920; i <= 20200926; i++) {
+	          for(int i=20200924; i <= 20200930; i++) {
 	               String mr_date = Integer.toString(i);
 	               int bunja = dao2.Bunja(m_id, mr_date);
-	              percent[num] = bunja/bunmo*100;
-	               num++;
-	               System.out.println(num);
+	               sb1.append(dao2.percent(bunja, bunmo));
+	               sb1.append(",");
 	            }
-	         request.setAttribute("list2", percent);
+	         request.setAttribute("list3", sb1.toString());
 	         	         
 	        //한달치 포인트를 계속 누적하면서 꺽은선 그래프를 그려보깅.
-	          int[] point = new int[30];
-	          int count=0;
+//	          int[] point = new int[30];
+	         	StringBuilder sb2 = new StringBuilder();
 	          for(int i =20200901; i <= 20200930; i++) {
 	                   String mr_date = Integer.toString(i);
-	                   point[count] = dao2.Point(m_id, mr_date);
-	                   count++;
+	                   sb2.append(dao2.Point(m_id, mr_date));
+	                   sb2.append(",");
+//	                   count++;
 	                }
-	         for (int i = 0; i < point.length; i++) {
-				System.out.println(i+1 +"일은"+point[i]);
-			}
-	         request.setAttribute("list3", point);    
+//	         for (int i = 0; i < point.length; i++) {
+//				System.out.println(i+1 +"일은"+point[i]);
+//			}
+	         request.setAttribute("list2", sb2.toString());    
 	         
 			return "/member/myhabit.jsp";
 	}
