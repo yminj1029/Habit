@@ -75,9 +75,10 @@ body{
 					<img class="lion" src="./images/O&O_Logo.png" style="max-width: 250px; max-height: 250px;">
 				</div>
 				<div class="square content">
-					<h5>${vo.nickname} 님, 오늘도 화이팅!</h5>
-					<h6>당신의 포인트 점수는...!!! : ${vo.point}</h6>
-					<h6>${vo.email}</h6>
+					<h3>${vo.nickname} 님,</h3>
+					<h5>하루 한걸음씩!! 화이팅!! O&O가 당신과 함께 합니다</h5>
+					<h5>NAME : ${vo.m_id}</h5>
+					<h5>E-MAIL : ${vo.email}</h5>
 					<a class="btn btn-secondary mx-1 mt-2" data-toggle="modal" href="#memberInfo">회원정보 수정</a>
 				</div>
 				</div>
@@ -243,7 +244,7 @@ body{
 				</div>
 				<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 				      <div class="panel-body">
-				      	<a data-toggle="modal" href="#myChall">물 1.5L 마시기</a>
+				      	<a data-toggle="modal" href="#myChall">아침밥 챙겨먹읍시당!! </a>
 				      </div>
 				</div>
 			</div>
@@ -286,7 +287,7 @@ body{
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="modal">물 1.5L 마시기</h5>
+					<h5 class="modal-title" id="modal">아침밥 챙겨먹읍시당!!</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -306,11 +307,11 @@ body{
                   	</div>
 					<div class="form-row">
 						<div class="form-group col-sm-4">
-							<label>6</label>
+							<label>10</label>
 						</div>
 					</div>
 						<div class="form-group">
-							<div>물 1.5L 마시기는 건강과 피부미용에 좋습니다.</div>
+							<div>아침밥을 챙겨먹고 나옵시다!</div>
 						</div>
 						
 						<canvas id="myhorizChart" width="400" height="200"></canvas>
@@ -321,8 +322,8 @@ body{
 								data: {
 									labels: ['ymj', 'bhs', 'aaj', 'but', 'gri', 'jhw'],
 									datasets: [{
-										label: '물 1.5L 마시기',
-										data: [12, 18, 3, 5, 2, 3, 13],
+										label: '아침밥을 챙겨먹읍시당!!',
+										data: [12, 9, 3, 5, 2, 3, 13],
 										backgroundColor: [
 											'rgba(255, 99, 132, 0.2)',
 											'rgba(54, 162, 235, 0.2)',
@@ -358,60 +359,10 @@ body{
 						
 						
 					<div class="modal-footer">
-						<a class="btn btn-warning" data-toggle="modal" href="#proofModal" data-dismiss="modal" style="color:white;">인증하기</a>
+						<a class="btn btn-warning" data-toggle="modal" onclick="newProof(event)" href="#proofModal" data-dismiss="modal" style="color:white;">인증하기</a>
 						<button type="button" class="btn btn-secondary"	data-dismiss="modal">닫기</button>
 					</div>
 			</form>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-<!-- 챌린지 인증하기 -->
-	<div class="modal fade" id="proofModal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="modal">챌린지 인증</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<form action="./myinfo.jsp" method="get">
-						<div class="form-row">
-							<div class="form-group col-sm-6">
-								<label>인증 제목</label> <input type="text" name="challengeName"
-									class="form-control" maxlength="20">
-							</div>
-						</div>
-						<div class="form-row">
-							<div class="form-group col-sm-12">
-                        		<label>인증 날짜</label>&emsp;&emsp;&emsp;<label>prf_date</label>
-                     		</div>
-                   		</div>
-		                <div class="form-row">
-		                   <div class="form-group col-sm-12">
-		                   		<label>챌린지 기간</label>&emsp;&emsp;&emsp;<label>vo.ch_startDate + ch_endDate</label>
-		                   </div>
-		                </div>
-						<div class="form-group">
-							<label>내용</label>
-							<textarea type="text" name="content"
-								class="form-control" maxlength="2048" style="height: 180px;"></textarea>
-						</div>
-						<div class="form-row">
-							<div class="form-group col-sm-6">
-								<label>첨부파일</label><input type="text" name="file"
-									class="form-control" maxlength="20">
-							</div>
-						</div>
-						<div class="modal-footer">
-							<input class="btn btn-warning" type="submit" onclick="newProof(event)" value="인증완료" style="color:white;">
-							<a class="btn btn-secondary mx-1 mt-2" data-toggle="modal" href="#challViewModal" data-dismiss="modal">취소</a>
-						</div>
-					</form>
 				</div>
 			</div>
 		</div>
