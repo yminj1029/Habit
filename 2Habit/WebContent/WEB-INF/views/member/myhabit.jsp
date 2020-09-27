@@ -191,7 +191,7 @@ body {
 					</form>
 					<form action="myresult.do" >
 						<input type ="hidden" name="h_id" value="${vo.h_id}">
-						<li><input class="btn btn-warning" type="submit" onclick="joinClicked(event)" value="습관체크" style="color:white;"></li>
+						<li><input class="btn btn-warning" type="button" onclick="joinClicked(event)" value="습관체크" style="color:white;"></li>
 					</form>
 					</ul>
 						
@@ -470,11 +470,14 @@ body {
 					$("#cal_top_month").text(month);
 					for (var i = firstDay.getDay(); i < firstDay.getDay()
 							+ lastDay.getDate(); i++) {
+						$tdDay.eq(i).css('background-color','white');
 						$tdDay.eq(i).text(++dayCount);
 					}
+					//일요일
 					for (var i = 0; i < 42; i += 7) {
 						$tdDay.eq(i).css("color", "red");
 					}
+					//토요일
 					for (var i = 6; i < 42; i += 7) {
 						$tdDay.eq(i).css("color", "blue");
 					}
@@ -506,18 +509,45 @@ body {
 				}
 
 				function getNewInfo() {
+										
 					for (var i = 0; i < 42; i++) {
 						$tdDay.eq(i).text("");
 					}
 					dayCount = 0;
 					firstDay = new Date(year, month - 1, 1);
 					lastDay = new Date(year, month, 0);
+					
 					drawDays();
+				}
+				
+				function drawRegisterDays(re_month, re_day) {
+					$("#cal_top_year").text(year);
+					$("#cal_top_month").text(month);
+					
+					for (var i = firstDay.getDay(); i < firstDay.getDay() + lastDay.getDate(); i++) {
+						if(month === re_month && ++dayCount === re_day){
+							$tdDay.eq(i).text(dayCount).css('background-color','limegreen');
+						}else{						
+							$tdDay.eq(i).text(dayCount);
+						}
+					}
+					
+					//일요일
+					for (var i = 0; i < 42; i += 7) {
+						$tdDay.eq(i).css("color", "red");
+					}
+					//토요일
+					for (var i = 6; i < 42; i += 7) {
+						$tdDay.eq(i).css("color", "blue");
+					}
 				}
 			</script>
 		</div>
-	<!-- 그래프 -->
+
+		<!-- 그래프 -->
 		<div class="graph">
+			<br />
+			<br />
 			<br />
 			<br />
 			<canvas id="mylineChart" width="700" height="500"></canvas>
@@ -526,12 +556,11 @@ body {
 				var mylineChart = new Chart(ctx, {
 					type : 'line',
 					data : {
-						labels : [ '1', '2', '3', '4', '5', '6',
-								'7','8','9','10','11','12','13','14','15','16','17','18',
-								'19','20','21','22','23','24','25','26','27','28','29','30'],
+						labels : [ '일요일', '월요일', '화요일', '수요일', '목요일', '금요일',
+								'토요일' ],
 						datasets : [ {
-							label : '# 한달 습관',
-							data : '${list3}',
+							label : '# 주간 습관',
+							data : [ 12, 18, 3, 5, 2, 3, 13 ],
 							backgroundColor : 'rgba(102, 102, 204, 0.2)',
 							borderColor : 'rgba(000, 000, 102, 1)',
 							borderWidth : 1,
@@ -543,15 +572,12 @@ body {
 						scales : {
 							yAxes : [ {
 								ticks : {
-									beginAtZero : true,
-									max: 500,
-									fontSize : 14,
+									beginAtZero : true
 								}
 							} ]
 						},
 					}
 				});
-				
 			</script>
 		</div>
 
@@ -571,7 +597,7 @@ body {
 								'토요일' ],
 						datasets : [ {
 							label : '# 주간 습관',
-							data : '${list2}',
+							data : [ 12, 18, 3, 5, 2, 3, 13 ],
 							backgroundColor : [ 'rgba(255, 99, 132, 0.2)',
 									'rgba(54, 162, 235, 0.2)',
 									'rgba(255, 206, 86, 0.2)',
@@ -601,8 +627,6 @@ body {
 					}
 				});
 			</script>
-
-		</div>
 
 		</div>
 
@@ -637,18 +661,25 @@ body {
 		}
 		function joinClicked(e){
 			var m_id=0;
+			
 			if(!confirm('체크하시겠습니까?')){
 				e.preventDefault();
 			}else{
 				joined(e);
+				
+				let date = new Date();
+				drawCalendar();
+				initDate();
+				drawRegisterDays(date.getMonth()+1, date.getDate());
+				
 				return m_id;
 			}
-			}
+		}
 		function joined(e){
 			return alert('역시! 오늘도 해낼 줄 알았어요!')			
 		}
 	</script>
-
+					
 
 </body>
 </html>
