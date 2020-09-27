@@ -116,6 +116,8 @@ public class MyHabitDAO {
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
+			}finally {
+				dbClose();
 			}
 			return list;
 		}

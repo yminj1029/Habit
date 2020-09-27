@@ -65,6 +65,8 @@ public class MyResultDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			dbClose();
 		}
 		return list;
 		
@@ -92,16 +94,18 @@ public class MyResultDAO {
 					}
 				} catch (SQLException e) {
 					e.printStackTrace();
+				} finally {
+					dbClose();
 				}
 
 				return cnt;
 			}
 		
-		   
-		   //포인트 증가시키기!!!
+   
+		   //현재까지 축척된 포인트
 		   public int Point(String m_id, String mr_date) {
 			   int point = 0;
-			   String sql = "select * from my_result where m_id=? and to_char(mr_date, 'YYYYMMDD')=?";
+			   String sql = "select * from my_result where m_id=? and to_char(mr_date, 'YYYYMMDD')<=?";
 			   try {
 				   conn= getConnect();
 					ps = conn.prepareStatement(sql);
@@ -110,23 +114,27 @@ public class MyResultDAO {
 					rs = ps.executeQuery();
 					
 					while (rs.next()) {
-						point += 50;
+						point += 5;
 					}
 				} catch (SQLException e) {
 					e.printStackTrace();
+				} finally {
+					dbClose();
 				}
 			   
 			return point;
 		   }
+		   
+		 
+		   
 	
-		   public int Bunmo(String m_id, String mr_date) {
+		   public int Bunmo(String m_id) {
 			   int bunmo =0;
 			   String sql = "select distinct h_id from my_result where m_id=?";
 			   try {
 				   conn= getConnect();
 					ps = conn.prepareStatement(sql);
 					ps.setString(1, m_id);
-					ps.setString(2, mr_date);
 					rs = ps.executeQuery();
 					
 					while (rs.next()) {
@@ -134,6 +142,8 @@ public class MyResultDAO {
 					}
 				} catch (SQLException e) {
 					e.printStackTrace();
+				} finally {
+					dbClose();
 				}
 			   
 			return bunmo;
@@ -154,9 +164,19 @@ public class MyResultDAO {
 					}
 				} catch (SQLException e) {
 					e.printStackTrace();
+				} finally {
+					dbClose();
 				}
 			   
 			return bunja;
 		   }
 	
+		  public int percent(int bunja, int bunmo) {
+			int percent = bunja/bunmo*100;
+			  
+			  return percent;
+			  
+		  }
+		  
+		 
 }

@@ -204,6 +204,8 @@ public class Member2DAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			dbClose();
 		}
 		return list;
 	}
