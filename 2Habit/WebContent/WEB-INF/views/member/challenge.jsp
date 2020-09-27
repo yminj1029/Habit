@@ -35,14 +35,14 @@ String r = "09";
 <!-- 커스텀 CSS 만들어서 추가하기 -->
 <link rel="stylesheet" href="./css/custom.css" />
 
-<title>HABIT</title>
+<title>O&O</title>
 
 </head>
 <body>
 
 <!-- Top bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="membermain.do">HABIT</a>
+      <a class="navbar-brand" href="membermain.do">O & O</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -66,10 +66,6 @@ String r = "09";
 	
 <!-- main -->
 <header>
-	<nav class="navbar navbar-expand-lg navbar-light">
-		<div class="navbar-brand">챌린지게시판</div>
-	</nav>
-	
 <!-- 챌린지 전체보기 -->
 	<div class="container">
 	
@@ -425,8 +421,7 @@ String r = "09";
 
 
 </header>
-
-<footer class="bg-dark mt-4 p-5 text-center" style="color: #FFFFFF;">Copyright ⓒ 2018 나동빈 All Rights Reserved.</footer>
+<footer class="bg-dark mt-4 p-5 text-center" style="color: #FFFFFF;">Credit @ 2020 빅데이터 3차 윤민지 박한성 정혜원 안예지.</footer>
 <!-- javascript -->
 	<!-- 제이쿼리 자바스크립트 추가하기 -->
 	<script src="./js/jquery.min.js"></script>

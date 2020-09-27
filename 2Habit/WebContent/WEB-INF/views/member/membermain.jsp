@@ -23,8 +23,8 @@
 			</div>
 			<div class="content">
 				<div class="inner">
-					<h1>HABIT</h1>
-					<p>Hope you Achieve & Become Incredibly Talented</p>
+					<h1>O & O</h1>
+					<p>One Day & One Step</p>
 				</div>
 			</div>
 			<nav>

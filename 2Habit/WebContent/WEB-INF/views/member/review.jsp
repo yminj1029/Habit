@@ -37,7 +37,7 @@ String r = "09";
 <div id="content">
 	<!-- Top bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="membermain.do">HABIT</a>
+      <a class="navbar-brand" href="membermain.do">O & O</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -61,10 +61,6 @@ String r = "09";
 </div>
 	<!-- main -->
 <header>
-	<nav class="navbar navbar-expand-lg navbar-light">
-		<div class="navbar-brand">후기게시판</div>
-	</nav>
-
 	<!-- 후기리스트 전체보기 -->
 	<div class="container">
 		<!-- 후기리스트 검색&등록 -->
@@ -215,7 +211,8 @@ String r = "09";
 
 </header>
 
-		<footer class="mt-4 p-5 text-center"> Credit @ 2020 빅데이터 3차 윤민지 박한성 정혜원 안예지. </footer>
+<footer class="bg-dark mt-4 p-5 text-center" style="color:#FFFFFF;"> Credit @ 2020 빅데이터 3차 윤민지 박한성 정혜원 안예지.</footer>
+
 
 
 <!-- javascript -->

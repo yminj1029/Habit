@@ -222,7 +222,7 @@ table.calendar td{
 }
 
 .list {
-	border: 1px solid pink;
+	border: 0;
 	width: 15%;
 	height: 800px;
 	float: left;
