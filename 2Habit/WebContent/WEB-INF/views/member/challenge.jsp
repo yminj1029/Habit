@@ -52,7 +52,7 @@
     </nav>
 	
 <!-- main -->
-<header id="bg">
+<header>
 	<nav class="navbar navbar-expand-lg navbar-light">
 		<div class="navbar-brand">챌린지게시판</div>
 	</nav>

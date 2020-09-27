@@ -22,7 +22,7 @@
 <title>myHabit</title>
 <style>
 body{
-      background-image: url('./images/bgimg.jpg');
+      background-image: url('../images/bgimg.jpg');
       background-attachment: fixed;
       background-repeat: no-repeat;
       width: 100%;

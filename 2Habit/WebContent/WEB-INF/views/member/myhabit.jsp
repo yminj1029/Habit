@@ -33,14 +33,14 @@ String r = "09";
 <title>HABIT</title>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <!-- 부트스트랩 CSS 만들어서 추가하기 -->
-<link rel="stylesheet" href="./css/bootstrap.min.css" />
+<link rel="stylesheet" href="./css/bootstrap.min.css?1" />
 <!-- 커스텀 CSS 만들어서 추가하기 -->
-<link rel="stylesheet" href="./css/custom.css" />
+<link rel="stylesheet" href="./css/custom.css?1" />
 
 <title>myHabit</title>
 <style>
 body {
-	background-image: url('./images/bgimg.jpg');
+	background-image: url('../images/bgimg.jpg');
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	width: 100%;

@@ -80,7 +80,7 @@
 			</div>
 
 		<!-- BG -->
-			<div id="bg"></div>
+			<div id="bgimg"></div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
