@@ -1,5 +1,7 @@
 # Habit
 
+#### 팀: O&O (총4명)
+
 ### 프로젝트 관련 PDF 파일 
 : [2차프로젝트.pdf](https://github.com/yminj1029/Habit/files/8973738/2.pdf)
 
