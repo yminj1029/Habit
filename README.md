@@ -42,10 +42,10 @@
 &nbsp;&nbsp; - BootStrap<br/>
 2. Model + Controller
 &nbsp;&nbsp; - JAVA : MVC2 패턴 사용<br/>
-<img width="400" alt="image" src="https://user-images.githubusercontent.com/68888349/175542098-ad3d2b8c-93e5-4ffd-8365-ac9abcd8bb80.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/68888349/175542098-ad3d2b8c-93e5-4ffd-8365-ac9abcd8bb80.png">
 
 
 ### 😍 Machine Learning<br/>
 &nbsp;&nbsp; - Python <br/>
-<img width="400" alt="image" src="https://user-images.githubusercontent.com/68888349/175541949-4cb2ddc0-3227-4e23-afc5-62e2446e2f41.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/68888349/175541949-4cb2ddc0-3227-4e23-afc5-62e2446e2f41.png">
 
