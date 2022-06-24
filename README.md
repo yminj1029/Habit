@@ -5,6 +5,7 @@
 
 ### 프로젝트 관련 시연 영상 
 : [Habit 시연영상 바로가기]([[http://google.com](https://www.youtube.com/watch?v=VEbr_ifL0Dk)]){: target="_blank"}
+[Stackoverflow The Key](https://stackoverflow.blog/2021/03/31/the-key-copy-paste/){:target="_blank" rel="noopener"}
 
 ![2차프로젝트1](https://user-images.githubusercontent.com/68888349/175476192-bd16470d-d543-4c23-91f4-c6a0d915af85.jpg)
 ![2차프로젝트2](https://user-images.githubusercontent.com/68888349/175476274-df4d710d-0f56-4fe0-9f77-0c6f8e4afe08.jpg)
