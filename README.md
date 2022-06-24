@@ -27,7 +27,7 @@
 
 <br/>
 
-## Project Infomation
+## Project Information
 
 #### 😍 DataBase 
 &nbsp;&nbsp; - Oracle <br/><br/>
